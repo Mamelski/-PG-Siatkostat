@@ -18,13 +18,48 @@ using Windows.UI.Xaml.Navigation;
 namespace Siatkostat
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Login page.
     /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void RegisterHyperlink_RegistrationPage(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(RegistrationPage));
+            //NavigationService.Navigate(new Uri("/Page2.xaml?msg=" + txtName.text, UriKind.Relative)); 
+            //LoginTextBox.Text = "dupa";
+        }
+
+        private void LoginButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            if (IsLoginDataValid())
+            {
+                this.Frame.Navigate(typeof(RegistrationPage));
+            }
+            else
+            {
+                AuthenticationFailed();
+            }
+        }
+
+        /// <summary>
+        /// Displays "Invalid user or password!" on the screen
+        /// </summary>
+        private void AuthenticationFailed()
+        {
+            InvalidLoginDataTextBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Returns true if login and password is not empty.
+        /// </summary>
+        private bool IsLoginDataValid()
+        {
+            return !(string.IsNullOrEmpty(LoginTextBox.Text) || string.IsNullOrEmpty(PasswordTextBox.Password));
         }
     }
 }

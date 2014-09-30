@@ -8,6 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        
+            <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Center" Margin="0,481,0,0" VerticalAlignment="Top" Click="LoginButton_Click"/>
+            <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Center" Margin="548,425,547,0" VerticalAlignment="Top" Width="271" ToolTipService.ToolTip="Password" PlaceholderText="Password"/>
+            <TextBox x:Name="LoginTextBox" Margin="0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Center" Width="271" HorizontalAlignment="Center"/>
+            <HyperlinkButton x:Name="RegisterHyperlinkButton" Content="Register" HorizontalAlignment="Center" Margin="0,512,0,0" VerticalAlignment="Top" Foreground="#FFBBB9C1" Click="RegisterHyperlink_RegistrationPage"/>
+            <TextBlock x:Name="InvalidLoginDataTextBlock" HorizontalAlignment="Center" Margin="0,330,0,0" TextWrapping="Wrap" Text="Invalid login or password!" VerticalAlignment="Top" Foreground="Red" Visibility="Collapsed"/>
+        
     </Grid>
 </Page>
