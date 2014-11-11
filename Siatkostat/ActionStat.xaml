@@ -15,22 +15,46 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
             <StackPanel Width="125">
-                <ToggleButton Name="ServeButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Zagrywka</ToggleButton>
-                <ToggleButton Name="PrzyjecieButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Przyjęcie</ToggleButton>
-                <ToggleButton Name="AttackButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Atak</ToggleButton>
-                <ToggleButton Name="BlockButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Blok</ToggleButton>
-                <ToggleButton Name="AnotherFaultButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Inny błąd</ToggleButton>
+                <ToggleButton Name="ServeButton" HorizontalAlignment="Stretch" Click="ServeButton_Click">Zagrywka</ToggleButton>
+                <ToggleButton Name="PrzyjecieButton" HorizontalAlignment="Stretch" Click="PrzyjecieButton_Click">Przyjęcie</ToggleButton>
+                <ToggleButton Name="AttackButton" HorizontalAlignment="Stretch" Click="AttackButton_Click">Atak</ToggleButton>
+                <ToggleButton Name="BlockButton" HorizontalAlignment="Stretch" Click="BlockButton_Click">Blok</ToggleButton>
+                <ToggleButton Name="AnotherFaultButton" HorizontalAlignment="Stretch" Click="AnotherFaultButton_Click">Inny błąd</ToggleButton>
             </StackPanel>
             <!-- Boisko -->
             <StackPanel Width="330" Margin="5,10,5,0">
                 <local:CourtControl></local:CourtControl>
             </StackPanel>
             <!-- /Boisko -->
-            <StackPanel Width="Auto">
-                <ToggleButton Name="PerfectButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Perfekcyjnie</ToggleButton>
-                <ToggleButton Name="PositiveButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Pozytywne</ToggleButton>
-                <ToggleButton Name="BadButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Złe</ToggleButton>
-                <ToggleButton Name="BrokenButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Zepsute</ToggleButton>
+            <!-- Zagrywka -->
+            <StackPanel Name="ServeStackPanel"  Width="125" Visibility="Collapsed">
+                <Button Name="PointServeButton" HorizontalAlignment="Stretch">Punktowa</Button>
+                <Button Name="OdrzucajacaButton" HorizontalAlignment="Stretch">Odrzucająca</Button>
+                <Button Name="ResztaServeButton" HorizontalAlignment="Stretch">Reszta</Button>
+                <Button Name="BrokenServeButton" HorizontalAlignment="Stretch">Zepsuta</Button>
+            </StackPanel>
+            <!-- Przyjęcie -->
+            <StackPanel Name="PrzyjecieStackPanel" Width="125" Visibility="Visible">
+                <Button Name="PerfectSaveButton" HorizontalAlignment="Stretch">Perfekcyjne</Button>
+                <Button Name="PositiveSaveButton" HorizontalAlignment="Stretch">Pozytywne</Button>
+                <Button Name="BadSaveButton" HorizontalAlignment="Stretch">Złe</Button>
+                <Button Name="BrokenSaveButton" HorizontalAlignment="Stretch">Zepsute</Button>
+            </StackPanel>
+            <!-- Atak -->
+            <StackPanel Name="AttackStackPanel"  Width="125" Visibility="Collapsed">
+                <Button Name="PointAttackButton" HorizontalAlignment="Stretch">Punktowy</Button>
+                <Button Name="OtherAttackButton" HorizontalAlignment="Stretch">Pozostałe</Button>
+                <Button Name="BlockedAttackButton" HorizontalAlignment="Stretch">Zablokowany punktowo</Button>
+                <Button Name="BrokenAttackButton" HorizontalAlignment="Stretch">Zepsuty</Button>
+            </StackPanel>
+            <!-- Blok -->
+            <StackPanel Name="BlockStackPanel"  Width="125" Visibility="Collapsed">
+                <Button Name="PointBlockButton" HorizontalAlignment="Stretch">Punktowy</Button>
+                <Button Name="NetFaultBlockButton" HorizontalAlignment="Stretch">Błąd siatki</Button>
+            </StackPanel>
+            <!-- Inny błąd -->
+            <StackPanel Name="AnotherFaultStackPanel"  Width="125" Visibility="Collapsed">
+                <Button Name="SelfFaultButton" HorizontalAlignment="Stretch">Błąd własny</Button>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">

@@ -58,13 +58,93 @@ namespace Siatkostat
 
         private void GradeButton_Click(object sender, RoutedEventArgs e)
         {
-            PerfectButton.IsChecked = false;
-            PositiveButton.IsChecked = false;
-            BadButton.IsChecked = false;
-            BrokenButton.IsChecked = false;
+            
 
             ToggleButton activeButton = sender as ToggleButton;
             activeButton.IsChecked = true;
+        }
+
+        private void ServeButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckAllActionTypeButtons();
+            ServeButton.IsChecked = true;
+
+            HideGradeStackPanels();
+            ServeStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private void HideGradeStackPanels()
+        {
+            ServeStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            PrzyjecieStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AttackStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            BlockStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AnotherFaultStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        private void UncheckAllActionTypeButtons()
+        {
+            ServeButton.IsChecked = false;
+            PrzyjecieButton.IsChecked = false;
+            AttackButton.IsChecked = false;
+            BlockButton.IsChecked = false;
+            AnotherFaultButton.IsChecked = false;
+
+            /*// Zagrywka
+            PointServeButton.IsChecked = false;
+            OdrzucajacaButton.IsChecked = false;
+            ResztaServeButton.IsChecked = false;
+            BrokenServeButton.IsChecked = false;
+
+            // Przyjecie
+            PerfectSaveButton.IsChecked = false;
+            PositiveSaveButton.IsChecked = false;
+            BadSaveButton.IsChecked = false;
+            BrokenSaveButton.IsChecked = false;
+
+            // Atak
+            PointAttackButton.IsChecked = false;
+            OtherAttackButton.IsChecked = false;
+            BlockedAttackButton.IsChecked = false;
+            BrokenAttackButton.IsChecked = false;*/
+
+            //
+        }
+
+        private void PrzyjecieButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckAllActionTypeButtons();
+            PrzyjecieButton.IsChecked = true;
+
+            HideGradeStackPanels();
+            PrzyjecieStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private void AttackButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckAllActionTypeButtons();
+            AttackButton.IsChecked = true;
+
+            HideGradeStackPanels();
+            AttackStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private void BlockButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckAllActionTypeButtons();
+            BlockButton.IsChecked = true;
+
+            HideGradeStackPanels();
+            BlockStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private void AnotherFaultButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckAllActionTypeButtons();
+            AnotherFaultButton.IsChecked = true;
+
+            HideGradeStackPanels();
+            AnotherFaultStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
     }
 }
