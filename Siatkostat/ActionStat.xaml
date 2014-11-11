@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource BackgroundImage}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,29 +14,29 @@
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <StackPanel Width="Auto">
-                <ToggleButton x:Name="ServeButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Zagrywka</ToggleButton>
-                <ToggleButton x:Name="PrzyjecieButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Przyjęcie</ToggleButton>
-                <ToggleButton x:Name="AttackButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Atak</ToggleButton>
-                <ToggleButton x:Name="BlockButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Blok</ToggleButton>
-                <ToggleButton x:Name="AnotherFaultButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Inny błąd</ToggleButton>
+            <StackPanel Width="125">
+                <ToggleButton Name="ServeButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Zagrywka</ToggleButton>
+                <ToggleButton Name="PrzyjecieButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Przyjęcie</ToggleButton>
+                <ToggleButton Name="AttackButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Atak</ToggleButton>
+                <ToggleButton Name="BlockButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Blok</ToggleButton>
+                <ToggleButton Name="AnotherFaultButton" HorizontalAlignment="Stretch" Click="ActionTypeButton_Click">Inny błąd</ToggleButton>
             </StackPanel>
             <!-- Boisko -->
-            <StackPanel Width="350">
+            <StackPanel Width="330" Margin="5,10,5,0">
                 <local:CourtControl></local:CourtControl>
             </StackPanel>
             <!-- /Boisko -->
             <StackPanel Width="Auto">
-                <ToggleButton x:Name="PerfectButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Perfekcyjnie</ToggleButton>
-                <ToggleButton x:Name="PositiveButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Pozytywne</ToggleButton>
-                <ToggleButton x:Name="BadButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Złe</ToggleButton>
-                <ToggleButton x:Name="BrokenButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Zepsute</ToggleButton>
+                <ToggleButton Name="PerfectButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Perfekcyjnie</ToggleButton>
+                <ToggleButton Name="PositiveButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Pozytywne</ToggleButton>
+                <ToggleButton Name="BadButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Złe</ToggleButton>
+                <ToggleButton Name="BrokenButton" HorizontalAlignment="Stretch" Click="GradeButton_Click">Zepsute</ToggleButton>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="AnotherTeamPointButton">Inny punkt drużyny</Button>
-            <Button x:Name="AnotherOpponentPointButton" Margin="10,0">Inny punkt przeciwnika</Button>
-            <Button x:Name="CancelButton">Anuluj</Button>
+            <Button Name="AnotherTeamPointButton">Inny punkt drużyny</Button>
+            <Button Name="AnotherOpponentPointButton" Margin="10,0">Inny punkt przeciwnika</Button>
+            <Button Name="CancelButton">Anuluj</Button>
         </StackPanel>
     </Grid>
 </Page>
