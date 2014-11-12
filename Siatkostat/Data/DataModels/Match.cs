@@ -34,5 +34,17 @@ namespace Siatkostat
         
         public int TeamBScoreInSet5 { get; private set; }
 
+
+        #region Constructor
+        public Match()
+        {
+            ID = 1;
+            TeamAID = 1;
+            TeamBID = 2;
+            TeamAScoreInSet1 = TeamAScoreInSet2 = TeamAScoreInSet3 = TeamAScoreInSet4 = TeamAScoreInSet5 = 0;
+            TeamBScoreInSet1 = TeamBScoreInSet2 = TeamBScoreInSet3 = TeamBScoreInSet4 = TeamBScoreInSet5 = 0;
+            MatchDate = new DateTime(2014, 5, 5);
+        }
+        #endregion
     }
 }

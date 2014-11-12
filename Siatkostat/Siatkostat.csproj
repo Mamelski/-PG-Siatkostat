@@ -88,7 +88,10 @@
     <Compile Include="CourtControl.xaml.cs">
       <DependentUpon>CourtControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\DataProviders\MatchProvider.cs" />
     <Compile Include="Data\DataProviders\PlayersProvider.cs" />
+    <Compile Include="Data\DataProviders\SetProvider.cs" />
+    <Compile Include="Data\DataProviders\TeamsProvider.cs" />
     <Compile Include="EditTeam.xaml.cs">
       <DependentUpon>EditTeam.xaml</DependentUpon>
     </Compile>
