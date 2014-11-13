@@ -10,7 +10,7 @@ namespace Siatkostat
 {
     public sealed partial class EditTeam
     {
-        private PlayersProvider playersProvider;
+        private readonly PlayersProvider playersProvider;
 
         public EditTeam()
         {

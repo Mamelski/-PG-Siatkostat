@@ -9,7 +9,6 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
-using Siatkostat.Authentication;
 
 namespace Siatkostat
 {
@@ -58,11 +57,11 @@ namespace Siatkostat
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame {CacheSize = 1};
 
-                // TODO: change this value to a cache size that is appropriate for your application
+                // change this value to a cache size that is appropriate for your application
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
-                    // TODO: Load state from previously suspended application
+                    // Load state from previously suspended application
                 }
 
                 // Place the frame in the current Window
@@ -87,7 +86,7 @@ namespace Siatkostat
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(MainMenu), e.Arguments))
+                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
                 }
@@ -105,7 +104,8 @@ namespace Siatkostat
         private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
         {
             var rootFrame = sender as Frame;
-            rootFrame.ContentTransitions = transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
+            if (rootFrame == null) return;
+            rootFrame.ContentTransitions = transitions ?? new TransitionCollection { new NavigationThemeTransition() };
             rootFrame.Navigated -= RootFrame_FirstNavigated;
         }
 
@@ -120,7 +120,7 @@ namespace Siatkostat
         {
             var deferral = e.SuspendingOperation.GetDeferral();
 
-            // TODO: Save application state and stop any background activity
+            // Save application state and stop any background activity
             deferral.Complete();
         }
     }

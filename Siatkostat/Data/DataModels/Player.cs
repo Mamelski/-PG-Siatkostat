@@ -4,7 +4,7 @@ namespace Siatkostat.Data.DataModels
 {
     public class Player
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string FirstName { get; set; }
 
@@ -12,8 +12,16 @@ namespace Siatkostat.Data.DataModels
 
         public int Number { get; set; }
 
-        public int TeamId { get; set; }
+        public string TeamId { get; set; }
 
         public bool IsLibero { get; set; }
+
+        public string IsLiberoString
+        {
+            get
+            {
+                return IsLibero ? "tak" : "nie";
+            }
+        }
     }
 }
