@@ -45,5 +45,15 @@ namespace Siatkostat
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
         }
+
+        private void MatchStartButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(NewMatch));
+        }
+
+        private void DisplayStatisticsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(StatisticsWindow));
+        }
     }
 }
