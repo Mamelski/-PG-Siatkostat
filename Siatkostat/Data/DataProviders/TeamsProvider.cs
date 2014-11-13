@@ -15,8 +15,8 @@ namespace Siatkostat.Data.DataProviders
         public TeamsProvider()
         {
             TeamCollection = new List<Team>();
-            TeamCollection.Add(new Team { ID = 1, Name = "Pierwsza drużyna" });
-            TeamCollection.Add(new Team { ID = 2, Name = "Druga drużyna" });
+            TeamCollection.Add(new Team { ID = "1", Name = "Pierwsza drużyna" });
+            TeamCollection.Add(new Team { ID = "2", Name = "Druga drużyna" });
         }
         #endregion
 

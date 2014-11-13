@@ -99,16 +99,16 @@ namespace Siatkostat
             ServeButton.IsChecked = true;
 
             HideGradeStackPanels();
-            ServeStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            ServeStackPanel.Visibility = Visibility.Visible;
         }
 
         private void HideGradeStackPanels()
         {
-            ServeStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            PrzyjecieStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AttackStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            BlockStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AnotherFaultStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            ServeStackPanel.Visibility = Visibility.Collapsed;
+            PrzyjecieStackPanel.Visibility = Visibility.Collapsed;
+            AttackStackPanel.Visibility = Visibility.Collapsed;
+            BlockStackPanel.Visibility = Visibility.Collapsed;
+            AnotherFaultStackPanel.Visibility = Visibility.Collapsed;
         }
 
         private void UncheckAllActionTypeButtons()
@@ -139,7 +139,7 @@ namespace Siatkostat
             PrzyjecieButton.IsChecked = true;
 
             HideGradeStackPanels();
-            PrzyjecieStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            PrzyjecieStackPanel.Visibility = Visibility.Visible;
         }
 
         private void AttackButton_Click(object sender, RoutedEventArgs e)
@@ -148,7 +148,7 @@ namespace Siatkostat
             AttackButton.IsChecked = true;
 
             HideGradeStackPanels();
-            AttackStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            AttackStackPanel.Visibility = Visibility.Visible;
         }
 
         private void BlockButton_Click(object sender, RoutedEventArgs e)
@@ -157,7 +157,7 @@ namespace Siatkostat
             BlockButton.IsChecked = true;
 
             HideGradeStackPanels();
-            BlockStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            BlockStackPanel.Visibility = Visibility.Visible;
         }
 
         private void AnotherFaultButton_Click(object sender, RoutedEventArgs e)
@@ -166,7 +166,7 @@ namespace Siatkostat
             AnotherFaultButton.IsChecked = true;
 
             HideGradeStackPanels();
-            AnotherFaultStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            AnotherFaultStackPanel.Visibility = Visibility.Visible;
         }
     }
 }

@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" Width="400">
-            <Image Source="logo.png" Height="80" HorizontalAlignment="Center" Margin="0,15,0,15"/>
+            <Image Source="Assets/SiatkostatLogo.png" Height="80" HorizontalAlignment="Center" Margin="0,15,0,15"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
