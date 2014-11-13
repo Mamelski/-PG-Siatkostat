@@ -1,52 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Siatkostat
+﻿namespace Siatkostat.Data.DataModels
 {
     public class Set
     {
-        public int ID { get; private set; }
+        public int ID { get; set; }
 
-        public int MatchID { get; private set; }
+        public int MatchID { get; set; }
 
-        public int SetNumber { get; private set; }
+        public int SetNumber { get; set; }
 
-        public int BlockFault { get; private set; }
+        public int BlockFault { get; set; }
 
-        public int BlockKill { get; private set; }
+        public int BlockKill { get; set; }
 
-        public int BlockRebound { get; private set; }
+        public int BlockRebound { get; set; }
 
-        public int OwnFault { get; private set; }
+        public int OwnFault { get; set; }
 
-        public int PlayerID { get; private set; }
+        public int PlayerID { get; set; }
 
-        public int ReceiveBad { get; private set; }
+        public int ReceiveBad { get; set; }
 
-        public int ReceiveFault { get; private set; }
+        public int ReceiveFault { get; set; }
 
-        public int ReceiveGood { get; private set; }
+        public int ReceiveGood { get; set; }
 
-        public int ReceivePerfect { get; private set; }
+        public int ReceivePerfect { get; set; }
 
-        public int ServeAce { get; private set; }
+        public int ServeAce { get; set; }
 
-        public int ServeFault { get; private set; }
+        public int ServeFault { get; set; }
 
-        public int ServeHit { get; private set; }
+        public int ServeHit { get; set; }
 
-        public int ServeOther { get; private set; }
+        public int ServeOther { get; set; }
 
-        public int SpikeBlocked { get; private set; }
+        public int SpikeBlocked { get; set; }
 
-        public int SpikeFault { get; private set; }
+        public int SpikeFault { get; set; }
 
-        public int SpikeKill { get; private set; }
+        public int SpikeKill { get; set; }
 
-        public int SpikeOther { get; private set; }
+        public int SpikeOther { get; set; }
 
     }
 }

@@ -13,5 +13,13 @@
         public string TeamId { get; set; }
 
         public bool IsLibero { get; set; }
+
+        public string IsLiberoString
+        {
+            get
+            {
+                return IsLibero ? "tak" : "nie";
+            }
+        }
     }
 }
