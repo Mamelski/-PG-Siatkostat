@@ -15,8 +15,6 @@ using Windows.UI.Xaml.Navigation;
 using Siatkostat.Data.DataProviders;
 using Siatkostat.Data.DataModels;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
-
 namespace Siatkostat
 {
     public enum Grade
@@ -37,6 +35,41 @@ namespace Siatkostat
         public ActionStat()
         {
             this.InitializeComponent();
+
+            // Zagrywka
+            PointServeButton.Click += HideStackPanelAndUnselectButtons;
+            OdrzucajacaButton.Click += HideStackPanelAndUnselectButtons;
+            ResztaServeButton.Click += HideStackPanelAndUnselectButtons;
+            BrokenServeButton.Click += HideStackPanelAndUnselectButtons;
+
+            // Przyjecie
+            PerfectSaveButton.Click += HideStackPanelAndUnselectButtons;
+            PositiveSaveButton.Click += HideStackPanelAndUnselectButtons;
+            BadSaveButton.Click += HideStackPanelAndUnselectButtons;
+            BrokenSaveButton.Click += HideStackPanelAndUnselectButtons;
+
+            // Atak
+            PointAttackButton.Click += HideStackPanelAndUnselectButtons;
+            OtherAttackButton.Click += HideStackPanelAndUnselectButtons;
+            BlockedAttackButton.Click += HideStackPanelAndUnselectButtons;
+            BrokenAttackButton.Click += HideStackPanelAndUnselectButtons;
+
+            // Blok
+            PointBlockButton.Click += HideStackPanelAndUnselectButtons;
+            NetFaultBlockButton.Click += HideStackPanelAndUnselectButtons;
+
+            // Inny błąd
+            SelfFaultButton.Click += HideStackPanelAndUnselectButtons;
+
+            SetPlayersOnCourt();
+        }
+
+        private void SetPlayersOnCourt()
+        {
+            for (int i = 0; i < Court.Players.Count; i++)
+            {
+                Court.Players[i].player = playerProvider.PlayerMockCollection[i];
+            }
         }
 
         /// <summary>
@@ -85,26 +118,19 @@ namespace Siatkostat
             AttackButton.IsChecked = false;
             BlockButton.IsChecked = false;
             AnotherFaultButton.IsChecked = false;
+        }
 
-            /*// Zagrywka
-            PointServeButton.IsChecked = false;
-            OdrzucajacaButton.IsChecked = false;
-            ResztaServeButton.IsChecked = false;
-            BrokenServeButton.IsChecked = false;
+        private void HideStackPanelAndUnselectButtons(object sender, RoutedEventArgs e)
+        {
+            HideGradeStackPanels();
+            UncheckAllActionTypeButtons();
+            UncheckPlayers();
+        }
 
-            // Przyjecie
-            PerfectSaveButton.IsChecked = false;
-            PositiveSaveButton.IsChecked = false;
-            BadSaveButton.IsChecked = false;
-            BrokenSaveButton.IsChecked = false;
-
-            // Atak
-            PointAttackButton.IsChecked = false;
-            OtherAttackButton.IsChecked = false;
-            BlockedAttackButton.IsChecked = false;
-            BrokenAttackButton.IsChecked = false;*/
-
-            //
+        private void UncheckPlayers()
+        {
+            foreach (PlayerControl player in Court.Players)
+                player.Unselect();
         }
 
         private void PrzyjecieButton_Click(object sender, RoutedEventArgs e)

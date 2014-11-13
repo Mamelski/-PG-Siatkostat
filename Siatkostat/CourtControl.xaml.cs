@@ -13,15 +13,21 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace Siatkostat
 {
     public sealed partial class CourtControl : UserControl
     {
+        public List<PlayerControl> Players = new List<PlayerControl>();
         public CourtControl()
         {
             this.InitializeComponent();
+            Players.Add(Player1);
+            Players.Add(Player2);
+            Players.Add(Player3);
+            Players.Add(Player4);
+            Players.Add(Player5);
+            Players.Add(Player6);
         }
     }
 }
