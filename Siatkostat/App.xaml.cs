@@ -23,6 +23,10 @@ namespace Siatkostat
 
         private TransitionCollection transitions;
 
+        public bool IsUserLogged { get; set; }
+
+        public string Login { get; set; }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().

@@ -1,8 +1,11 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace Siatkostat
 {
@@ -13,7 +16,9 @@ namespace Siatkostat
     {
         public MainPage()
         {
+
             InitializeComponent();
+            
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 
@@ -22,7 +27,7 @@ namespace Siatkostat
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.
         /// This parameter is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             // TODO: Prepare page for display here.
 
@@ -31,8 +36,9 @@ namespace Siatkostat
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
-
+           
         }
+      
 
         private void MatchStartButton_Click(object sender, RoutedEventArgs e)
         {

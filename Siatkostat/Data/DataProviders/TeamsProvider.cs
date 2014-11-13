@@ -2,6 +2,7 @@
 using Windows.UI.Popups;
 using Microsoft.WindowsAzure.MobileServices;
 using Siatkostat.Data.DataModels;
+using Siatkostat.Models;
 
 namespace Siatkostat.Data.DataProviders
 {
@@ -12,8 +13,8 @@ namespace Siatkostat.Data.DataProviders
         #region Constructor
         public TeamsProvider()
         {
-            TeamCollection.Add(new Team { ID = 1, Name = "Pierwsza drużyna" });
-            TeamCollection.Add(new Team { ID = 2, Name = "Druga drużyna" });
+            TeamCollection.Add(new Team { Id = 1, TeamName = "Pierwsza drużyna" });
+            TeamCollection.Add(new Team { Id = 2, TeamName = "Druga drużyna" });
         }
         #endregion
 

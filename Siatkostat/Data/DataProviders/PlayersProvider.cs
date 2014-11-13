@@ -3,6 +3,8 @@ using Windows.UI.Popups;
 using Microsoft.WindowsAzure.MobileServices;
 using Siatkostat.Data.DataModels;
 
+using Siatkostat.Models;
+
 namespace Siatkostat.Data.DataProviders
 {
     public class PlayersProvider

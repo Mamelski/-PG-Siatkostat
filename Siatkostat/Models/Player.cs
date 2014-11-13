@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Siatkostat.Data.DataModels
+﻿namespace Siatkostat.Models
 {
     public class Player
     {

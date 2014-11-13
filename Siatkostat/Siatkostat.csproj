@@ -101,7 +101,7 @@
     <Compile Include="Data\DataModels\Match.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data\DataModels\Player.cs">
+    <Compile Include="Models\Player.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NewMatch.xaml.cs">
@@ -117,7 +117,7 @@
     </Compile>
     <Compile Include="Authentication\SignInPage.xaml.cs" />
     <Compile Include="Authentication\SignUpPage.xaml.cs" />
-    <Compile Include="Data\DataModels\Team.cs">
+    <Compile Include="Models\Team.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="StatisticsWindow.xaml.cs">
