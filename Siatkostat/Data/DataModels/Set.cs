@@ -42,5 +42,13 @@
 
         public int SpikeOther { get; set; }
 
+        #region Constructor
+        public Set()
+        {
+            BlockFault = BlockKill = BlockRebound = OwnFault = ReceiveBad = ReceiveFault = ReceiveGood = ReceivePerfect = ServeAce = ServeFault
+                = ServeHit = ServeOther = SpikeBlocked = SpikeFault = SpikeKill = SpikeOther = 0;
+        }
+        #endregion
+
     }
 }
