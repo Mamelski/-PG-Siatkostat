@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -122,6 +123,8 @@ namespace Siatkostat
 
         private void HideStackPanelAndUnselectButtons(object sender, RoutedEventArgs e)
         {
+            if (!Court.Players.Any(p => p.Selected))
+                new MessageDialog("Wybierz zawodnika!").ShowAsync();
             HideGradeStackPanels();
             UncheckAllActionTypeButtons();
             UncheckPlayers();
@@ -167,6 +170,11 @@ namespace Siatkostat
 
             HideGradeStackPanels();
             AnotherFaultStackPanel.Visibility = Visibility.Visible;
+        }
+
+        private void AnotherTeamPointButton_Click(object sender, RoutedEventArgs e)
+        {
+            Court.RotatePlayers();
         }
     }
 }

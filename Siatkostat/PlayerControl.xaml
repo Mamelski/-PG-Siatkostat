@@ -12,8 +12,8 @@
     
     <Canvas>
         <Grid>
-            <Ellipse Canvas.ZIndex="1" Width="50" Height="50" Fill="White" Tapped="Ellipse_Tapped" Name="ellipse"/>
-            <TextBlock Canvas.ZIndex="10" Name="Number"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontSize="30" Tapped="Ellipse_Tapped">6</TextBlock>
+            <Ellipse Canvas.ZIndex="1" Width="50" Height="50" Fill="White" Name="ellipse"/>
+            <TextBlock Canvas.ZIndex="10" Name="Number"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontSize="30"></TextBlock>
         </Grid>
     </Canvas>
     

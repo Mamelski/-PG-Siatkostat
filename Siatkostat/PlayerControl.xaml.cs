@@ -43,14 +43,6 @@ namespace Siatkostat
             this.InitializeComponent();
         }
 
-        private void Ellipse_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (Selected)
-                Unselect();
-            else
-                Select();
-        }
-
         public void Select()
         {
             ellipse.Fill = highlightBrush;

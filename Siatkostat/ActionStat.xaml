@@ -74,7 +74,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="AnotherTeamPointButton" Width="Auto">Inny punkt drużyny</Button>
+            <Button Name="AnotherTeamPointButton" Width="Auto" Click="AnotherTeamPointButton_Click">Inny punkt drużyny</Button>
             <Button Name="AnotherOpponentPointButton" Margin="10,0" Width="Auto">Inny punkt przeciwnika</Button>
             <Button Name="CancelButton">Anuluj</Button>
         </StackPanel>

@@ -10,22 +10,22 @@
     d:DesignWidth="300">
 
     <UserControl.Resources>
-        <x:Double xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Key="FirstLineTopMargin">40</x:Double>
-        <x:Double xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Key="SecondLineTopMargin">145</x:Double>
+        <x:Double x:Key="FirstLineTopMargin">40</x:Double>
+        <x:Double x:Key="SecondLineTopMargin">145</x:Double>
 
-        <x:Double xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Key="FirstColumnLeftMargin">40</x:Double>
-        <x:Double xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Key="SecondColumnLeftMargin">125</x:Double>
-        <x:Double xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Key="ThirdColumnLeftMargin">210</x:Double>
+        <x:Double x:Key="FirstColumnLeftMargin">40</x:Double>
+        <x:Double x:Key="SecondColumnLeftMargin">125</x:Double>
+        <x:Double x:Key="ThirdColumnLeftMargin">210</x:Double>
     </UserControl.Resources>
     
     <Canvas>
-        <Image Canvas.ZIndex="1" Source="boisko.jpg" Width="300"/>
+        <Image Canvas.ZIndex="1" Source="Assets/boisko.jpg" Width="300"/>
         <local:PlayerControl Canvas.ZIndex="10" x:Name="Player1" Canvas.Left="{StaticResource FirstColumnLeftMargin}" Canvas.Top="{StaticResource FirstLineTopMargin}"/>
         <local:PlayerControl Canvas.ZIndex="10" x:Name="Player2" Canvas.Left="{StaticResource SecondColumnLeftMargin}" Canvas.Top="{StaticResource FirstLineTopMargin}"/>
         <local:PlayerControl Canvas.ZIndex="10" x:Name="Player3" Canvas.Left="{StaticResource ThirdColumnLeftMargin}" Canvas.Top="{StaticResource FirstLineTopMargin}"/>
 
-        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player4" Canvas.Left="{StaticResource FirstColumnLeftMargin}" Canvas.Top="{StaticResource SecondLineTopMargin}"/>
+        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player6" Canvas.Left="{StaticResource FirstColumnLeftMargin}" Canvas.Top="{StaticResource SecondLineTopMargin}"/>
         <local:PlayerControl Canvas.ZIndex="10" x:Name="Player5" Canvas.Left="{StaticResource SecondColumnLeftMargin}" Canvas.Top="{StaticResource SecondLineTopMargin}"/>
-        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player6" Canvas.Left="{StaticResource ThirdColumnLeftMargin}" Canvas.Top="{StaticResource SecondLineTopMargin}"/>
+        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player4" Canvas.Left="{StaticResource ThirdColumnLeftMargin}" Canvas.Top="{StaticResource SecondLineTopMargin}"/>
     </Canvas>
 </UserControl>
