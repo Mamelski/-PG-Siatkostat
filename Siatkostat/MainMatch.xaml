@@ -32,7 +32,7 @@
         <StackPanel Grid.Row="1" Grid.Column="2"  Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
             <Button Name="ActionButton" HorizontalAlignment="Stretch" Click="ActionButton_Click">AKCJA</Button>
             <Button Name="StatisticsButton" HorizontalAlignment="Stretch" Click="StatisticsButton_Click">STATYSTYKI</Button>
-            <Button Name="OptionsButton" HorizontalAlignment="Stretch">OPCJE</Button>
+            <Button Name="SubstitutionButton" HorizontalAlignment="Stretch">ZMIANA</Button>
         </StackPanel>
         
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="80" Background="Black" Margin="10">
