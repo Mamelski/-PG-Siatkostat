@@ -13,8 +13,8 @@ namespace Siatkostat.Data.DataProviders
         #region Constructor
         public TeamsProvider()
         {
-            TeamCollection.Add(new Team { Id = 1, TeamName = "Pierwsza drużyna" });
-            TeamCollection.Add(new Team { Id = 2, TeamName = "Druga drużyna" });
+            TeamCollection.Add(new Team { TeamName = "Pierwsza drużyna" });
+            TeamCollection.Add(new Team { TeamName = "Druga drużyna" });
         }
         #endregion
 

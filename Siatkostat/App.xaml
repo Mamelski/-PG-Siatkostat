@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <Application.Resources>
-        <ImageBrush x:Key="BackgroundImage" ImageSource="Assets/background.jpg"/>
+        <ImageBrush x:Key="SiatkostatBackgroundImage" ImageSource="Assets/background.jpg"/>
     </Application.Resources>
 
 </Application>
