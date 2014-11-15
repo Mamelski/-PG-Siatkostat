@@ -2,9 +2,9 @@
 {
     public class Set
     {
-        public int ID { get; set; }
+        public string ID { get; set; }
 
-        public int MatchID { get; set; }
+        public string MatchID { get; set; }
 
         public int SetNumber { get; set; }
 
@@ -16,7 +16,7 @@
 
         public int OwnFault { get; set; }
 
-        public int PlayerID { get; set; }
+        public string PlayerID { get; set; }
 
         public int ReceiveBad { get; set; }
 

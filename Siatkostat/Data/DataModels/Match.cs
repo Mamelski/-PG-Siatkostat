@@ -4,11 +4,11 @@ namespace Siatkostat
 {
     class Match
     {
-        public int ID { get; private set; }
+        public string ID { get; private set; }
 
-        public int TeamAID { get; private set; }
+        public string TeamAID { get; private set; }
 
-        public int TeamBID { get; private set; }
+        public string TeamBID { get; private set; }
 
         public DateTime MatchDate { get; private set; }
 
@@ -38,9 +38,9 @@ namespace Siatkostat
         #region Constructor
         public Match()
         {
-            ID = 1;
-            TeamAID = 1;
-            TeamBID = 2;
+            ID = "1";
+            TeamAID = "1";
+            TeamBID = "2";
             TeamAScoreInSet1 = TeamAScoreInSet2 = TeamAScoreInSet3 = TeamAScoreInSet4 = TeamAScoreInSet5 = 0;
             TeamBScoreInSet1 = TeamBScoreInSet2 = TeamBScoreInSet3 = TeamBScoreInSet4 = TeamBScoreInSet5 = 0;
             MatchDate = new DateTime(2014, 5, 5);

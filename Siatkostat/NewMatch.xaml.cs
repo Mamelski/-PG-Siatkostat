@@ -34,5 +34,10 @@ namespace Siatkostat
         {
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
+
+        private void ContinueButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainMatch));
+        }
     }
 }

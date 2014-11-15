@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Windows.UI.Popups;
 using Microsoft.WindowsAzure.MobileServices;
 using Siatkostat.Data.DataModels;
@@ -28,6 +29,7 @@ namespace Siatkostat.Data.DataProviders
         private readonly IMobileServiceTable<Player> playerTable = App.MobileService.GetTable<Player>();
 
         public MobileServiceCollection<Player, Player> PlayerCollection { get; set; }
+        public List<Player> PlayerMockCollection { get; set; }
 
         #endregion
 
@@ -36,14 +38,16 @@ namespace Siatkostat.Data.DataProviders
         public PlayersProvider()
         {
             //RefreshPlayers();
-            PlayerCollection.Add(new Player { Id = "1", FirstName = "Krzychu", LastName = "Dlsvbx", IsLibero = false, Number = 1, TeamId = "1" });
-            PlayerCollection.Add(new Player { Id = "2", FirstName = "Rychu", LastName = "Bsdfxz", IsLibero = false, Number = 2, TeamId = "1" });
-            PlayerCollection.Add(new Player { Id = "3", FirstName = "Zbychu", LastName = "Tsdgsdgxcvx", IsLibero = false, Number = 3, TeamId = "1" });
-            PlayerCollection.Add(new Player { Id = "4", FirstName = "Zdzichu", LastName = "Zgsdfbs", IsLibero = false, Number = 4, TeamId = "1" });
-            PlayerCollection.Add(new Player { Id = "5", FirstName = "Drugirychu", LastName = "Gsdgasdf", IsLibero = false, Number = 5, TeamId = "1" });
-            PlayerCollection.Add(new Player { Id = "6", FirstName = "Tumek", LastName = "WEfdgxcb", IsLibero = false, Number = 6, TeamId = "1" });
-            PlayerCollection.Add(new Player { Id = "7", FirstName = "Mikus", LastName = "bBssdf", IsLibero = true, Number = 7, TeamId = "1" });
-            PlayerCollection.Add(new Player { Id = "8", FirstName = "Leszek", LastName = "Wsdfgfxcsdf", IsLibero = false, Number = 8, TeamId = "1" });
+
+            PlayerMockCollection = new List<Player>();
+            PlayerMockCollection.Add(new Player { Id = "1", FirstName = "Krzychu", LastName = "Dlsvbx", IsLibero = false, Number = 1, TeamId = "1" });
+            PlayerMockCollection.Add(new Player { Id = "2", FirstName = "Rychu", LastName = "Bsdfxz", IsLibero = false, Number = 2, TeamId = "1" });
+            PlayerMockCollection.Add(new Player { Id = "3", FirstName = "Zbychu", LastName = "Tsdgsdgxcvx", IsLibero = false, Number = 3, TeamId = "1" });
+            PlayerMockCollection.Add(new Player { Id = "4", FirstName = "Zdzichu", LastName = "Zgsdfbs", IsLibero = false, Number = 4, TeamId = "1" });
+            PlayerMockCollection.Add(new Player { Id = "5", FirstName = "Drugirychu", LastName = "Gsdgasdf", IsLibero = false, Number = 5, TeamId = "1" });
+            PlayerMockCollection.Add(new Player { Id = "6", FirstName = "Tumek", LastName = "WEfdgxcb", IsLibero = false, Number = 6, TeamId = "1" });
+            PlayerMockCollection.Add(new Player { Id = "7", FirstName = "Mikus", LastName = "bBssdf", IsLibero = true, Number = 7, TeamId = "1" });
+            PlayerMockCollection.Add(new Player { Id = "8", FirstName = "Leszek", LastName = "Wsdfgfxcsdf", IsLibero = false, Number = 8, TeamId = "1" });
         }
 
         #endregion

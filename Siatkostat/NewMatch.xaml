@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" Width="400">
-            <Image Source="logo.png" Height="80" HorizontalAlignment="Center" Margin="0,15,0,15"/>
+            <Image Source="Assets/SiatkostatLogo.png" Height="80" HorizontalAlignment="Center" Margin="0,15,0,15"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -36,7 +36,7 @@
                 <TextBox Grid.Column="1" Grid.Row="3" Name="MatchPlaceTextBox"></TextBox>
             </Grid>
             
-            <Button Name="ContinueButton" HorizontalAlignment="Center">Kontynuuj</Button>
+            <Button Name="ContinueButton" HorizontalAlignment="Center" Click="ContinueButton_Click">Kontynuuj</Button>
         </StackPanel>
     </Grid>
 </Page>

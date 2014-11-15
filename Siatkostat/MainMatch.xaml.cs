@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.Phone.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -18,29 +17,14 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Siatkostat
 {
-    
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class StatisticsWindow : Page
+    public sealed partial class MainMatch : Page
     {
-        private readonly List<ComboBoxItem> actionTypes = new List<ComboBoxItem> 
-        { 
-            new ComboBoxItem { Name = "sdf", Tag = 3 },
-            new ComboBoxItem { Name = "sdfo", Tag = 2 }
-        };
-
-        public StatisticsWindow()
+        public MainMatch()
         {
             this.InitializeComponent();
-            ActionTypeComboBox.ItemsSource = actionTypes;
-        }
-
-        void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
-        {
-            e.Handled = true;
-            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
-            Frame.Navigate(typeof(MainMatch));
         }
 
         /// <summary>
@@ -50,7 +34,17 @@ namespace Siatkostat
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
+
+        private void ActionButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ActionStat));
+        }
+
+        private void StatisticsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(StatisticsWindow));
+        }
+
     }
 }

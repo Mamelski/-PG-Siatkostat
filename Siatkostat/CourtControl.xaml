@@ -6,11 +6,27 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="270"
-    d:DesignWidth="350">
+    d:DesignHeight="230"
+    d:DesignWidth="300">
 
-    <Grid>
+    <UserControl.Resources>
         <Image Source="Assets/boisko.jpg"/>
-        <local:PlayerControl></local:PlayerControl>
-    </Grid>
+        <x:Double x:Key="FirstLineTopMargin">40</x:Double>
+        <x:Double x:Key="SecondLineTopMargin">145</x:Double>
+
+        <x:Double x:Key="FirstColumnLeftMargin">40</x:Double>
+        <x:Double x:Key="SecondColumnLeftMargin">125</x:Double>
+        <x:Double x:Key="ThirdColumnLeftMargin">210</x:Double>
+    </UserControl.Resources>
+    
+    <Canvas>
+        <Image Canvas.ZIndex="1" Source="Assets/boisko.jpg" Width="300"/>
+        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player1" Canvas.Left="{StaticResource FirstColumnLeftMargin}" Canvas.Top="{StaticResource FirstLineTopMargin}"/>
+        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player2" Canvas.Left="{StaticResource SecondColumnLeftMargin}" Canvas.Top="{StaticResource FirstLineTopMargin}"/>
+        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player3" Canvas.Left="{StaticResource ThirdColumnLeftMargin}" Canvas.Top="{StaticResource FirstLineTopMargin}"/>
+
+        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player6" Canvas.Left="{StaticResource FirstColumnLeftMargin}" Canvas.Top="{StaticResource SecondLineTopMargin}"/>
+        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player5" Canvas.Left="{StaticResource SecondColumnLeftMargin}" Canvas.Top="{StaticResource SecondLineTopMargin}"/>
+        <local:PlayerControl Canvas.ZIndex="10" x:Name="Player4" Canvas.Left="{StaticResource ThirdColumnLeftMargin}" Canvas.Top="{StaticResource SecondLineTopMargin}"/>
+    </Canvas>
 </UserControl>

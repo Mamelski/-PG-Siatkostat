@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Phone.UI.Input;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -14,8 +16,6 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Siatkostat.Data.DataProviders;
 using Siatkostat.Data.DataModels;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace Siatkostat
 {
@@ -37,6 +37,48 @@ namespace Siatkostat
         public ActionStat()
         {
             this.InitializeComponent();
+
+            // Zagrywka
+            PointServeButton.Click += HideStackPanelAndUnselectButtons;
+            OdrzucajacaButton.Click += HideStackPanelAndUnselectButtons;
+            ResztaServeButton.Click += HideStackPanelAndUnselectButtons;
+            BrokenServeButton.Click += HideStackPanelAndUnselectButtons;
+
+            // Przyjecie
+            PerfectSaveButton.Click += HideStackPanelAndUnselectButtons;
+            PositiveSaveButton.Click += HideStackPanelAndUnselectButtons;
+            BadSaveButton.Click += HideStackPanelAndUnselectButtons;
+            BrokenSaveButton.Click += HideStackPanelAndUnselectButtons;
+
+            // Atak
+            PointAttackButton.Click += HideStackPanelAndUnselectButtons;
+            OtherAttackButton.Click += HideStackPanelAndUnselectButtons;
+            BlockedAttackButton.Click += HideStackPanelAndUnselectButtons;
+            BrokenAttackButton.Click += HideStackPanelAndUnselectButtons;
+
+            // Blok
+            PointBlockButton.Click += HideStackPanelAndUnselectButtons;
+            NetFaultBlockButton.Click += HideStackPanelAndUnselectButtons;
+
+            // Inny błąd
+            SelfFaultButton.Click += HideStackPanelAndUnselectButtons;
+
+            SetPlayersOnCourt();
+        }
+
+        private void SetPlayersOnCourt()
+        {
+            for (int i = 0; i < Court.Players.Count; i++)
+            {
+                Court.Players[i].player = playerProvider.PlayerMockCollection[i];
+            }
+        }
+
+        void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+        {
+            e.Handled = true;
+            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
+            Frame.Navigate(typeof(MainMatch));
         }
 
         /// <summary>
@@ -46,6 +88,7 @@ namespace Siatkostat
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
 
         private void ActionTypeButton_Click(object sender, RoutedEventArgs e)
@@ -66,16 +109,16 @@ namespace Siatkostat
             ServeButton.IsChecked = true;
 
             HideGradeStackPanels();
-            ServeStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            ServeStackPanel.Visibility = Visibility.Visible;
         }
 
         private void HideGradeStackPanels()
         {
-            ServeStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            PrzyjecieStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AttackStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            BlockStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AnotherFaultStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            ServeStackPanel.Visibility = Visibility.Collapsed;
+            PrzyjecieStackPanel.Visibility = Visibility.Collapsed;
+            AttackStackPanel.Visibility = Visibility.Collapsed;
+            BlockStackPanel.Visibility = Visibility.Collapsed;
+            AnotherFaultStackPanel.Visibility = Visibility.Collapsed;
         }
 
         private void UncheckAllActionTypeButtons()
@@ -85,26 +128,21 @@ namespace Siatkostat
             AttackButton.IsChecked = false;
             BlockButton.IsChecked = false;
             AnotherFaultButton.IsChecked = false;
+        }
 
-            /*// Zagrywka
-            PointServeButton.IsChecked = false;
-            OdrzucajacaButton.IsChecked = false;
-            ResztaServeButton.IsChecked = false;
-            BrokenServeButton.IsChecked = false;
+        private void HideStackPanelAndUnselectButtons(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+                new MessageDialog("Wybierz zawodnika!").ShowAsync();
+            HideGradeStackPanels();
+            UncheckAllActionTypeButtons();
+            UncheckPlayers();
+        }
 
-            // Przyjecie
-            PerfectSaveButton.IsChecked = false;
-            PositiveSaveButton.IsChecked = false;
-            BadSaveButton.IsChecked = false;
-            BrokenSaveButton.IsChecked = false;
-
-            // Atak
-            PointAttackButton.IsChecked = false;
-            OtherAttackButton.IsChecked = false;
-            BlockedAttackButton.IsChecked = false;
-            BrokenAttackButton.IsChecked = false;*/
-
-            //
+        private void UncheckPlayers()
+        {
+            foreach (PlayerControl player in Court.Players)
+                player.Unselect();
         }
 
         private void PrzyjecieButton_Click(object sender, RoutedEventArgs e)
@@ -113,7 +151,7 @@ namespace Siatkostat
             PrzyjecieButton.IsChecked = true;
 
             HideGradeStackPanels();
-            PrzyjecieStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            PrzyjecieStackPanel.Visibility = Visibility.Visible;
         }
 
         private void AttackButton_Click(object sender, RoutedEventArgs e)
@@ -122,7 +160,7 @@ namespace Siatkostat
             AttackButton.IsChecked = true;
 
             HideGradeStackPanels();
-            AttackStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            AttackStackPanel.Visibility = Visibility.Visible;
         }
 
         private void BlockButton_Click(object sender, RoutedEventArgs e)
@@ -131,7 +169,7 @@ namespace Siatkostat
             BlockButton.IsChecked = true;
 
             HideGradeStackPanels();
-            BlockStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            BlockStackPanel.Visibility = Visibility.Visible;
         }
 
         private void AnotherFaultButton_Click(object sender, RoutedEventArgs e)
@@ -140,7 +178,12 @@ namespace Siatkostat
             AnotherFaultButton.IsChecked = true;
 
             HideGradeStackPanels();
-            AnotherFaultStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            AnotherFaultStackPanel.Visibility = Visibility.Visible;
+        }
+
+        private void AnotherTeamPointButton_Click(object sender, RoutedEventArgs e)
+        {
+            Court.RotatePlayers();
         }
     }
 }
