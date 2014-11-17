@@ -4,6 +4,7 @@ using System.Linq;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Siatkostat.Data.DataModels;
+using Siatkostat.Models;
 
 
 namespace Siatkostat

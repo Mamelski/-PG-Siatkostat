@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 using Newtonsoft.Json.Bson;
 using Siatkostat.Data.DataModels;
+using Siatkostat.Models;
 
 namespace Siatkostat
 {

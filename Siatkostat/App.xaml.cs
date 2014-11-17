@@ -10,6 +10,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 using Siatkostat.Authentication;
+using Siatkostat.Models;
 
 namespace Siatkostat
 {
@@ -24,9 +25,8 @@ namespace Siatkostat
 
         private TransitionCollection transitions;
 
-        public bool IsUserLogged { get; set; }
+        public static Team SelectedTeam { get; set; }
 
-        public string Login { get; set; }
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

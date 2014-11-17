@@ -7,21 +7,53 @@ namespace Siatkostat.ViewModels
 {
     public class TeamsViewModel
     {
-        private readonly IMobileServiceTable<Team> teamTable  = App.MobileService.GetTable<Team>();
+        #region Lazy singleton elements
+        private static readonly Lazy<TeamsViewModel> LazyInstance =  new Lazy<TeamsViewModel>(() => new TeamsViewModel());
 
-        public MobileServiceCollection<Team, Team> PlayerCollection { get; set; }
+        public static TeamsViewModel Instance
+        {
+            get
+            {
+                return LazyInstance.Value;
+            }
+        }
 
-        public TeamsViewModel()
+        #endregion
+
+        #region Events
+        public delegate void TeamsCollectionLoaded (object sender);
+
+        public event TeamsCollectionLoaded CollectionLoaded;
+
+        protected virtual void OnCollectionLoaded()
+        {
+            if (CollectionLoaded != null)
+                CollectionLoaded(this);
+        }
+
+        #endregion
+
+        #region Data Objects
+        private readonly IMobileServiceTable<Team> teamsTable  = App.MobileService.GetTable<Team>();
+
+        public MobileServiceCollection<Team, Team> TeamsCollection { get; set; }
+
+        #endregion
+
+        #region Constructor
+        private TeamsViewModel()
         {
             RefreshPlayers();
         }
+
+        #endregion
 
         public async void RefreshPlayers()
         {
             MobileServiceInvalidOperationException exception = null;
             try
             {
-                PlayerCollection = await teamTable
+                TeamsCollection = await teamsTable
                     .ToCollectionAsync();
             }
             catch (MobileServiceInvalidOperationException e)
@@ -32,6 +64,10 @@ namespace Siatkostat.ViewModels
             if (exception != null)
             {
                 await new MessageDialog(exception.Message, "Error loading items").ShowAsync();
+            }
+            else
+            {
+                OnCollectionLoaded();
             }
         }
     }

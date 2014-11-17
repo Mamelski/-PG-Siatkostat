@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Siatkostat</RootNamespace>
     <AssemblyName>Siatkostat</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>pl</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -85,6 +85,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Authentication\ChoseTeamDialog.xaml.cs">
+      <DependentUpon>ChoseTeamDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CourtControl.xaml.cs">
       <DependentUpon>CourtControl.xaml</DependentUpon>
     </Compile>
@@ -119,7 +122,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Authentication\SignInPage.xaml.cs" />
-    <Compile Include="Authentication\SignUpPage.xaml.cs" />
     <Compile Include="Models\Team.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -153,6 +155,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Authentication\ChoseTeamDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CourtControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,10 +176,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Authentication\SignInPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Authentication\SignUpPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

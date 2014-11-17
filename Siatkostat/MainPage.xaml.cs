@@ -1,4 +1,5 @@
 ﻿using System;
+using Windows.Phone.UI.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -29,6 +30,7 @@ namespace Siatkostat
         /// This parameter is typically used to configure the page.</param>
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
             // TODO: Prepare page for display here.
 
             // TODO: If your application contains multiple pages, ensure that you are
@@ -48,6 +50,13 @@ namespace Siatkostat
         private void DisplayStatisticsButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(StatisticsWindow));
+        }
+
+        void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+        {
+            e.Handled = true;
+            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
+            Application.Current.Exit();
         }
     }
 }
