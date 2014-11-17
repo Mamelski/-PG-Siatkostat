@@ -8,11 +8,23 @@
     Background="{ThemeResource SiatkostatBackgroundImage}">
 
     <Grid>
-        <StackPanel Orientation="Vertical" Width="180">
-            <Image Source="Assets/SiatkostatLogo.png" Height="80" HorizontalAlignment="Center" Margin="0,30,0,0"/>
-            <Button Name="MatchStartButton" HorizontalAlignment="Stretch" Margin="0,30,0,0" Click="MatchStartButton_Click">Rozegraj mecz</Button>
-            <Button Name="DisplayStatisticsButton" HorizontalAlignment="Stretch" Click="DisplayStatisticsButton_Click">Wyświetl statystyki</Button>
-            <Button Name="ModifyTeamButton" HorizontalAlignment="Stretch">Modyfikuj drużynę</Button>
+        <StackPanel Orientation="Vertical" 
+                    Width="180">
+            <Image Source="Assets/SiatkostatLogo.png" 
+                   Height="80" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,30,0,0"/>
+            <Button HorizontalAlignment="Stretch" 
+                    Margin="0,30,0,0" 
+                    Click="MatchStartButton_Click"
+                    Content="Rozegraj mecz"/>
+            <Button HorizontalAlignment="Stretch" 
+                    Click="DisplayStatisticsButton_Click"
+                    Content="Wyświetl statystyki"/>
+            <Button Name="EditTeamButton" 
+                    HorizontalAlignment="Stretch"
+                    Content="Modyfikuj drużynę" 
+                    Click="EditTeamButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

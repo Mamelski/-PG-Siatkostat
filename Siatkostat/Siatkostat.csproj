@@ -95,8 +95,8 @@
     <Compile Include="Data\DataProviders\PlayersProvider.cs" />
     <Compile Include="Data\DataProviders\SetProvider.cs" />
     <Compile Include="Data\DataProviders\TeamsProvider.cs" />
-    <Compile Include="EditTeam.xaml.cs">
-      <DependentUpon>EditTeam.xaml</DependentUpon>
+    <Compile Include="EditTeamPage.xaml.cs">
+      <DependentUpon>EditTeamPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainMatch.xaml.cs">
       <DependentUpon>MainMatch.xaml</DependentUpon>
@@ -163,7 +163,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditTeam.xaml">
+    <Page Include="EditTeamPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
