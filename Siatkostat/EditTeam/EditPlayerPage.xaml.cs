@@ -10,9 +10,9 @@ namespace Siatkostat.EditTeam
     public sealed partial class EditPlayerPage
     {
         #region Fields
-        private Player editedPlayer;
+        private Player playerToEdit;
 
-        private Player newPlayer;
+        private Player playerAfterEdition;
         
         #endregion
 
@@ -27,17 +27,17 @@ namespace Siatkostat.EditTeam
         #region Navigation
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            editedPlayer = (Player)e.Parameter;
-            if (editedPlayer == null)
+            playerToEdit = (Player)e.Parameter;
+            if (playerToEdit == null)
             {
                 return;
             }
 
-            ImięTextBox.Text = editedPlayer.FirstName;
-            NazwiskoTextBox.Text = editedPlayer.LastName;
-            NumerTextBox.Text = editedPlayer.Number.ToString();
+            ImięTextBox.Text = playerToEdit.FirstName;
+            NazwiskoTextBox.Text = playerToEdit.LastName;
+            NumerTextBox.Text = playerToEdit.Number.ToString();
 
-            if (editedPlayer.IsLibero)
+            if (playerToEdit.IsLibero)
             {
                 IsLIberoToggleButton.IsChecked = true;
             }
@@ -45,14 +45,14 @@ namespace Siatkostat.EditTeam
 
         #endregion
 
-
+        #region Buttons
         private async void GotoweButton_Click(object sender, RoutedEventArgs e)
         {
             if (ImięTextBox.Text == string.Empty
                 || NazwiskoTextBox.Text == string.Empty
                 || NumerTextBox.Text == string.Empty)
             {
-                newPlayer = null;
+                playerAfterEdition = null;
                 var addPlayerErrorDialog = new MessageDialog("Wypełnij wszystkie pola") { Title = "Błąd tworzenia zawodnika" };
                 await addPlayerErrorDialog.ShowAsync();
                 return;
@@ -61,15 +61,15 @@ namespace Siatkostat.EditTeam
             int tmp;
             if (!Int32.TryParse(NumerTextBox.Text, out tmp))
             {
-                newPlayer = null;
+                playerAfterEdition = null;
                 var addPlayerErrorDialog = new MessageDialog("Pole \"Numer\" musi być liczbą") { Title = "Błąd tworzenia zawodnika" };
                 await addPlayerErrorDialog.ShowAsync();
                 return;
             }
 
-            newPlayer = new Player
+            playerAfterEdition = new Player
             {
-                Id = editedPlayer.Id,
+                Id = playerToEdit.Id,
                 FirstName = ImięTextBox.Text,
                 LastName = NazwiskoTextBox.Text,
                 Number = tmp,
@@ -78,17 +78,18 @@ namespace Siatkostat.EditTeam
 
             if (IsLIberoToggleButton.IsChecked == true)
             {
-                editedPlayer.IsLibero = true;
+                playerToEdit.IsLibero = true;
             }
 
 
-            Frame.Navigate(typeof(EditTeamPage), newPlayer);
+            Frame.Navigate(typeof(EditTeamPage), playerAfterEdition);
         }
 
         private void AnulujButton_Click(object sender, RoutedEventArgs e)
         {
-            editedPlayer = null;
-            Frame.Navigate(typeof(EditTeamPage), editedPlayer);
+            playerToEdit = null;
+            Frame.Navigate(typeof(EditTeamPage), playerToEdit);
         }
+        #endregion
     }
 }

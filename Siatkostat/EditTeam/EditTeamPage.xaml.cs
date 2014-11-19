@@ -60,9 +60,19 @@ namespace Siatkostat.EditTeam
             PlayersListBox.ItemsSource = PlayersViewModel.Instance.PlayersCollection;
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
-        #endregion
-       
 
+        void newPlayerContentDialog_Closing(Windows.UI.Xaml.Controls.ContentDialog sender, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs args)
+        {
+            if (newPlayerContentDialog.NewPlayer == null)
+            {
+                return;
+            }
+            newPlayerContentDialog.Closing -= newPlayerContentDialog_Closing;
+            PlayersViewModel.Instance.InsertPlayer(newPlayerContentDialog.NewPlayer);
+        }
+        #endregion
+
+        #region Buttons
         private void EdytujButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             if (PlayersListBox.SelectedItem == null)
@@ -71,7 +81,6 @@ namespace Siatkostat.EditTeam
             }
 
             Frame.Navigate(typeof (EditPlayerPage),PlayersListBox.SelectedItem);
-
         }
 
 
@@ -92,16 +101,6 @@ namespace Siatkostat.EditTeam
             newPlayerContentDialog.Closing += newPlayerContentDialog_Closing;
             await newPlayerContentDialog.ShowAsync();
         }
-
-        void newPlayerContentDialog_Closing(Windows.UI.Xaml.Controls.ContentDialog sender, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs args)
-        {
-            if (newPlayerContentDialog.NewPlayer == null)
-            {
-                return;
-            }
-            newPlayerContentDialog.Closing -= newPlayerContentDialog_Closing;
-            PlayersViewModel.Instance.InsertPlayer(newPlayerContentDialog.NewPlayer);
-        }
-
+        #endregion
     }
 }

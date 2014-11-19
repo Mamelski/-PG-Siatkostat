@@ -7,13 +7,18 @@ namespace Siatkostat.EditTeam
 {
     public sealed partial class NewPlayerContentDialog
     {
+        #region Fields
         public Player NewPlayer;
+        #endregion
 
+        #region Constructor
         public NewPlayerContentDialog()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Buttons
         private async void GotoweButton_Click(object sender, RoutedEventArgs e)
         {
             if (ImięTextBox.Text == string.Empty
@@ -56,5 +61,6 @@ namespace Siatkostat.EditTeam
             NewPlayer = null;
             Hide();
         }
+        #endregion
     }
 }

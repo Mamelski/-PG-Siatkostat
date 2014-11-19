@@ -96,13 +96,13 @@ namespace Siatkostat.ViewModels
         public async void ModifyPlayer(Player player)
         {
             
-            foreach (var player1 in PlayersCollection.Where(player1 => player1.Id.ToString() == player.Id.ToString()))
+            foreach (var playerToModify in PlayersCollection.Where(player1 => player1.Id.ToString() == player.Id.ToString()))
             {
-                player1.IsLibero = player.IsLibero;
-                player1.FirstName = player.FirstName;
-                player1.LastName = player.LastName;
-                player1.Number = player.Number;
-                await playersTable.UpdateAsync(player1);
+                playerToModify.IsLibero = player.IsLibero;
+                playerToModify.FirstName = player.FirstName;
+                playerToModify.LastName = player.LastName;
+                playerToModify.Number = player.Number;
+                await playersTable.UpdateAsync(playerToModify);
                 return;
             }
         }
