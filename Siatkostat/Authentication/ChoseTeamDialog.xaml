@@ -10,10 +10,9 @@
     <StackPanel HorizontalAlignment="Center" 
                 VerticalAlignment="Center"
                 Width="500" 
-                Margin="77,0,-215.333,0">
-
+                Margin="0,0,-148,0">
         <TextBlock Text="Wybierz drużynę"
-                   FontSize="20"/>
+    		FontSize="20"/>
         <Grid HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="43*"/>
@@ -23,35 +22,35 @@
             </Grid.ColumnDefinitions>
 
             <ListBox x:Name="ChoseTeamListView"
-        		Width="287"
-        		Height="277"
-        		VerticalAlignment="Center"
-        		HorizontalAlignment="Center"
-        		Grid.Column="0" 
-                Margin="0,16,213,10" 
-                Grid.ColumnSpan="4">
+    			Width="287"
+    			Height="277"
+    			VerticalAlignment="Center"
+    			HorizontalAlignment="Center"
+    			Grid.Column="0" 
+    			Margin="0,16,213,10" 
+    			Grid.ColumnSpan="4">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <TextBlock FontSize="21"
-                                       Margin="5"
-                                       Text="{Binding TeamName}"/>
+    							Margin="5"
+    							Text="{Binding TeamName}"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
             <Image Source="../Assets/SiatkostatLogo.png"
-                   Grid.Column="3"
-                   Height="80" 
-                   Margin="45,70,0,140"/>
+    			Grid.Column="3"
+    			Height="80" 
+    			Margin="85,0,-28,223"/>
             <Button Content="Gotowe" 
-                    Grid.Column="3"
-        		    Click="GotoweButton_Click"
-        		    Margin="89,180,0,66" RenderTransformOrigin="1.351,0.432"/>
+    			Grid.Column="3"
+    			Click="GotoweButton_Click"
+    			Margin="131,100,0,146" RenderTransformOrigin="1.351,0.432"/>
             <Button Content="Anuluj"
-                    Grid.Column="3"
-                    Click="AnulujButton_Click"
-        		    Margin="89,245,0,1"/>
+    			Grid.Column="3"
+    			Click="AnulujButton_Click"
+    			Margin="131,170,0,76"/>
         </Grid>
     </StackPanel>
 </ContentDialog>

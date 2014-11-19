@@ -20,9 +20,10 @@ namespace Siatkostat
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+
             if (App.SelectedTeam == null)
             {
-               EditTeamButton.Visibility = Visibility.Collapsed;
+                EditTeamButton.Visibility = Visibility.Collapsed;
             }
         }
       
@@ -30,11 +31,13 @@ namespace Siatkostat
         private void MatchStartButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(NewMatch));
+            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
         }
 
         private void DisplayStatisticsButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(StatisticsWindow));
+            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
         }
 
         void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
@@ -46,7 +49,8 @@ namespace Siatkostat
 
         private void EditTeamButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(EditTeam));
+            Frame.Navigate(typeof(EditTeam.EditTeamPage));
+            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
         
         }
     }

@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Siatkostat.Data.DataProviders;
 using Siatkostat.Data.DataModels;
+using Siatkostat.ViewModels;
 
 namespace Siatkostat
 {
@@ -31,8 +32,9 @@ namespace Siatkostat
     {
         private MatchProvider matchProvider = new MatchProvider();
         private SetProvider setProvider = new SetProvider();
-        private TeamsProvider teamProvider = new TeamsProvider();
-        private PlayersProvider playerProvider = new PlayersProvider();
+        //private TeamsProvider teamProvider = new TeamsProvider();
+        private PlayersViewModel playerProvider = PlayersViewModel.Instance;
+
 
         public ActionStat()
         {
@@ -70,7 +72,7 @@ namespace Siatkostat
         {
             for (int i = 0; i < Court.Players.Count; i++)
             {
-                Court.Players[i].player = playerProvider.PlayerMockCollection[i];
+                Court.Players[i].player = playerProvider.PlayersCollection[i];
             }
         }
 
@@ -130,10 +132,10 @@ namespace Siatkostat
             AnotherFaultButton.IsChecked = false;
         }
 
-        private void HideStackPanelAndUnselectButtons(object sender, RoutedEventArgs e)
+        private async void HideStackPanelAndUnselectButtons(object sender, RoutedEventArgs e)
         {
             if (!Court.Players.Any(p => p.Selected))
-                new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
             HideGradeStackPanels();
             UncheckAllActionTypeButtons();
             UncheckPlayers();

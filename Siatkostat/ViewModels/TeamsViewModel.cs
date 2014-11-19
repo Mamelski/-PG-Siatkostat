@@ -25,7 +25,7 @@ namespace Siatkostat.ViewModels
 
         public event TeamsCollectionLoaded CollectionLoaded;
 
-        protected virtual void OnCollectionLoaded()
+        protected virtual void OnTeamsCollectionLoaded()
         {
             if (CollectionLoaded != null)
                 CollectionLoaded(this);
@@ -43,12 +43,12 @@ namespace Siatkostat.ViewModels
         #region Constructor
         private TeamsViewModel()
         {
-            RefreshPlayers();
+            RefreshTeams();
         }
 
         #endregion
 
-        public async void RefreshPlayers()
+        public async void RefreshTeams()
         {
             MobileServiceInvalidOperationException exception = null;
             try
@@ -67,7 +67,7 @@ namespace Siatkostat.ViewModels
             }
             else
             {
-                OnCollectionLoaded();
+                OnTeamsCollectionLoaded();
             }
         }
     }

@@ -92,11 +92,15 @@
       <DependentUpon>CourtControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\DataProviders\MatchProvider.cs" />
-    <Compile Include="Data\DataProviders\PlayersProvider.cs" />
     <Compile Include="Data\DataProviders\SetProvider.cs" />
-    <Compile Include="Data\DataProviders\TeamsProvider.cs" />
-    <Compile Include="EditTeamPage.xaml.cs">
+    <Compile Include="EditTeam\EditPlayerPage.xaml.cs">
+      <DependentUpon>EditPlayerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditTeam\EditTeamPage.xaml.cs">
       <DependentUpon>EditTeamPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditTeam\NewPlayerDialog.xaml.cs">
+      <DependentUpon>NewPlayerDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainMatch.xaml.cs">
       <DependentUpon>MainMatch.xaml</DependentUpon>
@@ -128,6 +132,7 @@
     <Compile Include="StatisticsWindow.xaml.cs">
       <DependentUpon>StatisticsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\PlayersViewModel.cs" />
     <Compile Include="ViewModels\TeamsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +168,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditTeamPage.xaml">
+    <Page Include="EditTeam\EditPlayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditTeam\EditTeamPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditTeam\NewPlayerDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

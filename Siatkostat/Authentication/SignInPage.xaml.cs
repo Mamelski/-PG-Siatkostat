@@ -33,38 +33,39 @@ namespace Siatkostat.Authentication
         #endregion
 
         #region Button Events
-        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        private async void SignInButton_Click(object sender, RoutedEventArgs e)
         {
 
             if (selectedTeam == null)
             {
                 var signInErrorDialog = new  MessageDialog("Nie wybrałeś drużyny") {Title = "Błąd logowania"};
-                signInErrorDialog.ShowAsync();
+                await signInErrorDialog.ShowAsync();
                 return;
             }
 
             if (PasswordTextBox.Password.Equals(String.Empty))
             {
                 var signInErrorDialog = new MessageDialog("Wpisz hasło") { Title = "Błąd logowania" };
-                signInErrorDialog.ShowAsync();
+                await signInErrorDialog.ShowAsync();
                 return;
             }
 
             if (!PasswordTextBox.Password.Equals(selectedTeam.TeamPassword))
             {
                 var signInErrorDialog = new MessageDialog("Błędne hasło") { Title = "Błąd logowania" };
-                signInErrorDialog.ShowAsync();
+                await signInErrorDialog.ShowAsync();
                 return;
             }
 
             App.SelectedTeam = selectedTeam;
             Frame.Navigate(typeof(MainPage));
+            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
         }
 
-        private void ChooseTeamButton_Click(object sender, RoutedEventArgs e)
+        private async void ChooseTeamButton_Click(object sender, RoutedEventArgs e)
         {
             choseTeamDialog.Closing += choseTeamDialog_Closing;
-            choseTeamDialog.ShowAsync();
+            await choseTeamDialog.ShowAsync();
             
         }
         private void QuestInButton_Click(object sender, RoutedEventArgs e)
@@ -82,10 +83,10 @@ namespace Siatkostat.Authentication
         #endregion
 
         #region Handling choseTeamDialog
-        void choseTeamDialog_Closing(Windows.UI.Xaml.Controls.ContentDialog sender, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs args)
+        async void choseTeamDialog_Closing(Windows.UI.Xaml.Controls.ContentDialog sender, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs args)
         {
            
-            choseTeamDialog.ProgresIndicator.HideAsync();
+            await choseTeamDialog.ProgresIndicator.HideAsync();
 
             if (choseTeamDialog.SelectedTeam == null) 
                 return;

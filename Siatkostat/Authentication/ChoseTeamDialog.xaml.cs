@@ -1,4 +1,6 @@
-﻿using Windows.UI.ViewManagement;
+﻿using System;
+using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 
 // The Content Dialog item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -17,10 +19,6 @@ namespace Siatkostat.Authentication
         public ChoseTeamDialog()
         {
             InitializeComponent();
-            ChoseTeamListView.ItemsSource = TeamsViewModel.Instance.TeamsCollection;
-
-            if (ChoseTeamListView.ItemsSource != null) 
-                return;
 
             TeamsViewModel.Instance.CollectionLoaded += TeamsViewModel_CollectionLoaded;
             Loaded += ChoseTeamDialog_Loaded;
@@ -35,14 +33,15 @@ namespace Siatkostat.Authentication
         public Team SelectedTeam { get; set; }
         #endregion
 
-        #region ContentDialog Events
-        void ChoseTeamDialog_Loaded(object sender, RoutedEventArgs e)
+        #region Events
+        async void ChoseTeamDialog_Loaded(object sender, RoutedEventArgs e)
         {
+            TeamsViewModel.Instance.RefreshTeams();
             if (ChoseTeamListView.ItemsSource != null)
                 return;
 
             ProgresIndicator.Text = "Trwa łączenie z bazą danych";
-            ProgresIndicator.ShowAsync();
+            await ProgresIndicator.ShowAsync();
         }
 
         void ChoseTeamDialog_Closing(Windows.UI.Xaml.Controls.ContentDialog sender, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs args)
@@ -50,16 +49,24 @@ namespace Siatkostat.Authentication
             Loaded -= ChoseTeamDialog_Loaded;
         }
 
-        void TeamsViewModel_CollectionLoaded(object sender)
+        async void TeamsViewModel_CollectionLoaded(object sender)
         {
             ChoseTeamListView.ItemsSource = TeamsViewModel.Instance.TeamsCollection;
-            ProgresIndicator.HideAsync();
+            await ProgresIndicator.HideAsync();
         }
+
         #endregion
 
-        #region Buttons Events
-        private void GotoweButton_Click(object sender, RoutedEventArgs e)
+        #region Buttons
+        private async void GotoweButton_Click(object sender, RoutedEventArgs e)
         {
+            if (ChoseTeamListView.SelectedItem == null)
+            {
+                var selectTeamErrorDialog = new MessageDialog("Wybierz drużynę") { Title = "Błąd wyboru" };
+                await selectTeamErrorDialog.ShowAsync();
+                return;
+            }
+
             SelectedTeam = (Team) ChoseTeamListView.SelectedItem;
             Hide();
         }
