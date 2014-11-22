@@ -110,12 +110,12 @@ namespace Siatkostat
         {
             if (Court.Players.Any(p => p.player == null))
             {
-                await new MessageDialog("Nie wszystkie pozycje mają przypisanego zawodnika").ShowAsync();
+                await new MessageDialog("Nie wszystkie pozycje mają przypisanego zawodnika!").ShowAsync();
                 return;
             }
             if (!Court.ValidatePositions())
             {
-                await new MessageDialog("Libero nie może być w pierwszej linii").ShowAsync();
+                await new MessageDialog("Libero nie może znajdować się w pierwszej linii!").ShowAsync();
                 return;
             }
 
