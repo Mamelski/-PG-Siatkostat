@@ -36,6 +36,7 @@ namespace Siatkostat
             {
                 _player = value;
                 Number.Text = _player.Number.ToString();
+                Unselect();
             }
         }
 

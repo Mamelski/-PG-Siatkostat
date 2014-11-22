@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Windows.UI.Popups;
 using Microsoft.WindowsAzure.MobileServices;
@@ -38,6 +40,8 @@ namespace Siatkostat.ViewModels
         private readonly IMobileServiceTable<Player> playersTable = App.MobileService.GetTable<Player>();
 
         public MobileServiceCollection<Player, Player> PlayersCollection { get; set; }
+
+        public ObservableCollection<Player> PlayersOnCourt = new ObservableCollection<Player>();
         #endregion
 
         #region Constructor
@@ -79,6 +83,14 @@ namespace Siatkostat.ViewModels
             }
         }
 
+        public void SetPlayersOnCourt(IEnumerable<Player> players)
+        {
+            PlayersOnCourt.Clear();
+            foreach (var p in players)
+            {
+                PlayersOnCourt.Add(p);
+            }
+        }
 
         #region DataOperations
         public async void InsertPlayer(Player player)

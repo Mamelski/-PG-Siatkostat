@@ -28,11 +28,11 @@
         <TextBlock Grid.Row="0" Grid.Column="2"  Name="SecondTeamNameTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">FC BARCELONA</TextBlock>
 
 
-        <local:CourtControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></local:CourtControl>
+        <local:CourtControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="Court"></local:CourtControl>
         <StackPanel Grid.Row="1" Grid.Column="2"  Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
             <Button Name="ActionButton" HorizontalAlignment="Stretch" Click="ActionButton_Click">AKCJA</Button>
             <Button Name="StatisticsButton" HorizontalAlignment="Stretch" Click="StatisticsButton_Click">STATYSTYKI</Button>
-            <Button Name="SubstitutionButton" HorizontalAlignment="Stretch">ZMIANA</Button>
+            <Button Name="SubstitutionButton" HorizontalAlignment="Stretch" Click="SubstitutionButton_Click">ZMIANA</Button>
         </StackPanel>
         
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="80" Background="Black" Margin="10">

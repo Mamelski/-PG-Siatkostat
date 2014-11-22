@@ -37,7 +37,7 @@ namespace Siatkostat
 
         private void ContinueButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainMatch));
+            Frame.Navigate(typeof(CourtPlayersSelect));
         }
     }
 }

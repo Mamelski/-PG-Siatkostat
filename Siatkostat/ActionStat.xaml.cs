@@ -70,10 +70,7 @@ namespace Siatkostat
 
         private void SetPlayersOnCourt()
         {
-            for (int i = 0; i < Court.Players.Count; i++)
-            {
-                Court.Players[i].player = playerProvider.PlayersCollection[i];
-            }
+            Court.SetPlayersOnCourt(PlayersViewModel.Instance.PlayersOnCourt);
         }
 
         void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
@@ -135,7 +132,11 @@ namespace Siatkostat
         private async void HideStackPanelAndUnselectButtons(object sender, RoutedEventArgs e)
         {
             if (!Court.Players.Any(p => p.Selected))
+            {
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+                
             HideGradeStackPanels();
             UncheckAllActionTypeButtons();
             UncheckPlayers();
