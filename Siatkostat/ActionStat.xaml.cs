@@ -1,21 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Phone.UI.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Siatkostat.Data.DataProviders;
-using Siatkostat.Data.DataModels;
 using Siatkostat.ViewModels;
 
 namespace Siatkostat
@@ -28,10 +18,10 @@ namespace Siatkostat
         Broken
     }
 
-    public sealed partial class ActionStat : Page
+    public sealed partial class ActionStat
     {
-        private MatchProvider matchProvider = new MatchProvider();
-        private SetProvider setProvider = new SetProvider();
+       // private MatchViewModel matchViewModel = new MatchViewModel();
+     //  private SetProvider setProvider = new SetProvider();
         //private TeamsProvider teamProvider = new TeamsProvider();
         private PlayersViewModel playerProvider = PlayersViewModel.Instance;
 
