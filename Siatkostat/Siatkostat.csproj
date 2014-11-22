@@ -91,6 +91,9 @@
     <Compile Include="CourtControl.xaml.cs">
       <DependentUpon>CourtControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CourtPlayersSelect.xaml.cs">
+      <DependentUpon>CourtPlayersSelect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditTeam\EditPlayerPage.xaml.cs">
       <DependentUpon>EditPlayerPage.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CourtControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CourtPlayersSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,19 +12,17 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
+using Siatkostat.ViewModels;
 
 namespace Siatkostat
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainMatch : Page
     {
         public MainMatch()
         {
             this.InitializeComponent();
+
+            Court.SetPlayersOnCourt(PlayersViewModel.Instance.PlayersOnCourt);
         }
 
         /// <summary>
@@ -44,6 +42,11 @@ namespace Siatkostat
         private void StatisticsButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(StatisticsWindow));
+        }
+
+        private void SubstitutionButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (CourtPlayersSelect));
         }
 
     }
