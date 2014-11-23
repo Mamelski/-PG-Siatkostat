@@ -38,6 +38,8 @@ namespace Siatkostat.ViewModels
         private readonly IMobileServiceTable<Match> matchesTable = App.MobileService.GetTable<Match>();
 
         public MobileServiceCollection<Match, Match> MatchesCollection { get; set; }
+
+        public Match CurrentMatch { get; set; }
         #endregion
 
         #region Constructor

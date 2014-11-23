@@ -27,10 +27,10 @@
                 <TextBox Grid.Column="1" Grid.Row="0" Name="OpponentNameTextBox"></TextBox>
 
                 <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20">Data:</TextBlock>
-                <TextBox Grid.Column="1" Grid.Row="1" Name="MatchDateTextBox"></TextBox>
+                <DatePicker Grid.Column="1" Grid.Row="1" Name="MatchDateTextBox"></DatePicker>
 
                 <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20">Godzina:</TextBlock>
-                <TextBox Grid.Column="1" Grid.Row="2" Name="MatchHourTextBox"></TextBox>
+                <TimePicker Grid.Column="1" Grid.Row="2" Name="MatchHourTextBox"></TimePicker>
 
                 <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20">Miejsce:</TextBlock>
                 <TextBox Grid.Column="1" Grid.Row="3" Name="MatchPlaceTextBox"></TextBox>

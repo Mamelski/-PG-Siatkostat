@@ -1,59 +1,26 @@
 ﻿using System;
 using System.Linq;
+using Windows.Devices.Geolocation;
 using Windows.Phone.UI.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Navigation;
+using Siatkostat.Models;
 using Siatkostat.ViewModels;
 
 namespace Siatkostat
 {
-    public enum Grade
-    {
-        Perfect,
-        Positive,
-        Bad,
-        Broken
-    }
-
     public sealed partial class ActionStat
     {
-       // private MatchViewModel matchViewModel = new MatchViewModel();
-     //  private SetProvider setProvider = new SetProvider();
-        //private TeamsProvider teamProvider = new TeamsProvider();
-        private PlayersViewModel playerProvider = PlayersViewModel.Instance;
-
+        private Match match;
 
         public ActionStat()
         {
             this.InitializeComponent();
 
-            // Zagrywka
-            PointServeButton.Click += HideStackPanelAndUnselectButtons;
-            OdrzucajacaButton.Click += HideStackPanelAndUnselectButtons;
-            ResztaServeButton.Click += HideStackPanelAndUnselectButtons;
-            BrokenServeButton.Click += HideStackPanelAndUnselectButtons;
-
-            // Przyjecie
-            PerfectSaveButton.Click += HideStackPanelAndUnselectButtons;
-            PositiveSaveButton.Click += HideStackPanelAndUnselectButtons;
-            BadSaveButton.Click += HideStackPanelAndUnselectButtons;
-            BrokenSaveButton.Click += HideStackPanelAndUnselectButtons;
-
-            // Atak
-            PointAttackButton.Click += HideStackPanelAndUnselectButtons;
-            OtherAttackButton.Click += HideStackPanelAndUnselectButtons;
-            BlockedAttackButton.Click += HideStackPanelAndUnselectButtons;
-            BrokenAttackButton.Click += HideStackPanelAndUnselectButtons;
-
-            // Blok
-            PointBlockButton.Click += HideStackPanelAndUnselectButtons;
-            NetFaultBlockButton.Click += HideStackPanelAndUnselectButtons;
-
-            // Inny błąd
-            SelfFaultButton.Click += HideStackPanelAndUnselectButtons;
+            match = MatchViewModel.Instance.CurrentMatch;
 
             SetPlayersOnCourt();
         }
@@ -92,15 +59,6 @@ namespace Siatkostat
             activeButton.IsChecked = true;
         }
 
-        private void ServeButton_Click(object sender, RoutedEventArgs e)
-        {
-            UncheckAllActionTypeButtons();
-            ServeButton.IsChecked = true;
-
-            HideGradeStackPanels();
-            ServeStackPanel.Visibility = Visibility.Visible;
-        }
-
         private void HideGradeStackPanels()
         {
             ServeStackPanel.Visibility = Visibility.Collapsed;
@@ -119,17 +77,10 @@ namespace Siatkostat
             AnotherFaultButton.IsChecked = false;
         }
 
-        private async void HideStackPanelAndUnselectButtons(object sender, RoutedEventArgs e)
+        private void HideStackPanelAndUnselectButtons()
         {
-            if (!Court.Players.Any(p => p.Selected))
-            {
-                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
-                return;
-            }
-                
             HideGradeStackPanels();
             UncheckAllActionTypeButtons();
-            UncheckPlayers();
         }
 
         private void UncheckPlayers()
@@ -138,8 +89,21 @@ namespace Siatkostat
                 player.Unselect();
         }
 
+        #region LeftPanelButtons
+        private void ServeButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckAllActionTypeButtons();
+            ServeButton.IsChecked = true;
+
+            HideGradeStackPanels();
+            ServeStackPanel.Visibility = Visibility.Visible;
+
+            Court.SelectPlayerOnPosition(CourtControl.Position.Serve);
+        }
+
         private void PrzyjecieButton_Click(object sender, RoutedEventArgs e)
         {
+            HideStackPanelAndUnselectButtons();
             UncheckAllActionTypeButtons();
             PrzyjecieButton.IsChecked = true;
 
@@ -149,6 +113,7 @@ namespace Siatkostat
 
         private void AttackButton_Click(object sender, RoutedEventArgs e)
         {
+            HideStackPanelAndUnselectButtons();
             UncheckAllActionTypeButtons();
             AttackButton.IsChecked = true;
 
@@ -158,6 +123,7 @@ namespace Siatkostat
 
         private void BlockButton_Click(object sender, RoutedEventArgs e)
         {
+            HideStackPanelAndUnselectButtons();
             UncheckAllActionTypeButtons();
             BlockButton.IsChecked = true;
 
@@ -167,16 +133,177 @@ namespace Siatkostat
 
         private void AnotherFaultButton_Click(object sender, RoutedEventArgs e)
         {
+            HideStackPanelAndUnselectButtons();
             UncheckAllActionTypeButtons();
             AnotherFaultButton.IsChecked = true;
 
             HideGradeStackPanels();
             AnotherFaultStackPanel.Visibility = Visibility.Visible;
         }
+        #endregion
 
+        #region RightPanelButtons
+        #region ReturnButtons
         private void AnotherTeamPointButton_Click(object sender, RoutedEventArgs e)
         {
-            Court.RotatePlayers();
+            match.AddTeamPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Team);
+            Frame.Navigate(typeof (MainMatch));
         }
+
+        private void AnotherOpponentPointButton_Click(object sender, RoutedEventArgs e)
+        {
+            match.AddOpponentPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void PointAttackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddTeamPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Team);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void PointBlockButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddTeamPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Team);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void SelfFaultButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddOpponentPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void PointServeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddTeamPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Team);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void BrokenServeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddOpponentPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void BrokenSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddOpponentPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void BlockedAttackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddOpponentPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void NetFaultBlockButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddOpponentPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        private async void BrokenAttackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
+            match.AddOpponentPoint();
+            Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            Frame.Navigate(typeof(MainMatch));
+        }
+        #endregion
+        #region No return buttons
+        private void OdrzucajacaButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckPlayers();
+        }
+
+        private void ResztaServeButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckPlayers();
+        }
+
+        private void PerfectSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckPlayers();
+        }
+
+        private void BadSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckPlayers();
+        }
+
+        private void PositiveSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckPlayers();
+        }
+
+        private void OtherAttackButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckPlayers();
+        }
+        #endregion
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainMatch));
+        }
+
+        
+        #endregion
     }
 }

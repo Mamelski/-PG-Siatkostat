@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Siatkostat.Annotations;
@@ -32,16 +33,19 @@ namespace Siatkostat.Models
         private int oponentScoreSet4;
 
         private int oponentScoreSet5;
-
         #endregion
 
         #region Properties
+        public int CurrentSet { get; set; }
+
+        public int OpponentSetScore { get; set; }
+
+        public int TeamSetScore { get; set; }
 
         public Guid Id { get; set; }
 
         public Guid TeamId { get; set; }
-
-
+       
         public string OponentName
         {
             get { return oponentName; }
@@ -174,6 +178,130 @@ namespace Siatkostat.Models
             }
         }
 
+        #endregion
+
+        #region Events
+
+        public delegate void SetFinish(object sender);
+        public event SetFinish OnSetFinish;
+        #endregion
+
+        #region Constructor
+
+        public Match()
+        {
+            teamScoreSet1 = teamScoreSet2 = teamScoreSet3 = teamScoreSet4 = teamScoreSet5 = 0;
+            oponentScoreSet1 = oponentScoreSet2 = oponentScoreSet3 = oponentScoreSet4 = oponentScoreSet5 = 0;
+            CurrentSet = 1;
+            OpponentSetScore = TeamSetScore = 0;
+            teamScoreSet1 = 24;
+        }
+        #endregion
+
+        #region Methods
+        public void AddOpponentPoint()
+        {
+            switch (CurrentSet)
+            {
+                case 1:
+                    oponentScoreSet1++;
+                    break;
+                case 2:
+                    oponentScoreSet2++;
+                    break;
+                case 3:
+                    oponentScoreSet3++;
+                    break;
+                case 4:
+                    oponentScoreSet4++;
+                    break;
+                case 5:
+                    oponentScoreSet5++;
+                    break;
+            }
+
+            if (CurrentOpponentScore() >= 25)
+            {
+                if (CurrentOpponentScore() - CurrentTeamScore() >= 2)
+                {
+                    OpponentSetScore++;
+                    CurrentSet++;
+                    if(OnSetFinish != null)
+                        OnSetFinish.Invoke(this);
+                }
+            }
+        }
+
+        public void AddTeamPoint()
+        {
+            switch (CurrentSet)
+            {
+                case 1:
+                    teamScoreSet1++;
+                    break;
+                case 2:
+                    teamScoreSet2++;
+                    break;
+                case 3:
+                    teamScoreSet3++;
+                    break;
+                case 4:
+                    teamScoreSet4++;
+                    break;
+                case 5:
+                    teamScoreSet5++;
+                    break;
+            }
+
+            if (CurrentTeamScore() >= 25)
+            {
+                if (CurrentTeamScore() - CurrentOpponentScore() >= 2)
+                {
+                    TeamSetScore++;
+                    CurrentSet++;
+                    if (OnSetFinish != null)
+                        OnSetFinish.Invoke(this);
+                }
+            }
+        }
+
+        public int CurrentTeamScore()
+        {
+            switch (CurrentSet)
+            {
+                case 1:
+                    return teamScoreSet1;
+                case 2:
+                    return teamScoreSet2;
+                case 3:
+                    return teamScoreSet3;
+                case 4:
+                    return teamScoreSet4;
+                case 5:
+                    return teamScoreSet5;
+                default:
+                    return 0;
+            }
+        }
+
+        public int CurrentOpponentScore()
+        {
+            switch (CurrentSet)
+            {
+                case 1:
+                    return oponentScoreSet1;
+                case 2:
+                    return oponentScoreSet2;
+                case 3:
+                    return oponentScoreSet3;
+                case 4:
+                    return oponentScoreSet4;
+                case 5:
+                    return oponentScoreSet5;
+                default:
+                    return 0;
+            }
+        }
         #endregion
 
         #region INotifyProperyChange members

@@ -22,8 +22,8 @@
         
         <TextBlock Grid.Row="0" Grid.Column="0" Name="FirstTeamNameTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">SKRA BEŁCHATÓW</TextBlock>
         <StackPanel Grid.Row="0" Grid.Column="1"  Orientation="Vertical">
-            <TextBlock Name="SetResulTextBlock" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24">2:0</TextBlock>
-            <TextBlock Name="PointsResultTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="24">13:15</TextBlock>
+            <TextBlock Name="SetResulTextBlock" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24">0:0</TextBlock>
+            <TextBlock Name="PointsResultTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="24">0:0</TextBlock>
         </StackPanel>
         <TextBlock Grid.Row="0" Grid.Column="2"  Name="SecondTeamNameTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">FC BARCELONA</TextBlock>
 

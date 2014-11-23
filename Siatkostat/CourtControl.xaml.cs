@@ -12,6 +12,24 @@ namespace Siatkostat
 {
     public sealed partial class CourtControl : UserControl
     {
+        public enum Position
+        {
+            LeftAttack,
+            MiddleAttack,
+            RightAttack,
+            Serve,
+            LeftDefense,
+            MiddleDefense
+        };
+
+        public enum CurrentTeam
+        {
+            Team,
+            Opponent
+        };
+
+        private static CurrentTeam? currentTeam = null;
+
         public delegate void PlayerSelect(object sender);
 
         public event PlayerSelect OnPlayerSelect;
@@ -34,6 +52,16 @@ namespace Siatkostat
                 playerControl.Tapped += ChangeSelection;
                 playerControl.Tapped += PlayerSelected;
             }
+        }
+
+        //TODO: set current team before match begins!!!!
+        public void PointFor(CurrentTeam team)
+        {
+            if (currentTeam == CurrentTeam.Opponent && team == CurrentTeam.Team)
+            {
+                RotatePlayers();
+            }
+            currentTeam = team;
         }
 
         public void SetPlayersOnCourt(Collection<Player> players)
@@ -77,6 +105,31 @@ namespace Siatkostat
             if (Player1.player.IsLibero || Player2.player.IsLibero || Player3.player.IsLibero)
                 return false;
             return true;
+        }
+
+        public void SelectPlayerOnPosition(Position position)
+        {
+            switch (position)
+            {
+                case Position.LeftAttack:
+                    Players[0].Select();
+                    break;
+                case Position.MiddleAttack:
+                    Players[1].Select();
+                    break;
+                case Position.RightAttack:
+                    Players[2].Select();
+                    break;
+                case Position.Serve:
+                    Players[3].Select();
+                    break;
+                case Position.MiddleDefense:
+                    Players[4].Select();
+                    break;
+                case Position.LeftDefense:
+                    Players[5].Select();
+                    break;
+            }
         }
     }
 }

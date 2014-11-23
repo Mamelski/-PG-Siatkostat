@@ -12,17 +12,25 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Siatkostat.Models;
 using Siatkostat.ViewModels;
 
 namespace Siatkostat
 {
     public sealed partial class MainMatch : Page
     {
+        private Match match;
         public MainMatch()
         {
             this.InitializeComponent();
 
             Court.SetPlayersOnCourt(PlayersViewModel.Instance.PlayersOnCourt);
+
+            match = MatchViewModel.Instance.CurrentMatch;
+            //match.OnSetFinish += UpdateSetsResult;
+
+            FirstTeamNameTextBlock.Text = App.SelectedTeam.TeamName;
+            SecondTeamNameTextBlock.Text = MatchViewModel.Instance.CurrentMatch.OponentName;
         }
 
         /// <summary>
@@ -32,6 +40,18 @@ namespace Siatkostat
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            UpdateScoreResult();
+            UpdateSetsResult();
+        }
+
+        private void UpdateSetsResult()
+        {
+            SetResulTextBlock.Text = String.Format("{0}:{1}", match.TeamSetScore, match.OpponentSetScore);
+        }
+
+        private void UpdateScoreResult()
+        {
+            PointsResultTextBlock.Text = String.Format("{0}:{1}", match.CurrentTeamScore(), match.CurrentOpponentScore());
         }
 
         private void ActionButton_Click(object sender, RoutedEventArgs e)

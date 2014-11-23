@@ -1,10 +1,13 @@
 ﻿using System;
 using Windows.Phone.UI.Input;
 using Windows.UI.Popups;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 using Microsoft.WindowsAzure.MobileServices;
+using Siatkostat.Models;
+using Siatkostat.ViewModels;
 
 namespace Siatkostat
 {
@@ -35,8 +38,26 @@ namespace Siatkostat
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
 
-        private void ContinueButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private async void ContinueButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(OpponentNameTextBox.Text))
+            {
+                await new MessageDialog("Musisz podać nazwę przeciwnej drużyny!").ShowAsync();
+                return;
+            }
+            if (String.IsNullOrEmpty(MatchPlaceTextBox.Text))
+            {
+                await new MessageDialog("Musisz podać miejsce meczu!").ShowAsync();
+                return;
+            }
+
+            Match newMatch = new Match();
+            newMatch.OponentName = OpponentNameTextBox.Text;
+           //TODO: date and time
+            newMatch.TeamId = App.SelectedTeam.Id;
+
+            MatchViewModel.Instance.CurrentMatch = newMatch;
+
             Frame.Navigate(typeof(CourtPlayersSelect));
         }
     }
