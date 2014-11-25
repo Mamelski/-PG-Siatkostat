@@ -28,9 +28,13 @@ namespace Siatkostat
         {
             this.InitializeComponent();
 
-            if (PlayersViewModel.Instance.PlayersOnCourt.Count == 0)
+            if (PlayersViewModel.Instance.PlayersCollection == null)
             {
-                PlayersViewModel.Instance.CollectionLoaded += PlayersViewModel_CollectionLoaded;
+                PlayersViewModel.Instance.CollectionLoaded += Setup;
+            }
+            else if (PlayersViewModel.Instance.PlayersOnCourt.Count == 0)
+            {
+                Setup();
             }
             else
             {
@@ -43,13 +47,36 @@ namespace Siatkostat
             }
         }
 
-        private void PlayersViewModel_CollectionLoaded(object sender)
+        private void AddPlayersSource()
         {
             foreach (var p in PlayersViewModel.Instance.PlayersCollection)
             {
                 Players.Add(p);
             }
             PlayersListBox.ItemsSource = Players;
+        }
+
+        private void Setup(object sender = null)
+        {
+            AddPlayersSource();
+            CreateSets();
+        }
+
+        private void CreateSets()
+        {
+            foreach (var player in PlayersViewModel.Instance.PlayersCollection)
+            {
+                for (int i = 1; i <= 5; i++)
+                {
+                    Set set = new Set
+                    {
+                        PlayerId = player.Id,
+                        SetNumber = i,
+                    };
+
+                    SetViewModel.Instance.CurrentMatchSets.Add(set);
+                }
+            }
         }
 
         /// <summary>

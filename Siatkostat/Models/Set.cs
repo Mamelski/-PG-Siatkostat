@@ -256,5 +256,32 @@ namespace Siatkostat.Models
 
         #endregion
 
+        #region Methods
+
+        public int TotalServes()
+        {
+            return serveAce + serveFault + serveHit + serveOther;
+        }
+
+        public int TotalReceives()
+        {
+            return receiveBad + receiveFault + receiveGood + receivePerfect;
+        }
+
+        public int TotalSpikes()
+        {
+            return spikeBlocked + spikeKill + spikeFault + spikeOther;
+        }
+
+        public int TotalFaults()
+        {
+            return ownFault + serveFault + receiveFault + spikeFault + blockFault;
+        }
+
+        public int TotalBlocks()
+        {
+            return blockFault + blockKill + blockRebound;
+        }
+        #endregion
     }
 }

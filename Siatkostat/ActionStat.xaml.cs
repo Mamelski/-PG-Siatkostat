@@ -15,6 +15,7 @@ namespace Siatkostat
     public sealed partial class ActionStat
     {
         private Match match;
+        private SetViewModel setViewModel = SetViewModel.Instance;
 
         public ActionStat()
         {
@@ -23,6 +24,12 @@ namespace Siatkostat
             match = MatchViewModel.Instance.CurrentMatch;
 
             SetPlayersOnCourt();
+        }
+
+        private Set GetPlayerSet()
+        {
+            return setViewModel.CurrentMatchSets.Find(
+                s => s.PlayerId == Court.SelectedPlayer.player.Id && s.SetNumber == match.CurrentSet);
         }
 
         private void SetPlayersOnCourt()
@@ -45,18 +52,6 @@ namespace Siatkostat
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
-        }
-
-        private void ActionTypeButton_Click(object sender, RoutedEventArgs e)
-        {
-            ServeButton.IsChecked = false;
-            PrzyjecieButton.IsChecked = false;
-            AttackButton.IsChecked = false;
-            BlockButton.IsChecked = false;
-            AnotherFaultButton.IsChecked = false;
-
-            ToggleButton activeButton = sender as ToggleButton;
-            activeButton.IsChecked = true;
         }
 
         private void HideGradeStackPanels()
@@ -98,6 +93,7 @@ namespace Siatkostat
             HideGradeStackPanels();
             ServeStackPanel.Visibility = Visibility.Visible;
 
+            Log.Instance.Messages.Add(new Random().NextDouble().ToString());
             Court.SelectPlayerOnPosition(CourtControl.Position.Serve);
         }
 
@@ -148,6 +144,7 @@ namespace Siatkostat
         {
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
+            ExpertSystem.NeedSubstitution(GetPlayerSet());
             Frame.Navigate(typeof (MainMatch));
         }
 
@@ -165,6 +162,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().SpikeKill++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
             Frame.Navigate(typeof(MainMatch));
@@ -177,6 +175,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().BlockKill++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
             Frame.Navigate(typeof(MainMatch));
@@ -189,6 +188,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().OwnFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             Frame.Navigate(typeof(MainMatch));
@@ -201,6 +201,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().ServeAce++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
             Frame.Navigate(typeof(MainMatch));
@@ -213,6 +214,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().ServeFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             Frame.Navigate(typeof(MainMatch));
@@ -225,6 +227,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().ReceiveFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             Frame.Navigate(typeof(MainMatch));
@@ -237,6 +240,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().SpikeBlocked++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             Frame.Navigate(typeof(MainMatch));
@@ -249,6 +253,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().BlockFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             Frame.Navigate(typeof(MainMatch));
@@ -261,6 +266,7 @@ namespace Siatkostat
                 await new MessageDialog("Wybierz zawodnika!").ShowAsync();
                 return;
             }
+            GetPlayerSet().SpikeFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             Frame.Navigate(typeof(MainMatch));
@@ -269,31 +275,37 @@ namespace Siatkostat
         #region No return buttons
         private void OdrzucajacaButton_Click(object sender, RoutedEventArgs e)
         {
+            GetPlayerSet().ServeHit++;
             UncheckPlayers();
         }
 
         private void ResztaServeButton_Click(object sender, RoutedEventArgs e)
         {
+            GetPlayerSet().ServeOther++;
             UncheckPlayers();
         }
 
         private void PerfectSaveButton_Click(object sender, RoutedEventArgs e)
         {
+            GetPlayerSet().ReceivePerfect++;
             UncheckPlayers();
         }
 
         private void BadSaveButton_Click(object sender, RoutedEventArgs e)
         {
+            GetPlayerSet().ReceiveBad++;
             UncheckPlayers();
         }
 
         private void PositiveSaveButton_Click(object sender, RoutedEventArgs e)
         {
+            GetPlayerSet().ReceiveGood++;
             UncheckPlayers();
         }
 
         private void OtherAttackButton_Click(object sender, RoutedEventArgs e)
         {
+            GetPlayerSet().SpikeOther++;
             UncheckPlayers();
         }
         #endregion

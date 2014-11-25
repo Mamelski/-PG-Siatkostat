@@ -31,6 +31,16 @@ namespace Siatkostat
 
             FirstTeamNameTextBlock.Text = App.SelectedTeam.TeamName;
             SecondTeamNameTextBlock.Text = MatchViewModel.Instance.CurrentMatch.OponentName;
+
+            SetLog();
+        }
+
+        private void SetLog()
+        {
+            LogListView.ItemsSource = Log.Instance.Messages;
+
+            LogListView.SelectedIndex = LogListView.Items.Count - 1;
+            LogListView.ScrollIntoView(LogListView.SelectedItem);
         }
 
         /// <summary>
@@ -56,7 +66,8 @@ namespace Siatkostat
 
         private void ActionButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(ActionStat));
+      
+           Frame.Navigate(typeof(ActionStat));
         }
 
         private void StatisticsButton_Click(object sender, RoutedEventArgs e)

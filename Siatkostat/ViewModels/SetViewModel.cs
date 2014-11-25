@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Windows.UI.Popups;
 using Microsoft.WindowsAzure.MobileServices;
 using Siatkostat.Models;
@@ -47,6 +49,10 @@ namespace Siatkostat.ViewModels
         }
         #endregion
 
+        #region Properties
+        public List<Set> CurrentMatchSets = new List<Set>(); 
+        #endregion
+
         public async void RefreshSets()
         {
             if (App.SelectedTeam == null)
@@ -77,11 +83,20 @@ namespace Siatkostat.ViewModels
         }
 
         #region DataOperations
+
         public async void InsertMatch(Set set)
         {
             await setsTable.InsertAsync(set);
             SetsCollection.Add(set);
         }
         #endregion
+
+        public void InsertSets(int currentSet)
+        {
+            foreach (var set in CurrentMatchSets.FindAll(s => s.SetNumber == currentSet))
+            {
+                InsertMatch(set);
+            }
+        }
     }
 }

@@ -113,21 +113,27 @@ namespace Siatkostat
             {
                 case Position.LeftAttack:
                     Players[0].Select();
+                    SelectedPlayer = Players[0];
                     break;
                 case Position.MiddleAttack:
                     Players[1].Select();
+                    SelectedPlayer = Players[1];
                     break;
                 case Position.RightAttack:
                     Players[2].Select();
+                    SelectedPlayer = Players[2];
                     break;
                 case Position.Serve:
                     Players[3].Select();
+                    SelectedPlayer = Players[3];
                     break;
                 case Position.MiddleDefense:
                     Players[4].Select();
+                    SelectedPlayer = Players[4];
                     break;
                 case Position.LeftDefense:
                     Players[5].Select();
+                    SelectedPlayer = Players[5];
                     break;
             }
         }

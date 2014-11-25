@@ -11,8 +11,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="225"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"/>
@@ -34,9 +34,15 @@
             <Button Name="StatisticsButton" HorizontalAlignment="Stretch" Click="StatisticsButton_Click">STATYSTYKI</Button>
             <Button Name="SubstitutionButton" HorizontalAlignment="Stretch" Click="SubstitutionButton_Click">ZMIANA</Button>
         </StackPanel>
-        
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="80" Background="Black" Margin="10">
-            
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="100" Background="Black" Margin="10">
+            <ListView Name="LogListView" Height="100">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Height" Value="20" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
         </StackPanel>
     </Grid>
 </Page>

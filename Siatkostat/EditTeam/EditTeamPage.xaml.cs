@@ -24,6 +24,11 @@ namespace Siatkostat.EditTeam
 
             PlayersViewModel.Instance.CollectionLoaded += PlayersViewModel_CollectionLoaded;
             Loaded += EditTeam_Loaded;
+
+            if (App.SelectedTeam != null)
+            {
+                TeamNameTextBlock.Text = App.SelectedTeam.TeamName;
+            }
         }
         #endregion
 

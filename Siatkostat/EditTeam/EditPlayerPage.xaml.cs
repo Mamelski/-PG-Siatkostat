@@ -78,7 +78,7 @@ namespace Siatkostat.EditTeam
 
             if (IsLIberoToggleButton.IsChecked == true)
             {
-                playerToEdit.IsLibero = true;
+                playerAfterEdition.IsLibero = true;
             }
 
 

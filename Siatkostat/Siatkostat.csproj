@@ -103,6 +103,8 @@
     <Compile Include="EditTeam\NewPlayerDialog.xaml.cs">
       <DependentUpon>NewPlayerDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExpertSystem.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="MainMatch.xaml.cs">
       <DependentUpon>MainMatch.xaml</DependentUpon>
     </Compile>

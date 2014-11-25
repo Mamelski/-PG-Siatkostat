@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Siatkostat.Annotations;
+using Siatkostat.ViewModels;
 
 namespace Siatkostat.Models
 {
@@ -224,6 +225,7 @@ namespace Siatkostat.Models
             {
                 if (CurrentOpponentScore() - CurrentTeamScore() >= 2)
                 {
+                    SetViewModel.Instance.InsertSets(CurrentSet);
                     OpponentSetScore++;
                     CurrentSet++;
                     if(OnSetFinish != null)
@@ -257,6 +259,7 @@ namespace Siatkostat.Models
             {
                 if (CurrentTeamScore() - CurrentOpponentScore() >= 2)
                 {
+                    SetViewModel.Instance.InsertSets(CurrentSet);
                     TeamSetScore++;
                     CurrentSet++;
                     if (OnSetFinish != null)

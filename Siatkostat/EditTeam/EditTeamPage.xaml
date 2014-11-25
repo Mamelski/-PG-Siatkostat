@@ -20,7 +20,8 @@
               VerticalAlignment="Top" 
               Width="Auto"
               Margin="5">
-            <TextBlock Text="Drużyna:" 
+            <TextBlock Name="TeamNameTextBlock"
+                Text="Drużyna:" 
                        HorizontalAlignment="Center"
                        FontSize="18"/>
        </Grid>
