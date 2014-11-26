@@ -51,10 +51,12 @@ namespace Siatkostat
                 return;
             }
 
-            Match newMatch = new Match();
-            newMatch.OponentName = OpponentNameTextBox.Text;
-           //TODO: date and time
-            newMatch.TeamId = App.SelectedTeam.Id;
+            Match newMatch = new Match
+            {
+                OponentName = OpponentNameTextBox.Text,
+                MatchDate = MatchDateTextBox.Date.Date,
+                TeamId = App.SelectedTeam.Id
+            };
 
             MatchViewModel.Instance.CurrentMatch = newMatch;
 

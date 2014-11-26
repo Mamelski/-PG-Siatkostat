@@ -195,7 +195,6 @@ namespace Siatkostat.Models
             oponentScoreSet1 = oponentScoreSet2 = oponentScoreSet3 = oponentScoreSet4 = oponentScoreSet5 = 0;
             CurrentSet = 1;
             OpponentSetScore = TeamSetScore = 0;
-            teamScoreSet1 = 24;
         }
         #endregion
 

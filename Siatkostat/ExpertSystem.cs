@@ -62,41 +62,67 @@ namespace Siatkostat
 
         private static double BlockRate(Set playerStatistics)
         {
+            double divider = (4*playerStatistics.BlockFault + playerStatistics.BlockKill +
+                              playerStatistics.BlockRebound);
+
+            if (divider.Equals(0))
+                return 0.0;
+
             return (playerStatistics.BlockKill + 0.3 * playerStatistics.BlockRebound) / 
-                (4 * playerStatistics.BlockFault + playerStatistics.BlockKill + 
-                playerStatistics.BlockRebound);
+                divider;
         }
 
         private static double SpikeRate(Set playerStatistics)
         {
+            double divider = (4*playerStatistics.SpikeFault + playerStatistics.SpikeKill + playerStatistics.SpikeOther +
+                              playerStatistics.SpikeBlocked);
+
+            if (divider.Equals(0))
+                return 0.0;
+
             return (playerStatistics.SpikeKill + 0.4 * playerStatistics.SpikeOther + 0.2 * playerStatistics.SpikeBlocked) / 
-                (4 * playerStatistics.SpikeFault + playerStatistics.SpikeKill + playerStatistics.SpikeOther + 
-                playerStatistics.SpikeBlocked);
+                divider;
         }
 
         private static double ReceiveRate(Set playerStatistics)
         {
-            return (playerStatistics.ReceivePerfect + 0.7 * playerStatistics.ReceiveGood + 0.3 * playerStatistics.ReceiveBad) / 
-                (5 * playerStatistics.ReceiveFault + playerStatistics.ReceivePerfect + playerStatistics.ReceiveGood + 
+            double divider = (5 * playerStatistics.ReceiveFault + playerStatistics.ReceivePerfect + playerStatistics.ReceiveGood + 
                 playerStatistics.ReceiveBad);
+
+            if (divider.Equals(0))
+                return 0.0;
+
+            return (playerStatistics.ReceivePerfect + 0.7*playerStatistics.ReceiveGood + 0.3*playerStatistics.ReceiveBad)/
+                   divider;
+
         }
 
         private static double ServeRate(Set playerStatistics)
         {
+            double divider = (2*playerStatistics.ServeFault + playerStatistics.ServeAce + playerStatistics.ServeHit +
+                              playerStatistics.ServeOther);
+
+             if (divider.Equals(0))
+                return 0.0;
+
             return (playerStatistics.ServeAce + 0.5 * playerStatistics.ServeHit + 0.1 * playerStatistics.ServeOther) /
-                           (2 * playerStatistics.ServeFault + playerStatistics.ServeAce + playerStatistics.ServeHit +
-                           playerStatistics.ServeOther);
+                           divider;
         }
 
         private static double FaultRate(Set playerStatistics)
         {
+            double divider = (playerStatistics.OwnFault + playerStatistics.ServeFault + playerStatistics.ServeHit +
+                              playerStatistics.ServeOther + playerStatistics.ReceiveFault +
+                              playerStatistics.ReceivePerfect +
+                              playerStatistics.ReceiveGood + playerStatistics.ReceiveBad + playerStatistics.SpikeFault +
+                              playerStatistics.SpikeKill + playerStatistics.SpikeOther + playerStatistics.SpikeBlocked +
+                              playerStatistics.BlockFault + playerStatistics.BlockKill + playerStatistics.BlockRebound);
+            
+            if (divider.Equals(0))
+                return 0.0;
+
             return (playerStatistics.OwnFault + playerStatistics.ServeFault + playerStatistics.ReceiveFault +
-                playerStatistics.SpikeFault + playerStatistics.BlockFault) /
-                (playerStatistics.OwnFault + playerStatistics.ServeFault + playerStatistics.ServeHit +
-                playerStatistics.ServeOther + playerStatistics.ReceiveFault + playerStatistics.ReceivePerfect +
-                playerStatistics.ReceiveGood + playerStatistics.ReceiveBad + playerStatistics.SpikeFault +
-                playerStatistics.SpikeKill + playerStatistics.SpikeOther + playerStatistics.SpikeBlocked +
-                playerStatistics.BlockFault + playerStatistics.BlockKill + playerStatistics.BlockRebound);
+                playerStatistics.SpikeFault + playerStatistics.BlockFault) / divider;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Siatkostat
         private Set GetPlayerSet()
         {
             return setViewModel.CurrentMatchSets.Find(
-                s => s.PlayerId == Court.SelectedPlayer.player.Id && s.SetNumber == match.CurrentSet);
+                s => (s.PlayerId == Court.SelectedPlayer.player.Id && s.SetNumber == match.CurrentSet));
         }
 
         private void SetPlayersOnCourt()
@@ -42,6 +42,16 @@ namespace Siatkostat
             e.Handled = true;
             HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
             Frame.Navigate(typeof(MainMatch));
+        }
+
+        private void LogMessage()
+        {
+            if (ExpertSystem.NeedSubstitution(GetPlayerSet()))
+            {
+                Player player = Court.SelectedPlayer.player;
+                if (player == null) return;
+                Log.Instance.Messages.Add(String.Format("Sugerowana zmiana zawodnika nr {0} - {1} {2}", player.Number, player.FirstName, player.LastName));
+            }
         }
 
         /// <summary>
@@ -92,8 +102,6 @@ namespace Siatkostat
 
             HideGradeStackPanels();
             ServeStackPanel.Visibility = Visibility.Visible;
-
-            Log.Instance.Messages.Add(new Random().NextDouble().ToString());
             Court.SelectPlayerOnPosition(CourtControl.Position.Serve);
         }
 
@@ -144,7 +152,6 @@ namespace Siatkostat
         {
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
-            ExpertSystem.NeedSubstitution(GetPlayerSet());
             Frame.Navigate(typeof (MainMatch));
         }
 
@@ -165,6 +172,7 @@ namespace Siatkostat
             GetPlayerSet().SpikeKill++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
 
@@ -178,6 +186,7 @@ namespace Siatkostat
             GetPlayerSet().BlockKill++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
 
@@ -191,6 +200,7 @@ namespace Siatkostat
             GetPlayerSet().OwnFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
 
@@ -204,6 +214,7 @@ namespace Siatkostat
             GetPlayerSet().ServeAce++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
 
@@ -217,6 +228,7 @@ namespace Siatkostat
             GetPlayerSet().ServeFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
 
@@ -230,6 +242,7 @@ namespace Siatkostat
             GetPlayerSet().ReceiveFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
 
@@ -243,6 +256,7 @@ namespace Siatkostat
             GetPlayerSet().SpikeBlocked++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
 
@@ -256,6 +270,7 @@ namespace Siatkostat
             GetPlayerSet().BlockFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
 
@@ -269,6 +284,7 @@ namespace Siatkostat
             GetPlayerSet().SpikeFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
+            LogMessage();
             Frame.Navigate(typeof(MainMatch));
         }
         #endregion
@@ -276,36 +292,42 @@ namespace Siatkostat
         private void OdrzucajacaButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ServeHit++;
+            LogMessage();
             UncheckPlayers();
         }
 
         private void ResztaServeButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ServeOther++;
+            LogMessage();
             UncheckPlayers();
         }
 
         private void PerfectSaveButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ReceivePerfect++;
+            LogMessage();
             UncheckPlayers();
         }
 
         private void BadSaveButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ReceiveBad++;
+            LogMessage();
             UncheckPlayers();
         }
 
         private void PositiveSaveButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ReceiveGood++;
+            LogMessage();
             UncheckPlayers();
         }
 
         private void OtherAttackButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().SpikeOther++;
+            LogMessage();
             UncheckPlayers();
         }
         #endregion

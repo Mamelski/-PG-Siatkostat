@@ -52,6 +52,8 @@ namespace Siatkostat.Models
 
         public Guid PlayerId { get; set; }
 
+        public Guid MatchId { get; set; }
+
         public int SetNumber
         {
             get { return setNumber; }

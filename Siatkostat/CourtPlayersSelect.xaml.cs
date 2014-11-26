@@ -24,6 +24,9 @@ namespace Siatkostat
         private ObservableCollection<Player> Players = new ObservableCollection<Player>(); 
 
         private PlayerControl SelectedPlayer = null;
+
+        private Match match = MatchViewModel.Instance.CurrentMatch;
+
         public CourtPlayersSelect()
         {
             this.InitializeComponent();
@@ -72,6 +75,7 @@ namespace Siatkostat
                     {
                         PlayerId = player.Id,
                         SetNumber = i,
+                        MatchId = match.Id
                     };
 
                     SetViewModel.Instance.CurrentMatchSets.Add(set);
