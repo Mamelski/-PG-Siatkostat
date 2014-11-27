@@ -1,0 +1,21 @@
+﻿<UserControl
+    x:Class="Siatkostat.PlayerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Siatkostat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="50"
+    d:DesignWidth="50">
+
+    
+    <Canvas>
+        <Grid>
+            <Ellipse Canvas.ZIndex="1" Width="50" Height="50" Fill="White" Name="ellipse"/>
+            <TextBlock Canvas.ZIndex="10" Name="Number"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontSize="30"></TextBlock>
+        </Grid>
+    </Canvas>
+    
+</UserControl>
+

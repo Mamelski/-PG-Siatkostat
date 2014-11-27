@@ -1,0 +1,76 @@
+﻿<ContentDialog
+    x:Class="Siatkostat.EditTeam.NewPlayerContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SiatkostatBackgroundImage}">
+
+    <StackPanel Orientation="Horizontal" Margin="0,0,-203.333,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="175"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Imię:" 
+    			Grid.Row="0"
+    			HorizontalAlignment="Left"
+    			VerticalAlignment="Center"
+    			FontSize="21.333" 
+    			Margin="5" />
+            <TextBlock Text="Nazwisko:" 
+    			Grid.Row="1" Grid.Column="0"
+    			HorizontalAlignment="Left"
+    			VerticalAlignment="Center"
+    			FontSize="21.333" 
+    			Margin="5" />
+            <TextBlock Text="Numer:" 
+    			Grid.Row="2" Grid.Column="0"
+    			HorizontalAlignment="Left"
+    			VerticalAlignment="Center"
+    			FontSize="21.333" 
+    			Margin="5" />
+            <TextBlock Text="Czy jest libero:"
+    			Grid.Row="3" Grid.Column="0"
+    			HorizontalAlignment="Left"
+    			VerticalAlignment="Center"
+    			FontSize="21.333" 
+    			Margin="5" />
+
+            <TextBox x:Name="ImięTextBox"
+    			Grid.Row="0"
+    			Grid.Column="1"/>
+            <TextBox x:Name="NazwiskoTextBox"
+    			Grid.Row="1"
+    			Grid.Column="1"/>
+            <TextBox x:Name="NumerTextBox"
+    			Grid.Row="2"
+    			Grid.Column="1"/>
+            <ToggleButton x:Name="IsLIberoToggleButton"
+    			Grid.Row="3"
+    			Grid.Column="1"
+                HorizontalAlignment="Center"/>
+        </Grid>
+        <Grid>
+            <Image Source="../Assets/SiatkostatLogo.png"
+ 
+    			Height="80" 
+    			Margin="82,10,-28,213"/>
+            <Button x:ConnectionId='1' Content="Gotowe" 
+
+    			                          
+    			Margin="92,99,-28,147" RenderTransformOrigin="1.351,0.432"/>
+            <Button x:ConnectionId='2' Content="Anuluj"
+    			                          
+    			Margin="92,165,-28,81"/>
+        </Grid>
+    </StackPanel>
+</ContentDialog>
+

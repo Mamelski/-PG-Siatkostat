@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="Siatkostat.EditTeam.EditTeamPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext=""
+    Background="{ThemeResource SiatkostatBackgroundImage}">
+    <Grid Margin="0,5,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!-- Nazwa Drużyny -->
+        <Grid Grid.Row="0" 
+              HorizontalAlignment="Center"
+              Height="20" 
+              VerticalAlignment="Top" 
+              Width="Auto"
+              Margin="5">
+            <TextBlock Name="TeamNameTextBlock"
+                Text="Drużyna:" 
+                       HorizontalAlignment="Center"
+                       FontSize="18"/>
+       </Grid>
+
+        <!-- Dolny Grid -->
+        <Grid Grid.Row="1"
+              HorizontalAlignment="Center" 
+              VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Button Grid -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Image Source="../Assets/SiatkostatLogo.png"
+                       Grid.Row="0"
+                       Height="80"
+                       Margin="10"/>
+                <Button x:ConnectionId='1' Grid.Row="1" Content="Dodaj"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"                          />
+                <Button x:ConnectionId='2' Grid.Row="2" Content="Usuń"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"                         />
+                <Button x:ConnectionId='3' Grid.Row="3" Content="Edytuj"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"                           />
+            </Grid>
+
+            <!-- ListView Grid -->
+            <Grid Grid.Column="0">   
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- Nazwy pól -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Left" Text="Imię" FontSize="18"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Text="Nazwisko" FontSize="18"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Text="Numer" FontSize="18"/>
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Left" Text="Libero" FontSize="18"/>
+                </Grid>
+                <!--Właściwy grid -->
+                <Grid Row="1">
+                    <ListBox Name="PlayersListBox" 
+                             Width="350" 
+                             Height="300">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="50" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0"  FontSize="18" Text="{Binding FirstName}"/>
+                                    <TextBlock Grid.Column="1"  FontSize="18" Text="{Binding LastName}"/>
+                                    <TextBlock Grid.Column="2"  FontSize="18" Text="{Binding Number}"/>
+                                    <TextBlock Grid.Column="3"  FontSize="18" Text="{Binding IsLiberoString}"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
+

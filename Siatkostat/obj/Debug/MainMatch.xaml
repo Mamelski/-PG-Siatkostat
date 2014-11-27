@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="Siatkostat.MainMatch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Siatkostat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SiatkostatBackgroundImage}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="225"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Name="FirstTeamNameTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">SKRA BEŁCHATÓW</TextBlock>
+        <StackPanel Grid.Row="0" Grid.Column="1"  Orientation="Vertical">
+            <TextBlock Name="SetResulTextBlock" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24">0:0</TextBlock>
+            <TextBlock Name="PointsResultTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="24">0:0</TextBlock>
+        </StackPanel>
+        <TextBlock Grid.Row="0" Grid.Column="2"  Name="SecondTeamNameTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">FC BARCELONA</TextBlock>
+
+
+        <local:CourtControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="Court"></local:CourtControl>
+        <StackPanel Grid.Row="1" Grid.Column="2"  Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Button x:ConnectionId='1' Name="ActionButton" HorizontalAlignment="Stretch"                           >AKCJA</Button>
+            <Button x:ConnectionId='2' Name="StatisticsButton" HorizontalAlignment="Stretch"                               >STATYSTYKI</Button>
+            <Button x:ConnectionId='3' Name="SubstitutionButton" HorizontalAlignment="Stretch"                                 >ZMIANA</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="100" Background="Black" Margin="10">
+            <ListView Name="LogListView" Height="100">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Height" Value="20" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>
+

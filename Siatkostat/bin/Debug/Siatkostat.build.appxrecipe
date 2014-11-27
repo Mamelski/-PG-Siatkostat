@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>JAKUB</Machine>
+    <WindowsUser>Mamelski</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>b120760f-fe66-4f2f-ad97-81fedc0d6026</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Siatkostat.exe">
+      <PackagePath>Siatkostat.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Siatkostat.exe.config">
+      <PackagePath>Siatkostat.exe.config</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.Common.winmd">
+      <PackagePath>Microsoft.Advertising.Mobile.Common.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.Display.winmd">
+      <PackagePath>Microsoft.Advertising.Mobile.Display.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI.winmd">
+      <PackagePath>Microsoft.Advertising.Mobile.UI.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\packages\WindowsAzure.MobileServices.1.3.0-beta2\lib\wpa81\Microsoft.WindowsAzure.Mobile.dll">
+      <PackagePath>Microsoft.WindowsAzure.Mobile.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\packages\WindowsAzure.MobileServices.1.3.0-beta2\lib\wpa81\Microsoft.WindowsAzure.Mobile.Ext.dll">
+      <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Extensions.dll">
+      <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Primitives.dll">
+      <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI\Web\bootstrap.html">
+      <PackagePath>Microsoft.Advertising.Mobile.UI\Web\bootstrap.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI\Themes\Generic.xbf">
+      <PackagePath>Microsoft.Advertising.Mobile.UI\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Advertising.Mobile.Display\8.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI\Web\Ormma.js">
+      <PackagePath>Microsoft.Advertising.Mobile.UI\Web\Ormma.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\Logo.scale-240.png">
+      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\SmallLogo.scale-240.png">
+      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\SplashScreen.scale-240.png">
+      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\Square71x71Logo.scale-240.png">
+      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\StoreLogo.scale-240.png">
+      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\WideLogo.scale-240.png">
+      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\SiatkostatLogo.png">
+      <PackagePath>Assets\SiatkostatLogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\background.jpg">
+      <PackagePath>Assets\background.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\Assets\boisko.jpg">
+      <PackagePath>Assets\boisko.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\ActionStat.xbf">
+      <PackagePath>ActionStat.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Authentication\ChoseTeamDialog.xbf">
+      <PackagePath>Authentication\ChoseTeamDialog.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\CourtControl.xbf">
+      <PackagePath>CourtControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\CourtPlayersSelect.xbf">
+      <PackagePath>CourtPlayersSelect.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\EditTeam\EditPlayerPage.xbf">
+      <PackagePath>EditTeam\EditPlayerPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\EditTeam\EditTeamPage.xbf">
+      <PackagePath>EditTeam\EditTeamPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\EditTeam\NewPlayerDialog.xbf">
+      <PackagePath>EditTeam\NewPlayerDialog.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\MainMatch.xbf">
+      <PackagePath>MainMatch.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Authentication\SignInPage.xbf">
+      <PackagePath>Authentication\SignInPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\NewMatch.xbf">
+      <PackagePath>NewMatch.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\PlayerControl.xbf">
+      <PackagePath>PlayerControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\StatisticsWindow.xbf">
+      <PackagePath>StatisticsWindow.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Siatkostat.xr.xml">
+      <PackagePath>Siatkostat.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
