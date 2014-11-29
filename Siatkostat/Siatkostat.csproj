@@ -85,6 +85,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Authentication\AddTeamDialog.xaml.cs">
+      <DependentUpon>AddTeamDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Authentication\ChoseTeamDialog.xaml.cs">
       <DependentUpon>ChoseTeamDialog.xaml</DependentUpon>
     </Compile>
@@ -162,6 +165,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="ActionStat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Authentication\AddTeamDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

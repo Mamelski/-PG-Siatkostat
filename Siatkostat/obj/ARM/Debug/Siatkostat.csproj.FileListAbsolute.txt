@@ -112,3 +112,16 @@ C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\qualifier
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\ProjectArchitectures.txt
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Siatkostat.csprojResolveAssemblyReference.cache
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Authentication\AddTeamDialog.xbf
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\AddTeamDialog.g.i.cs
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\AddTeamDialog.g.cs
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\AddTeamDialog.xaml
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\AddTeamDialog.xbf
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles.intermediate
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles.intermediate
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles.intermediate
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml.intermediate

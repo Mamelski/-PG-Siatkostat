@@ -4,6 +4,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
 using Siatkostat.Models;
+using Siatkostat.ViewModels;
 
 namespace Siatkostat.Authentication
 {
@@ -16,6 +17,8 @@ namespace Siatkostat.Authentication
         private Team selectedTeam;
 
         private readonly ChoseTeamDialog choseTeamDialog = new ChoseTeamDialog();
+
+        private readonly AddTeamDialog addTeamDialog = new AddTeamDialog();
         #endregion
 
         #region Constructor
@@ -68,6 +71,7 @@ namespace Siatkostat.Authentication
             await choseTeamDialog.ShowAsync();
             
         }
+
         private void QuestInButton_Click(object sender, RoutedEventArgs e)
         {
             App.SelectedTeam = null;
@@ -80,9 +84,17 @@ namespace Siatkostat.Authentication
             HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
             Application.Current.Exit();
         }
+
+        private async void AddTeamButton_Click(object sender, RoutedEventArgs e)
+        {
+            addTeamDialog.Closing += addTeamDialog_Closing;
+            await addTeamDialog.ShowAsync();
+        }
+
+      
         #endregion
 
-        #region Handling choseTeamDialog
+        #region Handling Dialogs
         async void choseTeamDialog_Closing(Windows.UI.Xaml.Controls.ContentDialog sender, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs args)
         {
            
@@ -94,7 +106,19 @@ namespace Siatkostat.Authentication
             selectedTeam = choseTeamDialog.SelectedTeam;
             TeamNameTextBlock.Text = selectedTeam.TeamName;
         }
+
+        void addTeamDialog_Closing(Windows.UI.Xaml.Controls.ContentDialog sender, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs args)
+        {
+            if (addTeamDialog.NewTeam == null)
+                return;
+
+            TeamsViewModel.Instance.InsertTeam(addTeamDialog.NewTeam);
+
+            selectedTeam = addTeamDialog.NewTeam;
+            TeamNameTextBlock.Text = selectedTeam.TeamName;
+        }
         #endregion
 
+       
     }
 }

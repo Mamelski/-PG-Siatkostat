@@ -13,10 +13,15 @@
             <Image Source="../Assets/SiatkostatLogo.png"
                    Height="100" 
                    Margin="10"/>
-            <Button x:ConnectionId='1' Width="280"
+            <StackPanel Orientation="Horizontal">
+                <Button x:ConnectionId='3' Width="170"
                     Margin="5"
-                    Content="Wybierz drużynę z listy"                               />
-            <Grid>
+                    Content="Wybierz drużynę"                               />
+                <Button x:ConnectionId='4' Width="150"
+                    Margin="5"
+                    Content="Dodaj drużynę"                            />
+            </StackPanel>
+              <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
@@ -64,10 +69,10 @@
             <StackPanel Orientation="Horizontal" 
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Center">
-                <Button x:ConnectionId='2' Margin="5" 
+                <Button x:ConnectionId='1' Margin="5" 
                         Content="Zaloguj" 
                                                   />
-                <Button x:ConnectionId='3' Margin="5" 
+                <Button x:ConnectionId='2' Margin="5" 
                         Content="Wejdź jako gość"
                                                    />
             </StackPanel>

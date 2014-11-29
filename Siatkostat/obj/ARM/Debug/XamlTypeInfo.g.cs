@@ -148,51 +148,53 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[21];
+            _typeNameTable = new string[22];
             _typeNameTable[0] = "Siatkostat.CourtControl";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "Siatkostat.PlayerControl";
             _typeNameTable[3] = "Siatkostat.ActionStat";
             _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[5] = "Siatkostat.Authentication.ChoseTeamDialog";
+            _typeNameTable[5] = "Siatkostat.Authentication.AddTeamDialog";
             _typeNameTable[6] = "Windows.UI.Xaml.Controls.ContentDialog";
             _typeNameTable[7] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[8] = "Siatkostat.Models.Team";
-            _typeNameTable[9] = "Object";
-            _typeNameTable[10] = "Boolean";
-            _typeNameTable[11] = "Siatkostat.Models.Player";
-            _typeNameTable[12] = "Siatkostat.CourtPlayersSelect";
-            _typeNameTable[13] = "Siatkostat.EditTeam.EditPlayerPage";
-            _typeNameTable[14] = "Siatkostat.EditTeam.EditTeamPage";
-            _typeNameTable[15] = "Siatkostat.EditTeam.NewPlayerContentDialog";
-            _typeNameTable[16] = "Siatkostat.MainMatch";
-            _typeNameTable[17] = "Siatkostat.MainPage";
-            _typeNameTable[18] = "Siatkostat.Authentication.SignInPage";
-            _typeNameTable[19] = "Siatkostat.NewMatch";
-            _typeNameTable[20] = "Siatkostat.StatisticsWindow";
+            _typeNameTable[8] = "Siatkostat.Authentication.ChoseTeamDialog";
+            _typeNameTable[9] = "Siatkostat.Models.Team";
+            _typeNameTable[10] = "Object";
+            _typeNameTable[11] = "Boolean";
+            _typeNameTable[12] = "Siatkostat.Models.Player";
+            _typeNameTable[13] = "Siatkostat.CourtPlayersSelect";
+            _typeNameTable[14] = "Siatkostat.EditTeam.EditPlayerPage";
+            _typeNameTable[15] = "Siatkostat.EditTeam.EditTeamPage";
+            _typeNameTable[16] = "Siatkostat.EditTeam.NewPlayerContentDialog";
+            _typeNameTable[17] = "Siatkostat.MainMatch";
+            _typeNameTable[18] = "Siatkostat.MainPage";
+            _typeNameTable[19] = "Siatkostat.Authentication.SignInPage";
+            _typeNameTable[20] = "Siatkostat.NewMatch";
+            _typeNameTable[21] = "Siatkostat.StatisticsWindow";
 
-            _typeTable = new global::System.Type[21];
+            _typeTable = new global::System.Type[22];
             _typeTable[0] = typeof(global::Siatkostat.CourtControl);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::Siatkostat.PlayerControl);
             _typeTable[3] = typeof(global::Siatkostat.ActionStat);
             _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[5] = typeof(global::Siatkostat.Authentication.ChoseTeamDialog);
+            _typeTable[5] = typeof(global::Siatkostat.Authentication.AddTeamDialog);
             _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
             _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[8] = typeof(global::Siatkostat.Models.Team);
-            _typeTable[9] = typeof(global::System.Object);
-            _typeTable[10] = typeof(global::System.Boolean);
-            _typeTable[11] = typeof(global::Siatkostat.Models.Player);
-            _typeTable[12] = typeof(global::Siatkostat.CourtPlayersSelect);
-            _typeTable[13] = typeof(global::Siatkostat.EditTeam.EditPlayerPage);
-            _typeTable[14] = typeof(global::Siatkostat.EditTeam.EditTeamPage);
-            _typeTable[15] = typeof(global::Siatkostat.EditTeam.NewPlayerContentDialog);
-            _typeTable[16] = typeof(global::Siatkostat.MainMatch);
-            _typeTable[17] = typeof(global::Siatkostat.MainPage);
-            _typeTable[18] = typeof(global::Siatkostat.Authentication.SignInPage);
-            _typeTable[19] = typeof(global::Siatkostat.NewMatch);
-            _typeTable[20] = typeof(global::Siatkostat.StatisticsWindow);
+            _typeTable[8] = typeof(global::Siatkostat.Authentication.ChoseTeamDialog);
+            _typeTable[9] = typeof(global::Siatkostat.Models.Team);
+            _typeTable[10] = typeof(global::System.Object);
+            _typeTable[11] = typeof(global::System.Boolean);
+            _typeTable[12] = typeof(global::Siatkostat.Models.Player);
+            _typeTable[13] = typeof(global::Siatkostat.CourtPlayersSelect);
+            _typeTable[14] = typeof(global::Siatkostat.EditTeam.EditPlayerPage);
+            _typeTable[15] = typeof(global::Siatkostat.EditTeam.EditTeamPage);
+            _typeTable[16] = typeof(global::Siatkostat.EditTeam.NewPlayerContentDialog);
+            _typeTable[17] = typeof(global::Siatkostat.MainMatch);
+            _typeTable[18] = typeof(global::Siatkostat.MainPage);
+            _typeTable[19] = typeof(global::Siatkostat.Authentication.SignInPage);
+            _typeTable[20] = typeof(global::Siatkostat.NewMatch);
+            _typeTable[21] = typeof(global::Siatkostat.StatisticsWindow);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -230,18 +232,19 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
         private object Activate_0_CourtControl() { return new global::Siatkostat.CourtControl(); }
         private object Activate_2_PlayerControl() { return new global::Siatkostat.PlayerControl(); }
         private object Activate_3_ActionStat() { return new global::Siatkostat.ActionStat(); }
-        private object Activate_5_ChoseTeamDialog() { return new global::Siatkostat.Authentication.ChoseTeamDialog(); }
-        private object Activate_8_Team() { return new global::Siatkostat.Models.Team(); }
-        private object Activate_11_Player() { return new global::Siatkostat.Models.Player(); }
-        private object Activate_12_CourtPlayersSelect() { return new global::Siatkostat.CourtPlayersSelect(); }
-        private object Activate_13_EditPlayerPage() { return new global::Siatkostat.EditTeam.EditPlayerPage(); }
-        private object Activate_14_EditTeamPage() { return new global::Siatkostat.EditTeam.EditTeamPage(); }
-        private object Activate_15_NewPlayerContentDialog() { return new global::Siatkostat.EditTeam.NewPlayerContentDialog(); }
-        private object Activate_16_MainMatch() { return new global::Siatkostat.MainMatch(); }
-        private object Activate_17_MainPage() { return new global::Siatkostat.MainPage(); }
-        private object Activate_18_SignInPage() { return new global::Siatkostat.Authentication.SignInPage(); }
-        private object Activate_19_NewMatch() { return new global::Siatkostat.NewMatch(); }
-        private object Activate_20_StatisticsWindow() { return new global::Siatkostat.StatisticsWindow(); }
+        private object Activate_5_AddTeamDialog() { return new global::Siatkostat.Authentication.AddTeamDialog(); }
+        private object Activate_8_ChoseTeamDialog() { return new global::Siatkostat.Authentication.ChoseTeamDialog(); }
+        private object Activate_9_Team() { return new global::Siatkostat.Models.Team(); }
+        private object Activate_12_Player() { return new global::Siatkostat.Models.Player(); }
+        private object Activate_13_CourtPlayersSelect() { return new global::Siatkostat.CourtPlayersSelect(); }
+        private object Activate_14_EditPlayerPage() { return new global::Siatkostat.EditTeam.EditPlayerPage(); }
+        private object Activate_15_EditTeamPage() { return new global::Siatkostat.EditTeam.EditTeamPage(); }
+        private object Activate_16_NewPlayerContentDialog() { return new global::Siatkostat.EditTeam.NewPlayerContentDialog(); }
+        private object Activate_17_MainMatch() { return new global::Siatkostat.MainMatch(); }
+        private object Activate_18_MainPage() { return new global::Siatkostat.MainPage(); }
+        private object Activate_19_SignInPage() { return new global::Siatkostat.Authentication.SignInPage(); }
+        private object Activate_20_NewMatch() { return new global::Siatkostat.NewMatch(); }
+        private object Activate_21_StatisticsWindow() { return new global::Siatkostat.StatisticsWindow(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -285,10 +288,9 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
                 xamlType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Siatkostat.Authentication.ChoseTeamDialog
+            case 5:   //  Siatkostat.Authentication.AddTeamDialog
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_5_ChoseTeamDialog;
-                userType.AddMemberName("SelectedTeam");
+                userType.Activator = Activate_5_AddTeamDialog;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -301,87 +303,95 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
                 xamlType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  Siatkostat.Models.Team
-                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 9:   //  Object
-                xamlType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 10:   //  Boolean
-                xamlType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 11:   //  Siatkostat.Models.Player
-                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 12:   //  Siatkostat.CourtPlayersSelect
-                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_CourtPlayersSelect;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 13:   //  Siatkostat.EditTeam.EditPlayerPage
-                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_EditPlayerPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 14:   //  Siatkostat.EditTeam.EditTeamPage
-                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_EditTeamPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 15:   //  Siatkostat.EditTeam.NewPlayerContentDialog
+            case 8:   //  Siatkostat.Authentication.ChoseTeamDialog
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_15_NewPlayerContentDialog;
+                userType.Activator = Activate_8_ChoseTeamDialog;
+                userType.AddMemberName("SelectedTeam");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 16:   //  Siatkostat.MainMatch
-                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_MainMatch;
+            case 9:   //  Siatkostat.Models.Team
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  Siatkostat.MainPage
-                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_MainPage;
+            case 10:   //  Object
+                xamlType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  Boolean
+                xamlType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 12:   //  Siatkostat.Models.Player
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  Siatkostat.Authentication.SignInPage
+            case 13:   //  Siatkostat.CourtPlayersSelect
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_SignInPage;
+                userType.Activator = Activate_13_CourtPlayersSelect;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  Siatkostat.NewMatch
+            case 14:   //  Siatkostat.EditTeam.EditPlayerPage
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_NewMatch;
+                userType.Activator = Activate_14_EditPlayerPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  Siatkostat.StatisticsWindow
+            case 15:   //  Siatkostat.EditTeam.EditTeamPage
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_StatisticsWindow;
+                userType.Activator = Activate_15_EditTeamPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  Siatkostat.EditTeam.NewPlayerContentDialog
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
+                userType.Activator = Activate_16_NewPlayerContentDialog;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  Siatkostat.MainMatch
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_17_MainMatch;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 18:   //  Siatkostat.MainPage
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_18_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 19:   //  Siatkostat.Authentication.SignInPage
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_19_SignInPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 20:   //  Siatkostat.NewMatch
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_20_NewMatch;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 21:   //  Siatkostat.StatisticsWindow
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_21_StatisticsWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

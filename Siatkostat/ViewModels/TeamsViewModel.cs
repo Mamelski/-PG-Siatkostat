@@ -70,5 +70,10 @@ namespace Siatkostat.ViewModels
                 OnTeamsCollectionLoaded();
             }
         }
+
+        public async void InsertTeam(Team team){
+            await teamsTable.InsertAsync(team);
+            TeamsCollection.Add(team);
+        }
     }
 }

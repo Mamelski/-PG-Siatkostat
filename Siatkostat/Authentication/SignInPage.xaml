@@ -13,10 +13,15 @@
             <Image Source="../Assets/SiatkostatLogo.png"
                    Height="100" 
                    Margin="10"/>
-            <Button Width="280"
+            <StackPanel Orientation="Horizontal">
+                <Button Width="170"
                     Margin="5"
-                    Content="Wybierz drużynę z listy" Click="ChooseTeamButton_Click"/>
-            <Grid>
+                    Content="Wybierz drużynę" Click="ChooseTeamButton_Click"/>
+                <Button Width="150"
+                    Margin="5"
+                    Content="Dodaj drużynę" Click="AddTeamButton_Click"/>
+            </StackPanel>
+              <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>

@@ -94,6 +94,9 @@
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\ActionStat.xbf">
       <PackagePath>ActionStat.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Authentication\AddTeamDialog.xbf">
+      <PackagePath>Authentication\AddTeamDialog.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Authentication\ChoseTeamDialog.xbf">
       <PackagePath>Authentication\ChoseTeamDialog.xbf</PackagePath>
     </AppxPackagedFile>
