@@ -60,7 +60,8 @@ namespace Siatkostat.ViewModels
             MatchesCollection = null;
             try
             {
-                MatchesCollection = await matchesTable
+                MatchesCollection = await matchesTable.Where(
+                    match => match.TeamId.ToString() == App.SelectedTeam.Id.ToString())
                     .ToCollectionAsync();
             }
             catch (MobileServiceInvalidOperationException e)

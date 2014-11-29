@@ -1,6 +1,7 @@
 ﻿using Windows.Phone.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
+using Siatkostat.Statistics;
 
 namespace Siatkostat
 {
@@ -36,7 +37,7 @@ namespace Siatkostat
 
         private void DisplayStatisticsButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(StatisticsWindow));
+            Frame.Navigate(typeof(SelectCriterion));
             HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
         }
 

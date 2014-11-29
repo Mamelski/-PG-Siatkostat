@@ -22,4 +22,5 @@ MainPage.xbf
 NewMatch.xbf
 PlayerControl.xbf
 Siatkostat.xr.xml
-StatisticsWindow.xbf
+Statistics\SelectCriterion.xbf
+Statistics\StatisticsWindow.xbf

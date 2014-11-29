@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Siatkostat.Models;
 using Siatkostat.ViewModels;
@@ -10,7 +8,7 @@ using Siatkostat.ViewModels;
 
 namespace Siatkostat
 {
-    public sealed partial class CourtControl : UserControl
+    public sealed partial class CourtControl
     {
         public enum Position
         {

@@ -130,8 +130,11 @@
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\PlayerControl.xbf">
       <PackagePath>PlayerControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\StatisticsWindow.xbf">
-      <PackagePath>StatisticsWindow.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Statistics\SelectCriterion.xbf">
+      <PackagePath>Statistics\SelectCriterion.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Statistics\StatisticsWindow.xbf">
+      <PackagePath>Statistics\StatisticsWindow.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Siatkostat.xr.xml">
       <PackagePath>Siatkostat.xr.xml</PackagePath>

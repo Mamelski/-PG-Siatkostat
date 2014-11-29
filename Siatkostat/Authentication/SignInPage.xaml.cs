@@ -118,7 +118,6 @@ namespace Siatkostat.Authentication
             TeamNameTextBlock.Text = selectedTeam.TeamName;
         }
         #endregion
-
        
     }
 }

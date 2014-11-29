@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Linq;
-using Windows.Devices.Geolocation;
 using Windows.Phone.UI.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Navigation;
 using Siatkostat.Models;
 using Siatkostat.ViewModels;

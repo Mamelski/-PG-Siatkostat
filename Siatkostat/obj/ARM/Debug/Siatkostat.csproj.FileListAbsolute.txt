@@ -12,7 +12,6 @@ C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\MainPage.
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Authentication\SignInPage.xbf
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\NewMatch.xbf
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\PlayerControl.xbf
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\StatisticsWindow.xbf
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Siatkostat.xr.xml
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Siatkostat.exe
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Siatkostat.pdb
@@ -61,8 +60,6 @@ C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\NewMatch.
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\NewMatch.g.cs
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\PlayerControl.g.i.cs
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\PlayerControl.g.cs
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\StatisticsWindow.g.i.cs
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\StatisticsWindow.g.cs
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\XamlTypeInfo.g.cs
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\App.xaml
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\ActionStat.xaml
@@ -77,7 +74,6 @@ C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\MainPage.
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\SignInPage.xaml
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\NewMatch.xaml
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\PlayerControl.xaml
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\StatisticsWindow.xaml
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\App.xbf
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\ActionStat.xbf
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\ChoseTeamDialog.xbf
@@ -91,7 +87,6 @@ C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\MainPage.
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\SignInPage.xbf
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\NewMatch.xbf
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\PlayerControl.xbf
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\StatisticsWindow.xbf
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\XamlSaveStateFile.xml
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Siatkostat.exe
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Siatkostat.pdb
@@ -117,11 +112,13 @@ C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentic
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\AddTeamDialog.g.cs
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\AddTeamDialog.xaml
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Authentication\AddTeamDialog.xbf
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles.intermediate
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles.intermediate
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles.intermediate
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml.intermediate
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Statistics\SelectCriterion.xbf
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\ARM\Debug\Statistics\StatisticsWindow.xbf
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Statistics\SelectCriterion.g.i.cs
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Statistics\SelectCriterion.g.cs
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Statistics\StatisticsWindow.g.i.cs
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Statistics\StatisticsWindow.g.cs
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Statistics\StatisticsWindow.xaml
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Statistics\StatisticsWindow.xbf
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Statistics\SelectCriterion.xaml
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\ARM\Debug\Statistics\SelectCriterion.xbf

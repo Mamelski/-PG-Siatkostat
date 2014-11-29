@@ -1,11 +1,9 @@
 ﻿using System;
 using Windows.Phone.UI.Input;
 using Windows.UI.Popups;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
-using Microsoft.WindowsAzure.MobileServices;
 using Siatkostat.Models;
 using Siatkostat.ViewModels;
 

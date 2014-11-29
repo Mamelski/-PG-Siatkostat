@@ -148,7 +148,7 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[22];
+            _typeNameTable = new string[23];
             _typeNameTable[0] = "Siatkostat.CourtControl";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "Siatkostat.PlayerControl";
@@ -170,9 +170,10 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
             _typeNameTable[18] = "Siatkostat.MainPage";
             _typeNameTable[19] = "Siatkostat.Authentication.SignInPage";
             _typeNameTable[20] = "Siatkostat.NewMatch";
-            _typeNameTable[21] = "Siatkostat.StatisticsWindow";
+            _typeNameTable[21] = "Siatkostat.Statistics.SelectCriterion";
+            _typeNameTable[22] = "Siatkostat.StatisticsWindow";
 
-            _typeTable = new global::System.Type[22];
+            _typeTable = new global::System.Type[23];
             _typeTable[0] = typeof(global::Siatkostat.CourtControl);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::Siatkostat.PlayerControl);
@@ -194,7 +195,8 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
             _typeTable[18] = typeof(global::Siatkostat.MainPage);
             _typeTable[19] = typeof(global::Siatkostat.Authentication.SignInPage);
             _typeTable[20] = typeof(global::Siatkostat.NewMatch);
-            _typeTable[21] = typeof(global::Siatkostat.StatisticsWindow);
+            _typeTable[21] = typeof(global::Siatkostat.Statistics.SelectCriterion);
+            _typeTable[22] = typeof(global::Siatkostat.StatisticsWindow);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -244,7 +246,8 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
         private object Activate_18_MainPage() { return new global::Siatkostat.MainPage(); }
         private object Activate_19_SignInPage() { return new global::Siatkostat.Authentication.SignInPage(); }
         private object Activate_20_NewMatch() { return new global::Siatkostat.NewMatch(); }
-        private object Activate_21_StatisticsWindow() { return new global::Siatkostat.StatisticsWindow(); }
+        private object Activate_21_SelectCriterion() { return new global::Siatkostat.Statistics.SelectCriterion(); }
+        private object Activate_22_StatisticsWindow() { return new global::Siatkostat.StatisticsWindow(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -389,9 +392,16 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 21:   //  Siatkostat.StatisticsWindow
+            case 21:   //  Siatkostat.Statistics.SelectCriterion
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_21_StatisticsWindow;
+                userType.Activator = Activate_21_SelectCriterion;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 22:   //  Siatkostat.StatisticsWindow
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_22_StatisticsWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

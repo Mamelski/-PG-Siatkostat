@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Windows.UI.Popups;
 using Microsoft.WindowsAzure.MobileServices;
 using Siatkostat.Models;
