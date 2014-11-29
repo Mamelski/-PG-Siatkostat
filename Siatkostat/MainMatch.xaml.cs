@@ -27,7 +27,7 @@ namespace Siatkostat
             Court.SetPlayersOnCourt(PlayersViewModel.Instance.PlayersOnCourt);
 
             match = MatchViewModel.Instance.CurrentMatch;
-            //match.OnSetFinish += UpdateSetsResult;
+           //match.OnSetFinish += UpdateSetsResult;
 
             FirstTeamNameTextBlock.Text = App.SelectedTeam.TeamName;
             SecondTeamNameTextBlock.Text = MatchViewModel.Instance.CurrentMatch.OponentName;

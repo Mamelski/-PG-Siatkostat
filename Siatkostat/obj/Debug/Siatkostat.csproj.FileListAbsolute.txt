@@ -112,11 +112,3 @@ C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\qualifiers.tx
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\ProjectArchitectures.txt
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Siatkostat.csprojResolveAssemblyReference.cache
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles.intermediate
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles.intermediate
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles.intermediate
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml
-C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml.intermediate
