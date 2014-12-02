@@ -9,6 +9,14 @@ using Siatkostat.ViewModels;
 
 namespace Siatkostat
 {
+    public enum ActionType
+    {
+        Spike,
+        Block,
+        Rebound,
+        Serve
+    };
+    
     public sealed partial class ActionStat
     {
         private Match match;
@@ -43,11 +51,34 @@ namespace Siatkostat
 
         private void LogMessage()
         {
+            int ile = 5;
             if (ExpertSystem.NeedSubstitution(GetPlayerSet()))
             {
                 Player player = Court.SelectedPlayer.player;
                 if (player == null) return;
                 Log.Instance.Messages.Add(String.Format("Sugerowana zmiana zawodnika nr {0} - {1} {2}", player.Number, player.FirstName, player.LastName));
+            }
+
+            int blockRate = (int)(ExpertSystem.BlockRate(match.GetCurrentSet()) * 100);
+            int spikeRate = (int)(ExpertSystem.SpikeRate(match.GetCurrentSet()) * 100);
+            int receiveRate = (int)(ExpertSystem.ReceiveRate(match.GetCurrentSet()) * 100);
+            int serveRate = (int)(ExpertSystem.ServeRate(match.GetCurrentSet()) * 100);
+
+            if (match.GetCurrentSet().TotalBlocks() > ile && blockRate < match.BlockThreshold)
+            {
+                Log.Instance.Messages.Add(String.Format("Skuteczność bloku spadła poniżej {0}% - ({1}%)", match.BlockThreshold, blockRate));
+            }
+            if (match.GetCurrentSet().TotalSpikes() > ile && spikeRate < match.AttackThreshold)
+            {
+                Log.Instance.Messages.Add(String.Format("Skuteczność ataku spadła poniżej {0}% - ({1}%)", match.AttackThreshold, spikeRate));
+            }
+            if (match.GetCurrentSet().TotalReceives() > ile && receiveRate < match.ReboundThreshold)
+            {
+                Log.Instance.Messages.Add(String.Format("Skuteczność przyjęcia spadła poniżej {0}% - ({1}%)", match.ReboundThreshold, receiveRate));
+            }
+            if (match.GetCurrentSet().TotalServes() > ile && serveRate < match.ServeThreshold)
+            {
+                Log.Instance.Messages.Add(String.Format("Skuteczność zagrywki spadła poniżej {0}% - ({1}%)", match.ServeThreshold, serveRate));
             }
         }
 
@@ -145,7 +176,7 @@ namespace Siatkostat
 
         #region RightPanelButtons
         #region ReturnButtons
-        private void AnotherTeamPointButton_Click(object sender, RoutedEventArgs e)
+        private void AnotherTeamPointButton_Click(object sender, RoutedEventArgs e) 
         {
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
@@ -167,6 +198,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().SpikeKill++;
+            match.GetCurrentSet().SpikeKill++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
             LogMessage();
@@ -181,6 +213,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().BlockKill++;
+            match.GetCurrentSet().BlockKill++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
             LogMessage();
@@ -195,6 +228,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().OwnFault++;
+            match.GetCurrentSet().OwnFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             LogMessage();
@@ -209,6 +243,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().ServeAce++;
+            match.GetCurrentSet().ServeAce++;
             match.AddTeamPoint();
             Court.PointFor(CourtControl.CurrentTeam.Team);
             LogMessage();
@@ -223,6 +258,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().ServeFault++;
+            match.GetCurrentSet().ServeFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             LogMessage();
@@ -237,6 +273,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().ReceiveFault++;
+            match.GetCurrentSet().ReceiveFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             LogMessage();
@@ -251,6 +288,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().SpikeBlocked++;
+            match.GetCurrentSet().SpikeBlocked++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             LogMessage();
@@ -265,6 +303,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().BlockFault++;
+            match.GetCurrentSet().BlockFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             LogMessage();
@@ -279,6 +318,7 @@ namespace Siatkostat
                 return;
             }
             GetPlayerSet().SpikeFault++;
+            match.GetCurrentSet().SpikeFault++;
             match.AddOpponentPoint();
             Court.PointFor(CourtControl.CurrentTeam.Opponent);
             LogMessage();
@@ -289,6 +329,7 @@ namespace Siatkostat
         private void OdrzucajacaButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ServeHit++;
+            match.GetCurrentSet().ServeHit++;
             LogMessage();
             UncheckPlayers();
         }
@@ -296,6 +337,7 @@ namespace Siatkostat
         private void ResztaServeButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ServeOther++;
+            match.GetCurrentSet().ServeOther++;
             LogMessage();
             UncheckPlayers();
         }
@@ -303,6 +345,7 @@ namespace Siatkostat
         private void PerfectSaveButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ReceivePerfect++;
+            match.GetCurrentSet().ReceivePerfect++;
             LogMessage();
             UncheckPlayers();
         }
@@ -310,6 +353,7 @@ namespace Siatkostat
         private void BadSaveButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ReceiveBad++;
+            match.GetCurrentSet().ReceiveBad++;
             LogMessage();
             UncheckPlayers();
         }
@@ -317,6 +361,7 @@ namespace Siatkostat
         private void PositiveSaveButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().ReceiveGood++;
+            match.GetCurrentSet().ReceiveGood++;
             LogMessage();
             UncheckPlayers();
         }
@@ -324,6 +369,7 @@ namespace Siatkostat
         private void OtherAttackButton_Click(object sender, RoutedEventArgs e)
         {
             GetPlayerSet().SpikeOther++;
+            match.GetCurrentSet().SpikeOther++;
             LogMessage();
             UncheckPlayers();
         }

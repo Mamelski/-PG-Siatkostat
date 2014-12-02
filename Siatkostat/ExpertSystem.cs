@@ -5,45 +5,45 @@ namespace Siatkostat
     public static class ExpertSystem
     {
 
-        public static bool NeedSubstitution(Set playerStatistics)
+        public static bool NeedSubstitution(Set statistics)
         {
             int score = 0;
-            double serveRate = ServeRate(playerStatistics);
-            double receiveRate = ReceiveRate(playerStatistics);
-            double spikeRate = SpikeRate(playerStatistics);
-            double blockRate = BlockRate(playerStatistics);
-            double faultRate = FaultRate(playerStatistics);
+            double serveRate = ServeRate(statistics);
+            double receiveRate = ReceiveRate(statistics);
+            double spikeRate = SpikeRate(statistics);
+            double blockRate = BlockRate(statistics);
+            double faultRate = FaultRate(statistics);
 
-            if (playerStatistics.TotalServes() >= 3)
+            if (statistics.TotalServes() >= 3)
             {
                 if (serveRate < 0.16)
                     score -= 2;
                 else if (serveRate >= 0.35)
                     score += 2;
             }
-            if (playerStatistics.TotalReceives() >= 3)
+            if (statistics.TotalReceives() >= 3)
             {
                 if (receiveRate < 0.2)
                     score -= 3;
                 else if (receiveRate >= 0.6)
                     score += 2;
             }
-            if (playerStatistics.TotalSpikes() >= 3)
+            if (statistics.TotalSpikes() >= 3)
             {
                 if (spikeRate < 0.2)
                     score -= 2;
                 else if (spikeRate >= 0.45)
                     score += 3;
             }
-            if (playerStatistics.TotalBlocks() >= 3)
+            if (statistics.TotalBlocks() >= 3)
             {
                 if (blockRate < 0.15) 
                     score -= 1;
                 else if (blockRate >= 0.37)
                     score += 2;
             }
-            if (playerStatistics.TotalBlocks() + playerStatistics.TotalFaults() + playerStatistics.TotalReceives() +
-                playerStatistics.TotalServes() + playerStatistics.TotalSpikes() >= 3)
+            if (statistics.TotalBlocks() + statistics.TotalFaults() + statistics.TotalReceives() +
+                statistics.TotalServes() + statistics.TotalSpikes() >= 3)
             {
                 if (faultRate < 0.2)
                     score += 1;
@@ -54,69 +54,69 @@ namespace Siatkostat
             return score < 0;
         }
 
-        private static double BlockRate(Set playerStatistics)
+        public static double BlockRate(Set statistics)
         {
-            double divider = (4*playerStatistics.BlockFault + playerStatistics.BlockKill +
-                              playerStatistics.BlockRebound);
+            double divider = (4*statistics.BlockFault + statistics.BlockKill +
+                              statistics.BlockRebound);
 
             if (divider.Equals(0))
                 return 0.0;
 
-            return (playerStatistics.BlockKill + 0.3 * playerStatistics.BlockRebound) / 
+            return (statistics.BlockKill + 0.3 * statistics.BlockRebound) / 
                 divider;
         }
 
-        private static double SpikeRate(Set playerStatistics)
+        public static double SpikeRate(Set statistics)
         {
-            double divider = (4*playerStatistics.SpikeFault + playerStatistics.SpikeKill + playerStatistics.SpikeOther +
-                              playerStatistics.SpikeBlocked);
+            double divider = (4*statistics.SpikeFault + statistics.SpikeKill + statistics.SpikeOther +
+                              statistics.SpikeBlocked);
 
             if (divider.Equals(0))
                 return 0.0;
 
-            return (playerStatistics.SpikeKill + 0.4 * playerStatistics.SpikeOther + 0.2 * playerStatistics.SpikeBlocked) / 
+            return (statistics.SpikeKill + 0.4 * statistics.SpikeOther + 0.2 * statistics.SpikeBlocked) / 
                 divider;
         }
 
-        private static double ReceiveRate(Set playerStatistics)
+        public static double ReceiveRate(Set statistics)
         {
-            double divider = (5 * playerStatistics.ReceiveFault + playerStatistics.ReceivePerfect + playerStatistics.ReceiveGood + 
-                playerStatistics.ReceiveBad);
+            double divider = (5 * statistics.ReceiveFault + statistics.ReceivePerfect + statistics.ReceiveGood + 
+                statistics.ReceiveBad);
 
             if (divider.Equals(0))
                 return 0.0;
 
-            return (playerStatistics.ReceivePerfect + 0.7*playerStatistics.ReceiveGood + 0.3*playerStatistics.ReceiveBad)/
+            return (statistics.ReceivePerfect + 0.7*statistics.ReceiveGood + 0.3*statistics.ReceiveBad)/
                    divider;
 
         }
 
-        private static double ServeRate(Set playerStatistics)
+        public static double ServeRate(Set statistics)
         {
-            double divider = (2*playerStatistics.ServeFault + playerStatistics.ServeAce + playerStatistics.ServeHit +
-                              playerStatistics.ServeOther);
+            double divider = (2*statistics.ServeFault + statistics.ServeAce + statistics.ServeHit +
+                              statistics.ServeOther);
 
              if (divider.Equals(0))
                 return 0.0;
 
-            return (playerStatistics.ServeAce + 0.5 * playerStatistics.ServeHit + 0.1 * playerStatistics.ServeOther) /
+            return (statistics.ServeAce + 0.5 * statistics.ServeHit + 0.1 * statistics.ServeOther) /
                            divider;
         }
 
-        private static double FaultRate(Set playerStatistics)
+        public static double FaultRate(Set statistics)
         {
-            double divider = (playerStatistics.OwnFault + playerStatistics.ServeFault + playerStatistics.ServeHit +
-                              playerStatistics.ServeOther + playerStatistics.ReceiveFault +
-                              playerStatistics.ReceivePerfect +
-                              playerStatistics.ReceiveGood + playerStatistics.ReceiveBad + playerStatistics.SpikeFault +
-                              playerStatistics.SpikeKill + playerStatistics.SpikeOther + playerStatistics.SpikeBlocked +
-                              playerStatistics.BlockFault + playerStatistics.BlockKill + playerStatistics.BlockRebound);
+            double divider = (statistics.OwnFault + statistics.ServeFault + statistics.ServeHit +
+                              statistics.ServeOther + statistics.ReceiveFault +
+                              statistics.ReceivePerfect +
+                              statistics.ReceiveGood + statistics.ReceiveBad + statistics.SpikeFault +
+                              statistics.SpikeKill + statistics.SpikeOther + statistics.SpikeBlocked +
+                              statistics.BlockFault + statistics.BlockKill + statistics.BlockRebound);
             
             if (divider.Equals(0))
                 return 0.0;
 
-            return (playerStatistics.OwnFault + playerStatistics.ServeFault + playerStatistics.ReceiveFault +
-                playerStatistics.SpikeFault + playerStatistics.BlockFault) / divider;
+            return (statistics.OwnFault + statistics.ServeFault + statistics.ReceiveFault +
+                statistics.SpikeFault + statistics.BlockFault) / divider;
         }
     }
 }

@@ -56,6 +56,7 @@ namespace Siatkostat
                 TeamId = App.SelectedTeam.Id
             };
 
+            newMatch.CreateTeamStatistics();
             MatchViewModel.Instance.CurrentMatch = newMatch;
 
             Frame.Navigate(typeof(CourtPlayersSelect));

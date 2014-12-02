@@ -106,6 +106,9 @@
     <Compile Include="EditTeam\NewPlayerDialog.xaml.cs">
       <DependentUpon>NewPlayerDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EfficiencyThreshold.xaml.cs">
+      <DependentUpon>EfficiencyThreshold.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExpertSystem.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="MainMatch.xaml.cs">
@@ -196,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditTeam\NewPlayerDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EfficiencyThreshold.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

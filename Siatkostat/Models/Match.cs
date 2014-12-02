@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Siatkostat.Annotations;
@@ -33,9 +34,21 @@ namespace Siatkostat.Models
         private int oponentScoreSet4;
 
         private int oponentScoreSet5;
+
+        public List<Set> TeamStatistics = new List<Set>(); 
+
         #endregion
 
         #region Properties
+
+        public int AttackThreshold { get; set; }
+
+        public int ReboundThreshold { get; set; }
+
+        public int BlockThreshold { get; set; }
+
+        public int ServeThreshold { get; set; }
+
         public int CurrentSet { get; set; }
 
         public int OpponentSetScore { get; set; }
@@ -198,6 +211,22 @@ namespace Siatkostat.Models
         #endregion
 
         #region Methods
+
+
+        public Set GetCurrentSet()
+        {
+            return TeamStatistics.Find(s => s.SetNumber == CurrentSet);
+        }
+        public void CreateTeamStatistics()
+        {
+            TeamStatistics.Clear();
+            TeamStatistics.Add(new Set { SetNumber = 1 });
+            TeamStatistics.Add(new Set { SetNumber = 2 });
+            TeamStatistics.Add(new Set { SetNumber = 3 });
+            TeamStatistics.Add(new Set { SetNumber = 4 });
+            TeamStatistics.Add(new Set { SetNumber = 5 });
+        }
+
         public void AddOpponentPoint()
         {
             switch (CurrentSet)

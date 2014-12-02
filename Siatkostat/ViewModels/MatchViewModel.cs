@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Windows.UI.Popups;
 using Microsoft.WindowsAzure.MobileServices;
 using Siatkostat.Models;
@@ -40,6 +41,7 @@ namespace Siatkostat.ViewModels
         public MobileServiceCollection<Match, Match> MatchesCollection { get; set; }
 
         public Match CurrentMatch { get; set; }
+
         #endregion
 
         #region Constructor
@@ -86,5 +88,6 @@ namespace Siatkostat.ViewModels
             MatchesCollection.Add(match);
         }
         #endregion
+
     }
 }
