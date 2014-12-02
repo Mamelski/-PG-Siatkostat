@@ -14,6 +14,11 @@ namespace Siatkostat
         {
             this.InitializeComponent();
 
+            if (MatchViewModel.Instance.CurrentMatch.Finished())
+            {
+                Frame.Navigate(typeof (StatisticsWindow));
+            }
+
             Court.SetPlayersOnCourt(PlayersViewModel.Instance.PlayersOnCourt);
 
             match = MatchViewModel.Instance.CurrentMatch;

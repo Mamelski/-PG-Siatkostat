@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Windows.UI.Xaml.Controls;
 using Siatkostat.Annotations;
 using Siatkostat.ViewModels;
 
@@ -255,6 +256,10 @@ namespace Siatkostat.Models
                     SetViewModel.Instance.InsertSets(CurrentSet);
                     OpponentSetScore++;
                     CurrentSet++;
+                    if (OpponentSetScore == 3)
+                    {
+                        MatchViewModel.Instance.InsertMatch(MatchViewModel.Instance.CurrentMatch);
+                    }
                     if(OnSetFinish != null)
                         OnSetFinish.Invoke(this);
                 }
@@ -289,6 +294,10 @@ namespace Siatkostat.Models
                     SetViewModel.Instance.InsertSets(CurrentSet);
                     TeamSetScore++;
                     CurrentSet++;
+                    if (TeamSetScore == 3)
+                    {
+                        MatchViewModel.Instance.InsertMatch(MatchViewModel.Instance.CurrentMatch);
+                    }
                     if (OnSetFinish != null)
                         OnSetFinish.Invoke(this);
                 }
@@ -348,5 +357,10 @@ namespace Siatkostat.Models
         }
 
         #endregion
+
+        public bool Finished()
+        {
+            return OpponentSetScore == 3 || TeamSetScore == 3;
+        }
     }
 }
