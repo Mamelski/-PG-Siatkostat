@@ -43,9 +43,10 @@ namespace Siatkostat.EditTeam
             {
                 FirstName = ImięTextBox.Text,
                 LastName = NazwiskoTextBox.Text,
-                Number = tmp,
-                TeamId = App.SelectedTeam.Id
+                Number = tmp
             };
+            if (App.SelectedTeam != null)
+                NewPlayer.TeamId = App.SelectedTeam.Id;
 
             if (IsLIberoToggleButton.IsChecked == true)
             {

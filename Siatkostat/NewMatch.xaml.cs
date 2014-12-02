@@ -2,8 +2,7 @@
 using Windows.Phone.UI.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
+using Siatkostat.EditTeam;
 using Siatkostat.Models;
 using Siatkostat.ViewModels;
 
@@ -53,13 +52,16 @@ namespace Siatkostat
             {
                 OponentName = OpponentNameTextBox.Text,
                 MatchDate = MatchDateTextBox.Date.Date,
-                TeamId = App.SelectedTeam.Id
             };
+
+            if (App.SelectedTeam != null)
+                newMatch.TeamId = App.SelectedTeam.Id;
 
             newMatch.CreateTeamStatistics();
             MatchViewModel.Instance.CurrentMatch = newMatch;
 
-            Frame.Navigate(typeof(CourtPlayersSelect));
+
+            Frame.Navigate(App.SelectedTeam == null ? typeof (EditTeamPage) : typeof (CourtPlayersSelect));
         }
     }
 }

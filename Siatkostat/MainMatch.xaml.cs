@@ -24,7 +24,7 @@ namespace Siatkostat
             match = MatchViewModel.Instance.CurrentMatch;
            //match.OnSetFinish += UpdateSetsResult;
 
-            FirstTeamNameTextBlock.Text = App.SelectedTeam.TeamName;
+            FirstTeamNameTextBlock.Text = App.SelectedTeam != null ? App.SelectedTeam.TeamName : "Gość";
             SecondTeamNameTextBlock.Text = MatchViewModel.Instance.CurrentMatch.OponentName;
 
             SetLog();

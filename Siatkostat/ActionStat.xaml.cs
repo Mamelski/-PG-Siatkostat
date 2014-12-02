@@ -130,6 +130,7 @@ namespace Siatkostat
 
             HideGradeStackPanels();
             ServeStackPanel.Visibility = Visibility.Visible;
+            UncheckPlayers();
             Court.SelectPlayerOnPosition(CourtControl.Position.Serve);
         }
 
@@ -326,48 +327,78 @@ namespace Siatkostat
         }
         #endregion
         #region No return buttons
-        private void OdrzucajacaButton_Click(object sender, RoutedEventArgs e)
+        private async void OdrzucajacaButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
             GetPlayerSet().ServeHit++;
             match.GetCurrentSet().ServeHit++;
             LogMessage();
             UncheckPlayers();
         }
 
-        private void ResztaServeButton_Click(object sender, RoutedEventArgs e)
+        private async void ResztaServeButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
             GetPlayerSet().ServeOther++;
             match.GetCurrentSet().ServeOther++;
             LogMessage();
             UncheckPlayers();
         }
 
-        private void PerfectSaveButton_Click(object sender, RoutedEventArgs e)
+        private async void PerfectSaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
             GetPlayerSet().ReceivePerfect++;
             match.GetCurrentSet().ReceivePerfect++;
             LogMessage();
             UncheckPlayers();
         }
 
-        private void BadSaveButton_Click(object sender, RoutedEventArgs e)
+        private async void BadSaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
             GetPlayerSet().ReceiveBad++;
             match.GetCurrentSet().ReceiveBad++;
             LogMessage();
             UncheckPlayers();
         }
 
-        private void PositiveSaveButton_Click(object sender, RoutedEventArgs e)
+        private async void PositiveSaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
             GetPlayerSet().ReceiveGood++;
             match.GetCurrentSet().ReceiveGood++;
             LogMessage();
             UncheckPlayers();
         }
 
-        private void OtherAttackButton_Click(object sender, RoutedEventArgs e)
+        private async void OtherAttackButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Court.Players.Any(p => p.Selected))
+            {
+                await new MessageDialog("Wybierz zawodnika!").ShowAsync();
+                return;
+            }
             GetPlayerSet().SpikeOther++;
             match.GetCurrentSet().SpikeOther++;
             LogMessage();

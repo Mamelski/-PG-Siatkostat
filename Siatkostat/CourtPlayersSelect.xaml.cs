@@ -22,22 +22,33 @@ namespace Siatkostat
         {
             this.InitializeComponent();
 
-            if (PlayersViewModel.Instance.PlayersCollection == null)
+            if (App.SelectedTeam != null)
             {
-                PlayersViewModel.Instance.CollectionLoaded += Setup;
-            }
-            else if (PlayersViewModel.Instance.PlayersOnCourt.Count == 0)
-            {
-                Setup();
+                if (PlayersViewModel.Instance.PlayersCollection == null)
+                {
+                    PlayersViewModel.Instance.CollectionLoaded += Setup;
+                }
+                else if (PlayersViewModel.Instance.PlayersOnCourt.Count == 0)
+                {
+                    Setup();
+                }
+                else
+                {
+                    Court.SetPlayersOnCourt(PlayersViewModel.Instance.PlayersOnCourt);
+                    foreach (var p in PlayersViewModel.Instance.PlayersCollection.Except(PlayersViewModel.Instance.PlayersOnCourt))
+                    {
+                        Players.Add(p);
+                    }
+                    PlayersListBox.ItemsSource = Players;
+                }
             }
             else
             {
-                Court.SetPlayersOnCourt(PlayersViewModel.Instance.PlayersOnCourt);
-                foreach (var p in PlayersViewModel.Instance.PlayersCollection.Except(PlayersViewModel.Instance.PlayersOnCourt))
+                if (PlayersViewModel.Instance.PlayersOnCourt.Count == 0)
                 {
-                    Players.Add(p);
+                    AddGuestPlayersSource();
+                    CreateGuestSets();
                 }
-                PlayersListBox.ItemsSource = Players;
             }
         }
 
@@ -54,6 +65,33 @@ namespace Siatkostat
         {
             AddPlayersSource();
             CreateSets();
+        }
+
+        private void AddGuestPlayersSource()
+        {
+            foreach (var p in PlayersViewModel.Instance.GuestPlayersCollection)
+            {
+                Players.Add(p);
+            }
+            PlayersListBox.ItemsSource = Players;
+        }
+
+        private void CreateGuestSets()
+        {
+            foreach (var player in PlayersViewModel.Instance.GuestPlayersCollection)
+            {
+                for (int i = 1; i <= 5; i++)
+                {
+                    Set set = new Set
+                    {
+                        PlayerId = player.Id,
+                        SetNumber = i,
+                        MatchId = match.Id
+                    };
+
+                    SetViewModel.Instance.CurrentMatchSets.Add(set);
+                }
+            }
         }
 
         private void CreateSets()

@@ -41,6 +41,8 @@ namespace Siatkostat.ViewModels
 
         public MobileServiceCollection<Player, Player> PlayersCollection { get; set; }
 
+        public ObservableCollection<Player> GuestPlayersCollection = new ObservableCollection<Player>(); 
+
         public ObservableCollection<Player> PlayersOnCourt = new ObservableCollection<Player>();
         #endregion
 
@@ -95,19 +97,40 @@ namespace Siatkostat.ViewModels
         #region DataOperations
         public async void InsertPlayer(Player player)
         {
-            await playersTable.InsertAsync(player);
-            PlayersCollection.Add(player);
+            if (App.SelectedTeam == null)
+            {
+                GuestPlayersCollection.Add(player);
+            }
+            else
+            {
+                await playersTable.InsertAsync(player);
+                PlayersCollection.Add(player);
+            }
         }
 
         public async void DeletePlayer(Player player)
         {
-            await playersTable.DeleteAsync(player);
-            PlayersCollection.Remove(player);
+            if (App.SelectedTeam == null)
+            {
+                GuestPlayersCollection.Remove(player);
+            }
+            else
+            {
+                await playersTable.DeleteAsync(player);
+                PlayersCollection.Remove(player);
+            }
         }
 
         public async void ModifyPlayer(Player player)
         {
-            
+            if (App.SelectedTeam == null)
+            {
+                /*GuestPlayersCollection.
+                Player modifiedPlayer = GuestPlayersCollection.Find(p => p.Id == player.Id);
+                GuestPlayersCollection.Remove(modifiedPlayer);
+                GuestPlayersCollection.Add(player);*/
+                return;
+            }
             foreach (var playerToModify in PlayersCollection.Where(player1 => player1.Id.ToString() == player.Id.ToString()))
             {
                 playerToModify.IsLibero = player.IsLibero;

@@ -2,6 +2,7 @@
 using Windows.Phone.UI.Input;
 using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
 using Siatkostat.Models;
 using Siatkostat.ViewModels;
@@ -22,12 +23,17 @@ namespace Siatkostat.EditTeam
         {
             InitializeComponent();
 
-            PlayersViewModel.Instance.CollectionLoaded += PlayersViewModel_CollectionLoaded;
-            Loaded += EditTeam_Loaded;
-
             if (App.SelectedTeam != null)
             {
+                PlayersViewModel.Instance.CollectionLoaded += PlayersViewModel_CollectionLoaded;
+                Loaded += EditTeam_Loaded;
                 TeamNameTextBlock.Text = App.SelectedTeam.TeamName;
+            }
+            else
+            {
+                AcceptButton.Visibility = Visibility.Visible;
+                PlayersListBox.ItemsSource = PlayersViewModel.Instance.GuestPlayersCollection;
+                TeamNameTextBlock.Text = "Gość";
             }
         }
         #endregion
@@ -62,7 +68,14 @@ namespace Siatkostat.EditTeam
             {
                 PlayersViewModel.Instance.ModifyPlayer((Player)e.Parameter);
             }
-            PlayersListBox.ItemsSource = PlayersViewModel.Instance.PlayersCollection;
+            if (App.SelectedTeam != null)
+            {
+                PlayersListBox.ItemsSource = PlayersViewModel.Instance.PlayersCollection;
+            }
+            else
+            {
+                PlayersListBox.ItemsSource = PlayersViewModel.Instance.GuestPlayersCollection;
+            }
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
 
@@ -106,6 +119,12 @@ namespace Siatkostat.EditTeam
             newPlayerContentDialog.Closing += newPlayerContentDialog_Closing;
             await newPlayerContentDialog.ShowAsync();
         }
+
+        private void AkceptujButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CourtPlayersSelect));
+        }
         #endregion
+
     }
 }
