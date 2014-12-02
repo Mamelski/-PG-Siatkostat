@@ -17,10 +17,13 @@ CourtPlayersSelect.xbf
 EditTeam\EditPlayerPage.xbf
 EditTeam\EditTeamPage.xbf
 EditTeam\NewPlayerDialog.xbf
+EfficiencyThreshold.xbf
 MainMatch.xbf
 MainPage.xbf
 NewMatch.xbf
 PlayerControl.xbf
 Siatkostat.xr.xml
+Statistics\ChoosePlayerForStats.xbf
 Statistics\SelectCriterion.xbf
-Statistics\StatisticsWindow.xbf
+Statistics\StatisticsWindowOld.xbf
+Statistics\StatsWindow.xbf

@@ -148,7 +148,7 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[23];
+            _typeNameTable = new string[26];
             _typeNameTable[0] = "Siatkostat.CourtControl";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "Siatkostat.PlayerControl";
@@ -166,14 +166,17 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
             _typeNameTable[14] = "Siatkostat.EditTeam.EditPlayerPage";
             _typeNameTable[15] = "Siatkostat.EditTeam.EditTeamPage";
             _typeNameTable[16] = "Siatkostat.EditTeam.NewPlayerContentDialog";
-            _typeNameTable[17] = "Siatkostat.MainMatch";
-            _typeNameTable[18] = "Siatkostat.MainPage";
-            _typeNameTable[19] = "Siatkostat.Authentication.SignInPage";
-            _typeNameTable[20] = "Siatkostat.NewMatch";
-            _typeNameTable[21] = "Siatkostat.Statistics.SelectCriterion";
-            _typeNameTable[22] = "Siatkostat.StatisticsWindow";
+            _typeNameTable[17] = "Siatkostat.EfficiencyThreshold";
+            _typeNameTable[18] = "Siatkostat.MainMatch";
+            _typeNameTable[19] = "Siatkostat.MainPage";
+            _typeNameTable[20] = "Siatkostat.Authentication.SignInPage";
+            _typeNameTable[21] = "Siatkostat.NewMatch";
+            _typeNameTable[22] = "Siatkostat.Statistics.ChoosePlayerForStats";
+            _typeNameTable[23] = "Siatkostat.Statistics.SelectCriterion";
+            _typeNameTable[24] = "Siatkostat.StatisticsWindow";
+            _typeNameTable[25] = "Siatkostat.Statistics.StatsWindow";
 
-            _typeTable = new global::System.Type[23];
+            _typeTable = new global::System.Type[26];
             _typeTable[0] = typeof(global::Siatkostat.CourtControl);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::Siatkostat.PlayerControl);
@@ -191,12 +194,15 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
             _typeTable[14] = typeof(global::Siatkostat.EditTeam.EditPlayerPage);
             _typeTable[15] = typeof(global::Siatkostat.EditTeam.EditTeamPage);
             _typeTable[16] = typeof(global::Siatkostat.EditTeam.NewPlayerContentDialog);
-            _typeTable[17] = typeof(global::Siatkostat.MainMatch);
-            _typeTable[18] = typeof(global::Siatkostat.MainPage);
-            _typeTable[19] = typeof(global::Siatkostat.Authentication.SignInPage);
-            _typeTable[20] = typeof(global::Siatkostat.NewMatch);
-            _typeTable[21] = typeof(global::Siatkostat.Statistics.SelectCriterion);
-            _typeTable[22] = typeof(global::Siatkostat.StatisticsWindow);
+            _typeTable[17] = typeof(global::Siatkostat.EfficiencyThreshold);
+            _typeTable[18] = typeof(global::Siatkostat.MainMatch);
+            _typeTable[19] = typeof(global::Siatkostat.MainPage);
+            _typeTable[20] = typeof(global::Siatkostat.Authentication.SignInPage);
+            _typeTable[21] = typeof(global::Siatkostat.NewMatch);
+            _typeTable[22] = typeof(global::Siatkostat.Statistics.ChoosePlayerForStats);
+            _typeTable[23] = typeof(global::Siatkostat.Statistics.SelectCriterion);
+            _typeTable[24] = typeof(global::Siatkostat.StatisticsWindow);
+            _typeTable[25] = typeof(global::Siatkostat.Statistics.StatsWindow);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -242,12 +248,15 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
         private object Activate_14_EditPlayerPage() { return new global::Siatkostat.EditTeam.EditPlayerPage(); }
         private object Activate_15_EditTeamPage() { return new global::Siatkostat.EditTeam.EditTeamPage(); }
         private object Activate_16_NewPlayerContentDialog() { return new global::Siatkostat.EditTeam.NewPlayerContentDialog(); }
-        private object Activate_17_MainMatch() { return new global::Siatkostat.MainMatch(); }
-        private object Activate_18_MainPage() { return new global::Siatkostat.MainPage(); }
-        private object Activate_19_SignInPage() { return new global::Siatkostat.Authentication.SignInPage(); }
-        private object Activate_20_NewMatch() { return new global::Siatkostat.NewMatch(); }
-        private object Activate_21_SelectCriterion() { return new global::Siatkostat.Statistics.SelectCriterion(); }
-        private object Activate_22_StatisticsWindow() { return new global::Siatkostat.StatisticsWindow(); }
+        private object Activate_17_EfficiencyThreshold() { return new global::Siatkostat.EfficiencyThreshold(); }
+        private object Activate_18_MainMatch() { return new global::Siatkostat.MainMatch(); }
+        private object Activate_19_MainPage() { return new global::Siatkostat.MainPage(); }
+        private object Activate_20_SignInPage() { return new global::Siatkostat.Authentication.SignInPage(); }
+        private object Activate_21_NewMatch() { return new global::Siatkostat.NewMatch(); }
+        private object Activate_22_ChoosePlayerForStats() { return new global::Siatkostat.Statistics.ChoosePlayerForStats(); }
+        private object Activate_23_SelectCriterion() { return new global::Siatkostat.Statistics.SelectCriterion(); }
+        private object Activate_24_StatisticsWindow() { return new global::Siatkostat.StatisticsWindow(); }
+        private object Activate_25_StatsWindow() { return new global::Siatkostat.Statistics.StatsWindow(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -364,44 +373,65 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 17:   //  Siatkostat.MainMatch
+            case 17:   //  Siatkostat.EfficiencyThreshold
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_MainMatch;
+                userType.Activator = Activate_17_EfficiencyThreshold;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  Siatkostat.MainPage
+            case 18:   //  Siatkostat.MainMatch
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_MainPage;
+                userType.Activator = Activate_18_MainMatch;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  Siatkostat.Authentication.SignInPage
+            case 19:   //  Siatkostat.MainPage
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_SignInPage;
+                userType.Activator = Activate_19_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  Siatkostat.NewMatch
+            case 20:   //  Siatkostat.Authentication.SignInPage
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_NewMatch;
+                userType.Activator = Activate_20_SignInPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 21:   //  Siatkostat.Statistics.SelectCriterion
+            case 21:   //  Siatkostat.NewMatch
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_21_SelectCriterion;
+                userType.Activator = Activate_21_NewMatch;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 22:   //  Siatkostat.StatisticsWindow
+            case 22:   //  Siatkostat.Statistics.ChoosePlayerForStats
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_22_StatisticsWindow;
+                userType.Activator = Activate_22_ChoosePlayerForStats;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 23:   //  Siatkostat.Statistics.SelectCriterion
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_23_SelectCriterion;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 24:   //  Siatkostat.StatisticsWindow
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_24_StatisticsWindow;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 25:   //  Siatkostat.Statistics.StatsWindow
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_25_StatsWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -419,6 +449,10 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
                     _otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
                     global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
                     provider = new global::Microsoft.Advertising.Mobile.UI.UI_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                    provider = new global::WinRTXamlToolkit.Controls.DataVisualization.WinRTXamlToolkit_Controls_DataVisualization_WindowsPhone_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                    provider = new global::WinRTXamlToolkit.WinRTXamlToolkit_WindowsPhone_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
                     _otherProviders.Add(provider); 
                 }
                 return _otherProviders;

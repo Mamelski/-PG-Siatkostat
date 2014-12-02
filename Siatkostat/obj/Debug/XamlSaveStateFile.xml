@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\mamelski\documents\github\siatkostat\siatkostat\obj\debug\intermediatexaml\siatkostat.exe" HashGuid="3b6595b6-51f9-8179-e5dd-d3787f17075f" />
+    <LocalAssembly PathName="c:\users\mamelski\documents\github\siatkostat\siatkostat\obj\debug\intermediatexaml\siatkostat.exe" HashGuid="2de30f38-080d-481b-c2df-c145b6099848" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.advertising.mobile.display\8.1\references\commonconfiguration\neutral\microsoft.advertising.mobile.common.winmd" HashGuid="67667542-2ed0-db4a-d191-3e7623df243e" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.advertising.mobile.display\8.1\references\commonconfiguration\neutral\microsoft.advertising.mobile.display.winmd" HashGuid="cc0fb2e7-7a64-f70e-2997-2ad4fbf1cad0" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.advertising.mobile.display\8.1\references\commonconfiguration\neutral\microsoft.advertising.mobile.ui.winmd" HashGuid="b3d8dc37-2e80-b28f-127b-3083e011fcaf" />
@@ -9,5 +9,7 @@
     <ReferenceAssembly PathName="c:\users\mamelski\documents\github\siatkostat\packages\newtonsoft.json.6.0.4\lib\portable-net45+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="02b12ba6-881e-6b8a-1687-5b2ee1851a11" />
     <ReferenceAssembly PathName="c:\users\mamelski\documents\github\siatkostat\packages\microsoft.net.http.2.2.28\lib\wpa81\system.net.http.extensions.dll" HashGuid="794366f8-cc6d-f0fa-3d07-33b45136e193" />
     <ReferenceAssembly PathName="c:\users\mamelski\documents\github\siatkostat\packages\microsoft.net.http.2.2.28\lib\wpa81\system.net.http.primitives.dll" HashGuid="7b71418d-e056-7613-c839-85fb8f6472a6" />
+    <ReferenceAssembly PathName="c:\users\mamelski\documents\github\siatkostat\packages\winrtxamltoolkit.controls.datavisualization.windowsphone.1.7.4.0\lib\wpa\winrtxamltoolkit.controls.datavisualization.dll" HashGuid="dbd789a8-f25d-5ee0-4d54-2ce5c1ba056a" />
+    <ReferenceAssembly PathName="c:\users\mamelski\documents\github\siatkostat\packages\winrtxamltoolkit.windowsphone.1.7.4.0\lib\wpa\winrtxamltoolkit.dll" HashGuid="8e147034-4cfb-5f8a-fc1c-4c177ce2e063" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

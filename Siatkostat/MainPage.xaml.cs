@@ -37,7 +37,7 @@ namespace Siatkostat
 
         private void DisplayStatisticsButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SelectCriterion));
+            Frame.Navigate(typeof(ChoosePlayerForStats));
             HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
         }
 

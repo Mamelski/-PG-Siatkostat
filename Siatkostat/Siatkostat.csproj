@@ -138,11 +138,17 @@
     <Compile Include="Models\Team.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Statistics\ChoosePlayerForStats.xaml.cs">
+      <DependentUpon>ChoosePlayerForStats.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Statistics\SelectCriterion.xaml.cs">
       <DependentUpon>SelectCriterion.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Statistics\StatisticsWindow.xaml.cs">
-      <DependentUpon>StatisticsWindow.xaml</DependentUpon>
+    <Compile Include="Statistics\StatisticsWindowOld.xaml.cs">
+      <DependentUpon>StatisticsWindowOld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\StatsWindow.xaml.cs">
+      <DependentUpon>StatsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MatchViewModel.cs" />
     <Compile Include="ViewModels\PlayersViewModel.cs" />
@@ -226,11 +232,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Statistics\ChoosePlayerForStats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Statistics\SelectCriterion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Statistics\StatisticsWindow.xaml">
+    <Page Include="Statistics\StatisticsWindowOld.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Statistics\StatsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,6 +264,12 @@
     </Reference>
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit">
+      <HintPath>..\packages\WinRTXamlToolkit.WindowsPhone.1.7.4.0\lib\wpa\WinRTXamlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit.Controls.DataVisualization">
+      <HintPath>..\packages\WinRTXamlToolkit.Controls.DataVisualization.WindowsPhone.1.7.4.0\lib\wpa\WinRTXamlToolkit.Controls.DataVisualization.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
