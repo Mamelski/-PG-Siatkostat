@@ -60,7 +60,7 @@ namespace Siatkostat
             MatchViewModel.Instance.CurrentMatch.ReboundThreshold = (int)ReboundSlider.Value;
             MatchViewModel.Instance.CurrentMatch.BlockThreshold = (int)BlockSlider.Value;
             MatchViewModel.Instance.CurrentMatch.ServeThreshold = (int)ServeSlider.Value;
-            Frame.Navigate(typeof(MainMatch));
+            Frame.Navigate(typeof(CourtPlayersSelect));
         }
     }
 }

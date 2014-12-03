@@ -55,8 +55,11 @@ namespace Siatkostat
             if (ExpertSystem.NeedSubstitution(GetPlayerSet()))
             {
                 Player player = Court.SelectedPlayer.player;
-                if (player == null) return;
-                Log.Instance.Messages.Add(String.Format("Sugerowana zmiana zawodnika nr {0} - {1} {2}", player.Number, player.FirstName, player.LastName));
+                if (player != null && player.needSubstitution == false)
+                {
+                    Log.Instance.Messages.Add(String.Format("Sugerowana zmiana zawodnika nr {0} - {1} {2}", player.Number, player.FirstName, player.LastName));
+                    player.needSubstitution = true;
+                }
             }
 
             int blockRate = (int)(ExpertSystem.BlockRate(match.GetCurrentSet()) * 100);
@@ -64,21 +67,25 @@ namespace Siatkostat
             int receiveRate = (int)(ExpertSystem.ReceiveRate(match.GetCurrentSet()) * 100);
             int serveRate = (int)(ExpertSystem.ServeRate(match.GetCurrentSet()) * 100);
 
-            if (match.GetCurrentSet().TotalBlocks() > ile && blockRate < match.BlockThreshold)
+            if (match.GetCurrentSet().TotalBlocks() > ile && blockRate < match.BlockThreshold && Log.Instance.block == false)
             {
                 Log.Instance.Messages.Add(String.Format("Skuteczność bloku spadła poniżej {0}% - ({1}%)", match.BlockThreshold, blockRate));
+                Log.Instance.block = true;
             }
-            if (match.GetCurrentSet().TotalSpikes() > ile && spikeRate < match.AttackThreshold)
+            if (match.GetCurrentSet().TotalSpikes() > ile && spikeRate < match.AttackThreshold && Log.Instance.Attack == false)
             {
                 Log.Instance.Messages.Add(String.Format("Skuteczność ataku spadła poniżej {0}% - ({1}%)", match.AttackThreshold, spikeRate));
+                Log.Instance.Attack = true;
             }
-            if (match.GetCurrentSet().TotalReceives() > ile && receiveRate < match.ReboundThreshold)
+            if (match.GetCurrentSet().TotalReceives() > ile && receiveRate < match.ReboundThreshold && Log.Instance.rebound == false)
             {
                 Log.Instance.Messages.Add(String.Format("Skuteczność przyjęcia spadła poniżej {0}% - ({1}%)", match.ReboundThreshold, receiveRate));
+                Log.Instance.rebound = true;
             }
-            if (match.GetCurrentSet().TotalServes() > ile && serveRate < match.ServeThreshold)
+            if (match.GetCurrentSet().TotalServes() > ile && serveRate < match.ServeThreshold && Log.Instance.serve == false)
             {
                 Log.Instance.Messages.Add(String.Format("Skuteczność zagrywki spadła poniżej {0}% - ({1}%)", match.ServeThreshold, serveRate));
+                Log.Instance.serve = true;
             }
         }
 
@@ -413,5 +420,10 @@ namespace Siatkostat
 
         
         #endregion
+
+        private void PrzyjetyBlockButton_Click(object sender, RoutedEventArgs e)
+        {
+            UncheckPlayers();
+        }
     }
 }

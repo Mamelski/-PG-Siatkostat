@@ -66,6 +66,7 @@
                 <StackPanel Name="BlockStackPanel" Visibility="Collapsed">
                     <Button Name="PointBlockButton" HorizontalAlignment="Stretch" Click="PointBlockButton_Click">Punktowy</Button>
                     <Button Name="NetFaultBlockButton" HorizontalAlignment="Stretch" Click="NetFaultBlockButton_Click">Błąd siatki</Button>
+                    <Button Name="PrzyjetyBlockButton" HorizontalAlignment="Stretch" Click="PrzyjetyBlockButton_Click">Przyjęty</Button>
                 </StackPanel>
                 <!-- Inny błąd -->
                 <StackPanel Name="AnotherFaultStackPanel" Visibility="Collapsed">

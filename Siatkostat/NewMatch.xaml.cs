@@ -61,7 +61,7 @@ namespace Siatkostat
             MatchViewModel.Instance.CurrentMatch = newMatch;
 
 
-            Frame.Navigate(App.SelectedTeam == null ? typeof (EditTeamPage) : typeof (CourtPlayersSelect));
+            Frame.Navigate(App.SelectedTeam == null ? typeof (EditTeamPage) : typeof (EfficiencyThreshold));
         }
     }
 }

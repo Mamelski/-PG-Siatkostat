@@ -31,8 +31,7 @@
         <local:CourtControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="Court"></local:CourtControl>
         <StackPanel Grid.Row="1" Grid.Column="2"  Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
             <Button x:ConnectionId='1' Name="ActionButton" HorizontalAlignment="Stretch"                           >AKCJA</Button>
-            <Button x:ConnectionId='2' Name="StatisticsButton" HorizontalAlignment="Stretch"                               >STATYSTYKI</Button>
-            <Button x:ConnectionId='3' Name="SubstitutionButton" HorizontalAlignment="Stretch"                                 >ZMIANA</Button>
+            <Button x:ConnectionId='2' Name="SubstitutionButton" HorizontalAlignment="Stretch"                                 >ZMIANA</Button>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="100" Background="Black" Margin="10">

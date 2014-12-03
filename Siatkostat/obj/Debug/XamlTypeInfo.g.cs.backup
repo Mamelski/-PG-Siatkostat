@@ -148,7 +148,7 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[62];
+            _typeNameTable = new string[65];
             _typeNameTable[0] = "Siatkostat.CourtControl";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "Siatkostat.PlayerControl";
@@ -207,12 +207,15 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
             _typeNameTable[55] = "TimeSpan";
             _typeNameTable[56] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeriesHost";
             _typeNameTable[57] = "Siatkostat.Statistics.AtakCharts";
-            _typeNameTable[58] = "Siatkostat.Statistics.ChoosePlayerForStats";
-            _typeNameTable[59] = "Siatkostat.Statistics.SelectCriterion";
-            _typeNameTable[60] = "Siatkostat.StatisticsWindow";
-            _typeNameTable[61] = "Siatkostat.Statistics.StatsWindow";
+            _typeNameTable[58] = "Siatkostat.Statistics.BlockCharts";
+            _typeNameTable[59] = "Siatkostat.Statistics.ChoosePlayerForStats";
+            _typeNameTable[60] = "Siatkostat.Statistics.PrzyjęcieCharts";
+            _typeNameTable[61] = "Siatkostat.Statistics.SelectCriterion";
+            _typeNameTable[62] = "Siatkostat.StatisticsWindow";
+            _typeNameTable[63] = "Siatkostat.Statistics.StatsWindow";
+            _typeNameTable[64] = "Siatkostat.Statistics.ZagrywkaCharts";
 
-            _typeTable = new global::System.Type[62];
+            _typeTable = new global::System.Type[65];
             _typeTable[0] = typeof(global::Siatkostat.CourtControl);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::Siatkostat.PlayerControl);
@@ -271,10 +274,13 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
             _typeTable[55] = typeof(global::System.TimeSpan);
             _typeTable[56] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeriesHost);
             _typeTable[57] = typeof(global::Siatkostat.Statistics.AtakCharts);
-            _typeTable[58] = typeof(global::Siatkostat.Statistics.ChoosePlayerForStats);
-            _typeTable[59] = typeof(global::Siatkostat.Statistics.SelectCriterion);
-            _typeTable[60] = typeof(global::Siatkostat.StatisticsWindow);
-            _typeTable[61] = typeof(global::Siatkostat.Statistics.StatsWindow);
+            _typeTable[58] = typeof(global::Siatkostat.Statistics.BlockCharts);
+            _typeTable[59] = typeof(global::Siatkostat.Statistics.ChoosePlayerForStats);
+            _typeTable[60] = typeof(global::Siatkostat.Statistics.PrzyjęcieCharts);
+            _typeTable[61] = typeof(global::Siatkostat.Statistics.SelectCriterion);
+            _typeTable[62] = typeof(global::Siatkostat.StatisticsWindow);
+            _typeTable[63] = typeof(global::Siatkostat.Statistics.StatsWindow);
+            _typeTable[64] = typeof(global::Siatkostat.Statistics.ZagrywkaCharts);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -336,10 +342,13 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
         private object Activate_39_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.ResourceDictionary>(); }
         private object Activate_41_LineSeries() { return new global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries(); }
         private object Activate_57_AtakCharts() { return new global::Siatkostat.Statistics.AtakCharts(); }
-        private object Activate_58_ChoosePlayerForStats() { return new global::Siatkostat.Statistics.ChoosePlayerForStats(); }
-        private object Activate_59_SelectCriterion() { return new global::Siatkostat.Statistics.SelectCriterion(); }
-        private object Activate_60_StatisticsWindow() { return new global::Siatkostat.StatisticsWindow(); }
-        private object Activate_61_StatsWindow() { return new global::Siatkostat.Statistics.StatsWindow(); }
+        private object Activate_58_BlockCharts() { return new global::Siatkostat.Statistics.BlockCharts(); }
+        private object Activate_59_ChoosePlayerForStats() { return new global::Siatkostat.Statistics.ChoosePlayerForStats(); }
+        private object Activate_60_PrzyjęcieCharts() { return new global::Siatkostat.Statistics.PrzyjęcieCharts(); }
+        private object Activate_61_SelectCriterion() { return new global::Siatkostat.Statistics.SelectCriterion(); }
+        private object Activate_62_StatisticsWindow() { return new global::Siatkostat.StatisticsWindow(); }
+        private object Activate_63_StatsWindow() { return new global::Siatkostat.Statistics.StatsWindow(); }
+        private object Activate_64_ZagrywkaCharts() { return new global::Siatkostat.Statistics.ZagrywkaCharts(); }
         private void VectorAdd_24_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>)instance;
@@ -789,30 +798,51 @@ namespace Siatkostat.Siatkostat_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 58:   //  Siatkostat.Statistics.ChoosePlayerForStats
+            case 58:   //  Siatkostat.Statistics.BlockCharts
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_58_ChoosePlayerForStats;
+                userType.Activator = Activate_58_BlockCharts;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 59:   //  Siatkostat.Statistics.SelectCriterion
+            case 59:   //  Siatkostat.Statistics.ChoosePlayerForStats
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_59_SelectCriterion;
+                userType.Activator = Activate_59_ChoosePlayerForStats;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 60:   //  Siatkostat.StatisticsWindow
+            case 60:   //  Siatkostat.Statistics.PrzyjęcieCharts
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_60_StatisticsWindow;
+                userType.Activator = Activate_60_PrzyjęcieCharts;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 61:   //  Siatkostat.Statistics.StatsWindow
+            case 61:   //  Siatkostat.Statistics.SelectCriterion
                 userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_61_StatsWindow;
+                userType.Activator = Activate_61_SelectCriterion;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 62:   //  Siatkostat.StatisticsWindow
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_62_StatisticsWindow;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 63:   //  Siatkostat.Statistics.StatsWindow
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_63_StatsWindow;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 64:   //  Siatkostat.Statistics.ZagrywkaCharts
+                userType = new global::Siatkostat.Siatkostat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_64_ZagrywkaCharts;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

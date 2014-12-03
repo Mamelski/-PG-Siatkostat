@@ -17,6 +17,8 @@ namespace Siatkostat.Models
 
         private bool isLibero;
 
+        public bool needSubstitution = false;
+
         #endregion
 
         #region Properties

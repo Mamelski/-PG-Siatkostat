@@ -180,7 +180,7 @@ namespace Siatkostat
             }
 
             PlayersViewModel.Instance.SetPlayersOnCourt(Court.Players.Select(p => p.player));
-            Frame.Navigate(typeof (EfficiencyThreshold));
+            Frame.Navigate(typeof(MainMatch));
         }
     }
 }

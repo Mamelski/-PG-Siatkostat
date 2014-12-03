@@ -43,7 +43,7 @@ namespace Siatkostat
                     score += 2;
             }
             if (statistics.TotalBlocks() + statistics.TotalFaults() + statistics.TotalReceives() +
-                statistics.TotalServes() + statistics.TotalSpikes() >= 3)
+                statistics.TotalServes() + statistics.TotalSpikes() >= 12)
             {
                 if (faultRate < 0.2)
                     score += 1;

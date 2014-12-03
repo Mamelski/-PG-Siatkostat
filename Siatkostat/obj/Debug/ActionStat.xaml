@@ -29,11 +29,11 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
             <StackPanel Width="125">
-                <ToggleButton x:ConnectionId='19' Name="ServeButton" HorizontalAlignment="Stretch"                          >Zagrywka</ToggleButton>
-                <ToggleButton x:ConnectionId='20' Name="PrzyjecieButton" HorizontalAlignment="Stretch"                              >Przyjęcie</ToggleButton>
-                <ToggleButton x:ConnectionId='21' Name="AttackButton" HorizontalAlignment="Stretch"                           >Atak</ToggleButton>
-                <ToggleButton x:ConnectionId='22' Name="BlockButton" HorizontalAlignment="Stretch"                          >Blok</ToggleButton>
-                <ToggleButton x:ConnectionId='23' Name="AnotherFaultButton" HorizontalAlignment="Stretch"                                 >Inny błąd</ToggleButton>
+                <ToggleButton x:ConnectionId='20' Name="ServeButton" HorizontalAlignment="Stretch"                          >Zagrywka</ToggleButton>
+                <ToggleButton x:ConnectionId='21' Name="PrzyjecieButton" HorizontalAlignment="Stretch"                              >Przyjęcie</ToggleButton>
+                <ToggleButton x:ConnectionId='22' Name="AttackButton" HorizontalAlignment="Stretch"                           >Atak</ToggleButton>
+                <ToggleButton x:ConnectionId='23' Name="BlockButton" HorizontalAlignment="Stretch"                          >Blok</ToggleButton>
+                <ToggleButton x:ConnectionId='24' Name="AnotherFaultButton" HorizontalAlignment="Stretch"                                 >Inny błąd</ToggleButton>
             </StackPanel>
             <!-- Boisko -->
             <StackPanel Width="300" Margin="5,10,5,0">
@@ -43,29 +43,30 @@
             <!-- Zagrywka -->
             <StackPanel Width="125">
                 <StackPanel Name="ServeStackPanel" Visibility="Collapsed">
-                    <Button x:ConnectionId='15' Name="PointServeButton" HorizontalAlignment="Stretch"                               >Punktowa</Button>
-                    <Button x:ConnectionId='16' Name="OdrzucajacaButton" HorizontalAlignment="Stretch"                                >Odrzucająca</Button>
-                    <Button x:ConnectionId='17' Name="ResztaServeButton" HorizontalAlignment="Stretch"                                >Reszta</Button>
-                    <Button x:ConnectionId='18' Name="BrokenServeButton" HorizontalAlignment="Stretch"                                >Zepsuta</Button>
+                    <Button x:ConnectionId='16' Name="PointServeButton" HorizontalAlignment="Stretch"                               >Punktowa</Button>
+                    <Button x:ConnectionId='17' Name="OdrzucajacaButton" HorizontalAlignment="Stretch"                                >Odrzucająca</Button>
+                    <Button x:ConnectionId='18' Name="ResztaServeButton" HorizontalAlignment="Stretch"                                >Reszta</Button>
+                    <Button x:ConnectionId='19' Name="BrokenServeButton" HorizontalAlignment="Stretch"                                >Zepsuta</Button>
                 </StackPanel>
                 <!-- Przyjęcie -->
                 <StackPanel Name="PrzyjecieStackPanel" Visibility="Collapsed">
-                    <Button x:ConnectionId='11' Name="PerfectSaveButton" HorizontalAlignment="Stretch"                                >Perfekcyjne</Button>
-                    <Button x:ConnectionId='12' Name="PositiveSaveButton" HorizontalAlignment="Stretch"                                 >Pozytywne</Button>
-                    <Button x:ConnectionId='13' Name="BadSaveButton" HorizontalAlignment="Stretch"                            >Złe</Button>
-                    <Button x:ConnectionId='14' Name="BrokenSaveButton" HorizontalAlignment="Stretch"                               >Zepsute</Button>
+                    <Button x:ConnectionId='12' Name="PerfectSaveButton" HorizontalAlignment="Stretch"                                >Perfekcyjne</Button>
+                    <Button x:ConnectionId='13' Name="PositiveSaveButton" HorizontalAlignment="Stretch"                                 >Pozytywne</Button>
+                    <Button x:ConnectionId='14' Name="BadSaveButton" HorizontalAlignment="Stretch"                            >Złe</Button>
+                    <Button x:ConnectionId='15' Name="BrokenSaveButton" HorizontalAlignment="Stretch"                               >Zepsute</Button>
                 </StackPanel>
                 <!-- Atak -->
                 <StackPanel Name="AttackStackPanel" Visibility="Collapsed">
-                    <Button x:ConnectionId='7' Name="PointAttackButton" HorizontalAlignment="Stretch"                                >Punktowy</Button>
-                    <Button x:ConnectionId='8' Name="OtherAttackButton" HorizontalAlignment="Stretch"                                >Pozostałe</Button>
-                    <Button x:ConnectionId='9' Name="BlockedAttackButton" HorizontalAlignment="Stretch"                                  >Zablokowany punktowo</Button>
-                    <Button x:ConnectionId='10' Name="BrokenAttackButton" HorizontalAlignment="Stretch"                                 >Zepsuty</Button>
+                    <Button x:ConnectionId='8' Name="PointAttackButton" HorizontalAlignment="Stretch"                                >Punktowy</Button>
+                    <Button x:ConnectionId='9' Name="OtherAttackButton" HorizontalAlignment="Stretch"                                >Pozostałe</Button>
+                    <Button x:ConnectionId='10' Name="BlockedAttackButton" HorizontalAlignment="Stretch"                                  >Zablokowany punktowo</Button>
+                    <Button x:ConnectionId='11' Name="BrokenAttackButton" HorizontalAlignment="Stretch"                                 >Zepsuty</Button>
                 </StackPanel>
                 <!-- Blok -->
                 <StackPanel Name="BlockStackPanel" Visibility="Collapsed">
                     <Button x:ConnectionId='5' Name="PointBlockButton" HorizontalAlignment="Stretch"                               >Punktowy</Button>
                     <Button x:ConnectionId='6' Name="NetFaultBlockButton" HorizontalAlignment="Stretch"                                  >Błąd siatki</Button>
+                    <Button x:ConnectionId='7' Name="PrzyjetyBlockButton" HorizontalAlignment="Stretch"                                  >Przyjęty</Button>
                 </StackPanel>
                 <!-- Inny błąd -->
                 <StackPanel Name="AnotherFaultStackPanel" Visibility="Collapsed">

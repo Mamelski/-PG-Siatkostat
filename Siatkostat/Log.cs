@@ -7,6 +7,11 @@ namespace Siatkostat
         private static Log instance;
         private static object thisLock = new object();
 
+        public bool Attack = false;
+        public bool serve = false;
+        public bool rebound = false;
+        public bool block = false;
+
         public List<string> Messages = new List<string>(); 
 
         private Log() { }
