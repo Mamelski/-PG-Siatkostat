@@ -161,3 +161,4 @@ C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\WinRTXamlTool
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\pri.resfiles.intermediate
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\priconfig.xml
 C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\priconfig.xml.intermediate
+C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\obj\Debug\Siatkostat.csprojResolveAssemblyReference.cache

@@ -36,27 +36,25 @@
             </Grid.ColumnDefinitions>
             
             <!-- Button Grid -->
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                </Grid.RowDefinitions>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
                 <Image Source="../Assets/SiatkostatLogo.png"
-                       Grid.Row="0"
                        Height="80"
                        Margin="10"/>
-                <Button x:ConnectionId='1' Grid.Row="1" Content="Dodaj"
+                <Button x:ConnectionId='1' Content="Dodaj"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"                          />
-                <Button x:ConnectionId='2' Grid.Row="2" Content="Usuń"
+                <Button x:ConnectionId='2' Content="Usuń"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"                         />
-                <Button x:ConnectionId='3' Grid.Row="3" Content="Edytuj"
+                <Button x:ConnectionId='3' Content="Edytuj"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"                           />
-            </Grid>
+                <Button x:ConnectionId='4' Content="Akceptuj"
+                        Name="AcceptButton"
+                        Visibility="Collapsed"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"                             />
+            </StackPanel>
 
             <!-- ListView Grid -->
             <Grid Grid.Column="0">   
