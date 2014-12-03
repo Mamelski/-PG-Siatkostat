@@ -138,8 +138,17 @@
     <Compile Include="Models\Team.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Statistics\AtakCharts.xaml.cs">
+      <DependentUpon>AtakCharts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\BlockCharts.xaml.cs">
+      <DependentUpon>BlockCharts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Statistics\ChoosePlayerForStats.xaml.cs">
       <DependentUpon>ChoosePlayerForStats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\PrzyjęcieCharts.xaml.cs">
+      <DependentUpon>PrzyjęcieCharts.xaml</DependentUpon>
     </Compile>
     <Compile Include="Statistics\SelectCriterion.xaml.cs">
       <DependentUpon>SelectCriterion.xaml</DependentUpon>
@@ -149,6 +158,9 @@
     </Compile>
     <Compile Include="Statistics\StatsWindow.xaml.cs">
       <DependentUpon>StatsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\ZagrywkaCharts.xaml.cs">
+      <DependentUpon>ZagrywkaCharts.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MatchViewModel.cs" />
     <Compile Include="ViewModels\PlayersViewModel.cs" />
@@ -232,7 +244,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Statistics\AtakCharts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Statistics\BlockCharts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Statistics\ChoosePlayerForStats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Statistics\PrzyjęcieCharts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Statistics\StatsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Statistics\ZagrywkaCharts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

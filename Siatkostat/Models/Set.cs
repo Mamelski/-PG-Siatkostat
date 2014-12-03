@@ -54,6 +54,8 @@ namespace Siatkostat.Models
 
         public Guid MatchId { get; set; }
 
+        public DateTime __createdAt { get; set; }
+
         public int SetNumber
         {
             get { return setNumber; }

@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="Siatkostat.Statistics.PrzyjęcieCharts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Siatkostat.Statistics"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    mc:Ignorable="d"
+    Background="{ThemeResource SiatkostatBackgroundImage}">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Przyjęcie"
+				       FontSize="25"
+				       HorizontalAlignment="Center"/>
+            <Grid>
+                <charting:Chart x:Name="PrzyjęcieChart"
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Width="500"
+                                Height="350">
+                    <charting:LineSeries Title="Perfekcjne"/>
+                    <charting:LineSeries Title="Pozytywne"/>
+                    <charting:LineSeries Title="Złe"/>
+                    <charting:LineSeries Title="Zepsute"/>
+                </charting:Chart>
+
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Page>

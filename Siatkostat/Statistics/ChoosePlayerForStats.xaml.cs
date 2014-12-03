@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
+using Windows.Media.Capture;
 using Windows.Phone.UI.Input;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
+using Siatkostat.Models;
 using Siatkostat.ViewModels;
 
 namespace Siatkostat.Statistics
@@ -69,7 +72,8 @@ namespace Siatkostat.Statistics
                 return;
             }
              HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
-            Frame.Navigate(typeof (StatsWindow));
+            var Id = ((Player) PlayersListBox.SelectedItem).Id.ToString();
+            Frame.Navigate(typeof (StatsWindow),Id);
         }
     }
 }

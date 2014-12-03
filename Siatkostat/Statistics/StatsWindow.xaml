@@ -6,9 +6,114 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource SiatkostatBackgroundImage}">
 
     <Grid>
-
+        <StackPanel>
+            <TextBlock x:Name="PlayerInfo"
+                       Text="Player"
+                        FontSize="20"
+                        HorizontalAlignment="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0"
+                            Grid.Column="0">
+                    <Button Content="Zagrywka"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Click="Zagrywka_OnClick"/>
+                    <TextBlock Text="Punktowa"
+                               x:Name="PunktowaZagrywka"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Odrzucająca"
+                               x:Name="OdrzucającaZagrywka"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Reszta"
+                               x:Name="ResztaZagrywka"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Zepsuta"
+                               x:Name="ZepsutaZagrywka"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"
+                            Grid.Column="0">
+                    <Button Content="Blok"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Click="Blok_OnClick"/>
+                    <TextBlock Text="Punktowy"
+                               x:Name="PunktowyBlok"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Rebound"
+                               x:Name="ReboundBlok"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Błąd siatki"
+                               x:Name="BłądBlok"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    </StackPanel>
+                <StackPanel Grid.Row="1"
+                            Grid.Column="1">
+                    <Button Content="Atak"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Click="Atak_OnClick"/>
+                    <TextBlock x:Name="PunktowyAtak" 
+                               Text="Punktowy"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="PozostałeAtak"
+                               Text="Pozostałe"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="ZablokowaneAtak"
+                               Text="Zablokowany"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="ZepsutyAtak"
+                               Text="Zepsuty"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0"
+                            Grid.Column="1">
+                    <Button Content="Przyjęcie"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Click="Przyjęcie_OnClick"/>
+                    <TextBlock Text="Perfekcyjne"
+                               x:Name="PerfekcyjnePrzyjęcie"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Pozytywne"
+                                x:Name="PozytywnePrzyjęcie"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Złe"
+                                x:Name="ZłePrzyjęcie"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Zepsute"
+                                x:Name="ZepsutePrzyjęcie"
+                               FontSize="20"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+          
+            </Grid>
+        </StackPanel>
+    
     </Grid>
 </Page>

@@ -139,8 +139,17 @@
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\PlayerControl.xbf">
       <PackagePath>PlayerControl.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Statistics\AtakCharts.xbf">
+      <PackagePath>Statistics\AtakCharts.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Statistics\BlockCharts.xbf">
+      <PackagePath>Statistics\BlockCharts.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Statistics\ChoosePlayerForStats.xbf">
       <PackagePath>Statistics\ChoosePlayerForStats.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Statistics\PrzyjęcieCharts.xbf">
+      <PackagePath>Statistics\PrzyjęcieCharts.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Statistics\SelectCriterion.xbf">
       <PackagePath>Statistics\SelectCriterion.xbf</PackagePath>
@@ -150,6 +159,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Statistics\StatsWindow.xbf">
       <PackagePath>Statistics\StatsWindow.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Statistics\ZagrywkaCharts.xbf">
+      <PackagePath>Statistics\ZagrywkaCharts.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mamelski\Documents\GitHub\Siatkostat\Siatkostat\bin\Debug\Siatkostat.xr.xml">
       <PackagePath>Siatkostat.xr.xml</PackagePath>

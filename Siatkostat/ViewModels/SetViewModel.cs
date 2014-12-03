@@ -63,7 +63,7 @@ namespace Siatkostat.ViewModels
             SetsCollection = null;
             try
             {
-                SetsCollection = await setsTable
+                SetsCollection = await setsTable.Take(1000)
                     .ToCollectionAsync();
             }
             catch (MobileServiceInvalidOperationException e)

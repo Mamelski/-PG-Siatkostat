@@ -23,7 +23,11 @@ MainPage.xbf
 NewMatch.xbf
 PlayerControl.xbf
 Siatkostat.xr.xml
+Statistics\AtakCharts.xbf
+Statistics\BlockCharts.xbf
 Statistics\ChoosePlayerForStats.xbf
+Statistics\PrzyjęcieCharts.xbf
 Statistics\SelectCriterion.xbf
 Statistics\StatisticsWindowOld.xbf
 Statistics\StatsWindow.xbf
+Statistics\ZagrywkaCharts.xbf
