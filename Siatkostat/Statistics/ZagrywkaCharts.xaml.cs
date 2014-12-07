@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Windows.Phone.UI.Input;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Siatkostat.Models;
@@ -26,9 +27,16 @@ namespace Siatkostat.Statistics
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             id = e.Parameter as String;
+            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
             MakePunktowy();
         }
 
+        async void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+        {
+            e.Handled = true;
+            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
+            Frame.Navigate(typeof(StatsWindow),id);
+        }
 
         private void MakePunktowy()
         {
